@@ -82,6 +82,19 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 % Enter the current year, for the copyright statements etc.
 \pubyear{2015}
 
+
+
+\newcommand{\inclfig}[2]{
+	\includegraphics[width=0.49\linewidth]{spaghetti/#2_input.png}
+	\includegraphics[width=0.49\linewidth]{spaghetti/#2_img1.png}
+	\includegraphics[width=0.49\linewidth]{spaghetti/#2_img3_ipol.png}
+	\includegraphics[width=0.49\linewidth]{spaghetti/#2_img2.png}
+	\includegraphics[width=1\linewidth]{masses/#1_#2_mstel_vs_mtot.png}
+}
+
+
+
+
 % Don't change these lines
 \begin{document}
 \label{firstpage}
@@ -142,7 +155,6 @@ Those are most probly non lenses,
 \subsection{plausible}
 \begin{itemize}
   \item SW01 (ASW0004dv8)
-  \item SW02 (ASW000619d)
   \item SW08 (ASW00099ed)
   \item SW11 (ASW0002qtn)
   \item SW12 (ASW0003wsu)
@@ -159,6 +171,28 @@ Those are most probly non lenses,
   \item SW54 (ASW0007sez)
   \item SW58 (ASW0007iwp)
 \end{itemize}
+
+good example of plausible
+
+% \begin{figure}
+% 	\inclfig{SW45}{ASW000024id_TSKKYHD3CB}
+% \end{figure}
+
+\begin{figure}
+	\inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
+\end{figure}
+
+
+\subsubsection{grouplens}
+
+\begin{figure}
+	\inclfig{SW36}{ASW000096t_7IPP7LWVOF}
+\end{figure}
+
+(like 4dv8 collective modelling)
+
+
+
 
 \subsection{unclear}
 \begin{itemize}
@@ -179,13 +213,49 @@ Those are most probly non lenses,
   \item SW57 (ASW0008pag)
 \end{itemize}
 
+
+\begin{figure}
+	\inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
+\end{figure}
+
+
+\begin{figure}
+	\inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
+\end{figure}
+
+
+
 \subsection{convincing}
 \begin{itemize}
+  \item SW02 (ASW000619d)
   \item SW05 (ASW0007k4r)
   \item SW09 (ASW0002asp)
   \item SW28 (ASW0007xrs)
   \item SW29 (ASW0008qsm)
 \end{itemize}
+
+\begin{figure}
+	\inclfig{SW02}{ASW000619d_011489}
+\end{figure}
+
+\begin{figure}
+	\inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
+\end{figure}
+
+\begin{figure}
+	\inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
+\end{figure}
+
+\begin{figure}
+	\inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
+\end{figure}
+
+\begin{figure}
+	\inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
+\end{figure}
+
+
+
 
 \subsection{doubtful}
 \begin{itemize}
@@ -201,6 +271,19 @@ Those are most probly non lenses,
   \item SW42 (ASW00096rm)
   \item SW53 (ASW00070vl)
 \end{itemize}
+
+
+
+outlier because very odd mass ratio
+\begin{figure}
+	\inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
+\end{figure}
+
+
+
+
+
+
 
 \subsection{missing}
 \begin{itemize}
