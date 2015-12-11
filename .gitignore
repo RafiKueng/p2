@@ -137,3 +137,5 @@ sympy-plots-for-*.tex/
 
 *.tex.backup
 paper2.pdf
+
+spaghetti/*.png
