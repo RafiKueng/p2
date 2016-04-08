@@ -21,7 +21,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic setup. Most papers should leave these options alone.
-\documentclass[a4paper,fleqn,usenatbib]{mnras}
+\documentclass[fleqn,usenatbib]{mnras}
 
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will be fine) or prefer the old Computer Modern fonts, comment
@@ -36,15 +36,16 @@
 % Use vector fonts, so it zooms properly in on-screen viewing software
 % Don't change these lines unless you know what you are doing
 \usepackage[T1]{fontenc}
-\usepackage{ae,aecompl}
+%\usepackage{ae,aecompl}
 
 
 %%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
 
 % Only include extra packages if you really need them. Common packages are:
-\usepackage{graphicx}	% Including figure files
+\usepackage[dvipdfmx]{graphicx}	% Including figure files
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
+\usepackage{bmpsize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,14 +57,15 @@
 
 
 \newcommand{\inclfig}[2]{
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_input.png}
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img1.png}
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img3_ipol.png}
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img2.png}
-  \includegraphics[width=1\linewidth]{masses/#1_#2_mstel_vs_mtot.png}
+  \centering
+  \includegraphics[width=0.49\linewidth]{spaghetti/#2_input} %
+  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img1} \\
+  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img3_ipol} %
+  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img2} \\
+  \includegraphics[width=1\linewidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
-\newcommand{\lenstitle}[1]{\noindent\textit{#1}\quad}
+\newcommand{\lenstitle}[1]{\noindent\textit{#1} --}
 
 
 
@@ -106,11 +108,10 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 
 % Abstract of the paper
 \begin{abstract}
-
-%This is a simple template for authors to write new MNRAS papers.
-%The abstract should briefly describe the aims, methods, and main results of the paper.
-%It should be a single paragraph not more than 250 words (200 words for Letters).
-%No references should appear in the abstract.
+This is a simple template for authors to write new MNRAS papers.
+The abstract should briefly describe the aims, methods, and main results of the paper.
+It should be a single paragraph not more than 250 words (200 words for Letters).
+No references should appear in the abstract.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -180,7 +181,7 @@ Those are most probly non lenses,
 \subsection{plausible}
 
 \lenstitle{SW01 (ASW0004dv8)}
-	This is some text that says somwthing more than this line.
+  This is some text that says somwthing more than this line.
 
 \lenstitle{SW08 (ASW00099ed)}
   Simple lens with two images;
@@ -266,14 +267,15 @@ good example of plausible
 % \end{figure}
 
 \begin{figure}
-	\inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
+  \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
+  \caption{}
 \end{figure}
 
 
 \subsubsection{grouplens}
 
 \begin{figure}
-	\inclfig{SW36}{ASW000096t_7IPP7LWVOF}
+  \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
 \end{figure}
 
 (like 4dv8 collective modelling)
