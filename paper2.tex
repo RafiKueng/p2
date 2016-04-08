@@ -45,7 +45,11 @@
 \usepackage[dvipdfmx]{graphicx}	% Including figure files
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
-\usepackage{bmpsize}
+%\usepackage{bmpsize}
+
+% I disabled hyperlink in the cls und included it here because of bugs
+\usepackage{hyperref}   % Hyperlinks
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -181,7 +185,7 @@ Those are most probly non lenses,
 \subsection{plausible}
 
 \lenstitle{SW01 (ASW0004dv8)}
-  This is some text that says somwthing more than this line.
+  This is some text that says something more than this line.
 
 \lenstitle{SW08 (ASW00099ed)}
   Simple lens with two images;
@@ -369,16 +373,16 @@ good example of plausible
 
 \subsection{convincing}
 \begin{itemize}
-  \item SW02 (ASW000619d) \\
+  \item SW02 (ASW000619d)
   
     
-  \item SW05 (ASW0007k4r) \\
+  \item SW05 (ASW0007k4r)
   
-  \item SW09 (ASW0002asp) \\
+  \item SW09 (ASW0002asp)
   
-  \item SW28 (ASW0007xrs) \\
+  \item SW28 (ASW0007xrs)
   
-  \item SW29 (ASW0008qsm) \\
+  \item SW29 (ASW0008qsm)
   
 \end{itemize}
 
@@ -487,7 +491,7 @@ outlier because very odd mass ratio
 
 % The best way to enter references is to use BibTeX:
 \bibliographystyle{mnras}
-\bibliography{bib/bibli} % if your bibtex file is called example.bib
+\bibliography{bib/bibli.bib} % if your bibtex file is called example.bib
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
