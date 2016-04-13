@@ -23,6 +23,9 @@
 % Basic setup. Most papers should leave these options alone.
 \documentclass[fleqn,usenatbib]{mnras}
 
+\usepackage{silence} % silence error warinings
+\WarningFilter{caption}{Unsupported document class} % caption doesn't know mnras..
+
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will be fine) or prefer the old Computer Modern fonts, comment
 % out the following line
@@ -35,17 +38,28 @@
 
 % Use vector fonts, so it zooms properly in on-screen viewing software
 % Don't change these lines unless you know what you are doing
-\usepackage[T1]{fontenc}
-%\usepackage{ae,aecompl}
+\usepackage[T1]{fontenc} % make sure font is supported
+% \usepackage{ae,aecompl} %obsolete when using modern fonts
+\usepackage[final]{microtype} % make sure font is supported
+% and a suitable font
+\usepackage{lmodern} % use a modern font with T1 support
+%\usepackage{cm-super} % use a modern font with T1 support
 
 
 %%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
 
 % Only include extra packages if you really need them. Common packages are:
-\usepackage[dvipdfmx]{graphicx}	% Including figure files
+%\usepackage[dvipdfmx]{graphicx}	% Including figure files
+\usepackage{graphicx} % Including figure files
+\usepackage[skip=0pt]{subcaption}
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
-%\usepackage{bmpsize}
+%\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
+
+% TODO stuff, comment out for final submit
+\usepackage{todonotes} % as long as we are editing...
+\usepackage{showframe} % for debug
+\overfullrule=5pt      % show overfull boxes
 
 % I disabled hyperlink in the cls und included it here because of bugs
 \usepackage{hyperref}   % Hyperlinks
@@ -62,14 +76,26 @@
 
 \newcommand{\inclfig}[2]{
   \centering
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_input} %
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img1} \\
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img3_ipol} %
-  \includegraphics[width=0.49\linewidth]{spaghetti/#2_img2} \\
-  \includegraphics[width=1\linewidth]{masses/#1_#2_mstel_vs_mtot}
+  \begin{subfigure}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{spaghetti/#2_input}
+  \end{subfigure}%
+  \begin{subfigure}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{spaghetti/#2_img1}
+  \end{subfigure}%
+  \\[-1px]%
+  \begin{subfigure}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{spaghetti/#2_img3_ipol}
+  \end{subfigure}%
+  \begin{subfigure}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{spaghetti/#2_img2}
+  \end{subfigure}%
+  \\[-1px]%
+  \begin{subfigure}[b]{\linewidth}
+    \includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
+  \end{subfigure}
 }
 
-\newcommand{\lenstitle}[1]{\noindent\textit{#1} --}
+\newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
 
 
 
@@ -151,19 +177,16 @@ The isothermal ellipsoid model outputs three useful parameters: the radius of th
 By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
 
 
-%TODO append this to the bibliography file (bibli.bib)
-% References
-% Keeton C.
-% R., 2002, “A Catalog of Mass Models for Gravitational Lensing”, arXiv:astro-ph/0102341v2
+\subsection{HiRes image}
+Almost certain candidates, that qualify for follow up hires observations
+
+
+
 
 
 
 \section{Results}
 We came up with four kind of candidates.
-
-\subsection{HiRes image}
-Almost certain candidates, that qualify for follow up hires observations
-
 
 
 \subsection{Spectra}
@@ -183,6 +206,8 @@ Those are most probly non lenses,
 
 
 \subsection{plausible}
+  The plausible candidates fail in one category, but are quite convincing in all the others.
+  Thats why we recomend them for a following up study for ...
 
 \lenstitle{SW01 (ASW0004dv8)}
   This is some text that says something more than this line.
@@ -506,6 +531,13 @@ If you want to present additional material which would interrupt the flow of the
 it can be placed in an Appendix which appears after the list of references.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{TODO}
+\listoftodos
+
+\todo{REMOVE TODOS at the end}
 
 
 
