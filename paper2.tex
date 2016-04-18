@@ -55,7 +55,7 @@
 % Only include extra packages if you really need them. Common packages are:
 %\usepackage[dvipdfmx]{graphicx}	% Including figure files
 \usepackage{graphicx} % Including figure files
-\usepackage[skip=0pt]{subcaption}
+%\usepackage[skip=0pt]{subcaption}
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
 %\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
@@ -77,26 +77,35 @@
 % overwriting existing commands. Example:
 %\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 
+%
+%\newcommand{\inclfig2}[2]{
+  %\centering
+  %\begin{subfigure}{0.5\linewidth}
+    %\includegraphics[width=\linewidth]{spaghetti/#2_input}
+  %\end{subfigure}%
+  %\begin{subfigure}{0.5\linewidth}
+    %\includegraphics[width=\linewidth]{spaghetti/#2_img1}
+  %\end{subfigure}%
+  %\\[-1px]%
+  %\begin{subfigure}{0.5\linewidth}
+    %\includegraphics[width=\linewidth]{spaghetti/#2_img3_ipol}
+  %\end{subfigure}%
+  %\begin{subfigure}{0.5\linewidth}
+    %\includegraphics[width=\linewidth]{spaghetti/#2_img2}
+  %\end{subfigure}%
+  %\\[-1px]%
+  %\begin{subfigure}[b]{\linewidth}
+    %\includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
+  %\end{subfigure}
+%}
 
 \newcommand{\inclfig}[2]{
   \centering
-  \begin{subfigure}{0.5\linewidth}
-    \includegraphics[width=\linewidth]{spaghetti/#2_input}
-  \end{subfigure}%
-  \begin{subfigure}{0.5\linewidth}
-    \includegraphics[width=\linewidth]{spaghetti/#2_img1}
-  \end{subfigure}%
-  \\[-1px]%
-  \begin{subfigure}{0.5\linewidth}
-    \includegraphics[width=\linewidth]{spaghetti/#2_img3_ipol}
-  \end{subfigure}%
-  \begin{subfigure}{0.5\linewidth}
-    \includegraphics[width=\linewidth]{spaghetti/#2_img2}
-  \end{subfigure}%
-  \\[-1px]%
-  \begin{subfigure}[b]{\linewidth}
-    \includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
-  \end{subfigure}
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_input}%
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img1}
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img3_ipol}%
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
+	\includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
@@ -616,7 +625,7 @@ Finally this category lists all the candidates, that miss redshift measurements 
 
 % The best way to enter references is to use BibTeX:
 \bibliographystyle{mnras}
-\bibliography{bib/bibli.bib} % if your bibtex file is called example.bib
+\bibliography{bib/bibli} % if your bibtex file is called example.bib
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
