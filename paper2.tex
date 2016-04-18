@@ -23,8 +23,12 @@
 % Basic setup. Most papers should leave these options alone.
 \documentclass[fleqn,usenatbib]{mnras}
 
+%%% DEBUG SETTINGS - remove at the end %%%%%%%%%%%%%%%
 \usepackage{silence} % silence error warinings
 \WarningFilter{caption}{Unsupported document class} % caption doesn't know mnras..
+\hbadness = 5000
+\vbadness = 10000
+\usepackage{}
 
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will be fine) or prefer the old Computer Modern fonts, comment
@@ -96,8 +100,15 @@
 }
 
 \newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
+\newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
 
 
+\newcommand{\asw}[1]{ASW000#1}
+\newcommand{\sw}[1]{SW~#1}
+\newcommand{\model}[1]{SL model~#1}
+
+\newcommand{\figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\Figref}[1]{Figure \ref{fig:#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -160,7 +171,7 @@ Here we cite \cite{2015MNRAS.447.2170K}.
 
 \section{Methods}
 
-\subsection{Parameterisation of pixel models}
+\subsection{Parameterisation of pixel models} \label{sec:parameter}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
 This created the residuals function.
 The number of components defined as principle was varied to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
@@ -177,8 +188,51 @@ The isothermal ellipsoid model outputs three useful parameters: the radius of th
 By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
 
 
-\subsection{HiRes image}
-Almost certain candidates, that qualify for follow up hires observations
+\subsection{HiRes / Subsampling of central region}
+In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
+We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
+The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
+\Figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
+We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
+  \caption{
+    Circularly averaged mass profile for different subsampling of central region.
+    Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
+    $\cdot / \cdot \cdot \cdot$: $r_\text{subs}=1$ inner pixels, each subdivided into $n_\text{subs}=3$ sub pixels.
+    $\cdot / \cdot \cdot \cdot \cdot \cdot$: $r_\text{subs}=1$, $n_\text{subs}=5$.
+    $\cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=2$, $n_\text{subs}=3$.
+    $\cdot \cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=3$, $n_\text{subs}=3$.
+    }
+  \label{fig:subsampling}
+\end{figure}
+
+
+
+
+\subsection{Additional / Improved Synthetic Image}
+
+Volunteers often ask about better indicators to identify wether the modelling resulted in a ``good'' or ``bad'' model.
+We developped a prototype of a better syntetic image than just the rendering of a \todo{insert currently used source profile} profile.
+It operates on the composite input image.
+The user has to mask the supposed lensed images.
+The algorith then establishes a grid on the source plane and projects the masked pixels of the lense plane back to the source plane.
+Multiple lens plane pixels fall onto one source plane pixel and get averaged.
+The new synthetic image then reverses the mapping, coloring each pixel in the lens plane with the corresponding values of the source plane pixel.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{img/new_synth_img_detailed}
+  \caption{
+      Top-left: Orginal image, top-right: improved synthetic image for candidate \sw{5} (\asw{7k4r}) and model \model{12402};
+      bottom from left to right:
+        reconstructed source in color,
+        intensity (grayscale),
+        count of lens plane pixels per source plane pixel,
+        residual of orginal image to improved syntetic image in grayscale
+    }
+  \label{fig:synthimg}
+\end{figure}
 
 
 
@@ -186,28 +240,35 @@ Almost certain candidates, that qualify for follow up hires observations
 
 
 \section{Results}
-We came up with four kind of candidates.
+Throu visual inspection of the most popular models generated for each candidate and data generated by those models we classified the candidates in four categories.
+The data available is shown in \figref{SW58}.
+\todo{better explain criterias?}
+The following sections list all the models for all the categories, each with a short explanation of the reasons.
+Additionally, selected models are presented in figures for demonstration.
 
-
-\subsection{Spectra}
-Candidates to follow up with a spectral analysis. 
-
-
-\subsection{Bad models}
-Candidates that need more work to be modelled.
-Or that have features that are hard / impossible to model with the current SpaghettiLens version.
-Examples are group lenses
-
-
-
-\subsection{Non Lenses}
-Those are most probly non lenses, 
+% 
+% \subsection{Spectra}
+% Candidates to follow up with a spectral analysis. 
+% 
+% 
+% \subsection{Bad models}
+% Candidates that need more work to be modelled.
+% Or that have features that are hard / impossible to model with the current SpaghettiLens version.
+% Examples are group lenses
+% 
+% 
+% 
+% \subsection{Non Lenses}
+% Those are most probly non lenses, 
 
 
 
 \subsection{plausible}
-  The plausible candidates fail in one category, but are quite convincing in all the others.
-  Thats why we recomend them for a following up study for ...
+
+The plausible candidates fail in one category, but are quite convincing in all the others.
+One particular reason for a candidate to end up in this category is that is has extended arcs, what is hard to modell with the current version of the program.
+Thats why we recomend them for a following up study, for example for taking spectras or other follow up obersatories and for other modelling programs for a try.
+
 
 \lenstitle{SW01 (ASW0004dv8)}
   This is some text that says something more than this line.
@@ -221,73 +282,71 @@ Those are most probly non lenses,
   model nedes minor refinement;
   quite low mass ratio
   
-\begin{itemize}
-  \item SW12 (ASW0003wsu) \\
+\lenstitle{SW12 (ASW0003wsu)} 
   faint arc, bright overall situation, no counter image;
   has good model;
   low Mstel and low Mlens
   
-  \item SW21 (ASW0004m3x) \\
+\lenstitle{SW21 (ASW0004m3x)} 
   clear arc, no counter image; inbetween two external sources;
   model needs work, predicts additional images. play with external mass / sheer?
   Mass ratio low.
   
-  \item SW27 (ASW0006jh5) \\
+\lenstitle{SW27 (ASW0006jh5)} 
   (really plausible?)
   unclear situation, but arc is visible;
   model shows extended arc not there in org image;
   mass ratio ok
   
-  \item SW31 (ASW00021r0) \\
+\lenstitle{SW31 (ASW00021r0)} 
   (really plausible?)
   noisy situation, unclear images, potential external mass interfering;
   model ok'ish, hard to say;
   high mass ratio
   
-  \item SW33 (ASW0003s0m)\\
+\lenstitle{SW33 (ASW0003s0m)}
   clear picture, two image situation;
   model simple, but ok. arc too much extended;
   masses in the middle, but rather high ratio
   
-  \item SW36 (ASW000096t) \\
+\lenstitle{SW36 (ASW000096t)} 
   noisy picture, many possible external masses, faint images;
   model predicts additional images, needs more work, arc too extended;
   masses look ok
   
-  \item SW38 (ASW0009cp0) \\
+\lenstitle{SW38 (ASW0009cp0)} 
   quite clean picture, two bright minima, counter image hidden;
   model fine
   really hi stellar mass
   
-  \item SW43 (ASW0001c3j) \\
+\lenstitle{SW43 (ASW0001c3j)} 
   clean situation, faint arc'ish images;
   model needs work, shows additional images, strange arc (LHD);
   very high Mstel
   
-  \item SW45 (ASW00024id)\\
-  ring like structure, very clean \\
+\lenstitle{SW45 (ASW00024id)}
+  ring like structure, very clean
   usual problems with rings, otherwise model quite ok actually;
   very high Mstel
   
-  \item SW46 (ASW00024q6) \\
+\lenstitle{SW46 (ASW00024q6)} 
   yellow'ish arc, two image configuration;
   model ok;
   masses ok
   
-  \item SW52 (ASW0006a07) \\
+\lenstitle{SW52 (ASW0006a07)} 
   (no imgs)
   
-  \item SW54 (ASW0007sez) \\
+\lenstitle{SW54 (ASW0007sez)} 
   white lens, fuzzy ring like structure;
   model really good, given ring like;
   masses ok
   
-  \item SW58 (ASW0007iwp) \\
+\lenstitle{SW58 (ASW0007iwp)} 
   nice arc, no counter image;
   model prediction really good;
   masses ok
-  
-\end{itemize}
+
 
 good example of plausible
 
@@ -297,7 +356,8 @@ good example of plausible
 
 \begin{figure}
   \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
-  \caption{}
+  \caption{SW58. topleft: user input; top right: resulting contour map of arrival time surface; mid left: synthetic image, renering a TODO{profile} source behind the modelled lens; mid right: mass profile; bottom: lensing mass, obtained from the model against estimate of stellar mass, obtained using photometric redshift assuming TODO(which population model?).}
+  \label{fig:SW58}
 \end{figure}
 
 
@@ -313,76 +373,80 @@ good example of plausible
 
 
 \subsection{unclear}
-\begin{itemize}
-  \item SW04 (ASW0009cjs) \\
+
+This categy contains the ones that are hard to say.
+They might look like lenses visually, but the modelling failed or prediced additional images.
+
+
+
+\lenstitle{SW04 (ASW0009cjs)} 
   noisy field, possible group lens, but images not typical? (no arclike structure);
   model fail (input errors);
   Mlens too high (10e13)
   
-  \item SW06 (ASW0008swn)\\
+\lenstitle{SW06 (ASW0008swn)}
   green images, elongated lens, images on strange positions?;
   model ok'ish, but mass distr. doesn't reflect visuals;
   masses ok
   
-  \item SW07 (ASW0007e08) \\
+\lenstitle{SW07 (ASW0007e08)} 
   (no img)
   
-  \item SW13 (ASW00047ae) \\
+\lenstitle{SW13 (ASW00047ae)} 
   croweded situation unclear setup;
   model failed, predicts additional images;
   masses ok
   
-  \item SW15 (ASW0004nan) \\
+\lenstitle{SW15 (ASW0004nan)} 
   no counter image (should be visible)?
   model ok'ish;
   Mlens on the lower end
   
-  \item SW17 (ASW0005rnb) \\
+\lenstitle{SW17 (ASW0005rnb)} 
   two image setup, but arcish structure of images missing;
   model failed, predicts additional images, rednering failed;
   
-  \item SW19 (ASW0001ld7) \\
+\lenstitle{SW19 (ASW0001ld7)} 
   asymmetry / really extended arc and no counter image rather no lensing configuration;
   rendering ok'ish, model predicts additionla images;
   Mstel and Mlens way too low (e10 / e11)
   
-  \item SW24 (ASW00050sk) \\
+\lenstitle{SW24 (ASW00050sk)} 
   unclear / noisy situation, shape of arc strange;
   model ok;
   mass ration close to unity
   
-  \item SW32 (ASW0004iye) \\
+\lenstitle{SW32 (ASW0004iye)} 
   (no img)
   
-  \item SW35 (ASW0004wgd) \\
+\lenstitle{SW35 (ASW0004wgd)} 
   hard to say, doesn't look convincing, but neither totally off
   modell ok;
   masses as well;
   
-  \item SW44 (ASW0002k40) \\
+\lenstitle{SW44 (ASW0002k40)} 
   (no img);
   very old model;
   hi mass ratio
   
-  \item SW47 (ASW0003r6c) \\
+\lenstitle{SW47 (ASW0003r6c)} 
   two images, no arcish structre.. too far away from lens?;
   model predicts additional images;
   quite high mass ratio
   
-  \item SW51 (ASW0006e0o) \\
+\lenstitle{SW51 (ASW0006e0o)} 
   (no img)
   
-  \item SW56 (ASW0007pga) \\
+\lenstitle{SW56 (ASW0007pga)} 
   very ellyptical lens, images not really arcish;
   model failed, predicts additional images;
   masses ok
   
-  \item SW57 (ASW0008pag) \\
+\lenstitle{SW57 (ASW0008pag)} 
   point mass / group lens interfering? symertry of arc off;
   model failed completly;
   Mlens too high
   
-\end{itemize}
 
 
 \begin{figure}
@@ -397,91 +461,115 @@ good example of plausible
 
 
 \subsection{convincing}
-\begin{itemize}
-  \item SW02 (ASW000619d)
+
+The canidates that looked the most promising and left little doubt about being lenses were grouped into the category ``convincing''.
+In Figures \ref{fig:SW02} to \ref{fig:SW29} we show all the convincing candidates.
+Following we list the parameters, obtained applying the technique described in section~\ref{sec:parameter}
+
+\lenstitle{SW02 (ASW000619d)}
+Nice arc with counter image;
+additional mass at 12 o'clock doesn't seem to influence the image.
+\params{1.04}{0.32}{-5.18}
+
+\lenstitle{SW05 (ASW0007k4r)}
+The model predicts very steep central mass profile, and thus a very high lensing mass;
+looks otherwise very convincing.
+\params{3.80}{0.15}{52.50}
   
-    
-  \item SW05 (ASW0007k4r)
+\lenstitle{SW09 (ASW0002asp)}
+\params{1.12}{0.00}{88.39}
   
-  \item SW09 (ASW0002asp)
-  
-  \item SW28 (ASW0007xrs)
-  
-  \item SW29 (ASW0008qsm)
-  
-\end{itemize}
+\lenstitle{SW28 (ASW0007xrs)}
+Faint, but clearly visible arc and counter image;
+but model sfits nicely
+\params{1.04}{0.33}{66.63}
+ 
+\lenstitle{SW29 (ASW0008qsm)}
+Faint close arc, but reconstruion works very well;
+parameterisation of ellypticity fails.
+\params{0.73}{0.00}{249.80}
 
 \begin{figure}
-	\inclfig{SW02}{ASW000619d_011489}
+  \inclfig{SW02}{ASW000619d_011489}
+  \caption{SW02}
+  \label{fig:SW02}
 \end{figure}
 
 \begin{figure}
-	\inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \caption{SW05}
+  \label{fig:SW05}
 \end{figure}
 
 \begin{figure}
-	\inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
+  \inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
+  \caption{SW09}
+  \label{fig:SW09}
 \end{figure}
 
 \begin{figure}
-	\inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \caption{SW28}
+  \label{fig:SW28}
 \end{figure}
 
 \begin{figure}
-	\inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
+  \inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
+  \caption{SW29}
+  \label{fig:SW29}
 \end{figure}
 
 
 
 
 \subsection{doubtful}
-\begin{itemize}
-  \item SW10 (ASW0002bmc) \\
+
+\lenstitle{SW10 (ASW0002bmc)} 
   very elliptical setup, unlikley to be a lens;
   model failed totally
   
-  \item SW16 (ASW0009bp2) \\
+\lenstitle{SW16 (ASW0009bp2)} 
   very faint images
   
-  \item SW18 (ASW0007hu2) \\
+\lenstitle{SW18 (ASW0007hu2)} 
   model failed completly
   
-  \item SW20 (ASW0002dx7) \\
+\lenstitle{SW20 (ASW0002dx7)} 
   faint white images, rather substuctre of ``lens'' ??
   
-  \item SW22 (ASW0009ab8) \\
+\lenstitle{SW22 (ASW0009ab8)} 
   very faint images, group configuration;
   model predicts additional images;
   mass ration close to unity
   
-  \item SW23 (ASW0003r61) \\
+\lenstitle{SW23 (ASW0003r61)} 
   (no img)
   
-  \item SW26 (ASW0005ma2) \\
+\lenstitle{SW26 (ASW0005ma2)} 
   similar to SW10
   
-  \item SW34 (ASW00051ld) \\
+\lenstitle{SW34 (ASW00051ld)} 
   (no img)
   
-  \item SW41 (ASW0008xbu) \\
+\lenstitle{SW41 (ASW0008xbu)} 
   similar to SW10. very ellyptical lens
   
-  \item SW42 (ASW00096rm) \\
+\lenstitle{SW42 (ASW00096rm)} 
   ring like structure, but very strange distribution;
   model not too bad, brightnesses off;
   stellar mass way too lower
   
-  \item SW53 (ASW00070vl) \\
+\lenstitle{SW53 (ASW00070vl)} 
   images don't look liked lensed;
   model predicts additional images
   
-\end{itemize}
 
 
 
-outlier because very odd mass ratio
 \begin{figure}
-	\inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
+  \inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
+  \caption{outlier because very odd mass ratio}
+  \label{fig:SW42}
 \end{figure}
 
 
@@ -491,20 +579,32 @@ outlier because very odd mass ratio
 
 
 \subsection{missing}
-\begin{itemize}
-  \item SW03 (ASW0006mea)
-  \item SW14 (ASW0004xjk)
-  \item SW25 (ASW00007mq)
-  \item SW30 (ASW0002p8y)
-  \item SW37 (ASW00086xq)
-  \item SW39 (ASW0005qiz)
-  \item SW40 (ASW0008wmr)
-  \item SW48 (ASW0000g95)
-  \item SW49 (ASW00007ls)
-  \item SW50 (ASW00008a0)
-  \item SW55 (ASW0007t5y)
-  \item SW59 (ASW00085cp)
-\end{itemize}
+
+Finally this category lists all the candidates, that miss redshift measurements of the lens and thus further analysis is difficult.
+
+\lenstitle{SW03 (ASW0006mea)}
+
+\lenstitle{SW14 (ASW0004xjk)}
+
+\lenstitle{SW25 (ASW00007mq)}
+
+\lenstitle{SW30 (ASW0002p8y)}
+
+\lenstitle{SW37 (ASW00086xq)}
+
+\lenstitle{SW39 (ASW0005qiz)}
+
+\lenstitle{SW40 (ASW0008wmr)}
+
+\lenstitle{SW48 (ASW0000g95)}
+
+\lenstitle{SW49 (ASW00007ls)}
+
+\lenstitle{SW50 (ASW00008a0)}
+
+\lenstitle{SW55 (ASW0007t5y)}
+
+\lenstitle{SW59 (ASW00085cp)}
 
 
 
@@ -532,7 +632,7 @@ it can be placed in an Appendix which appears after the list of references.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\clearpage
 
 \section{TODO}
 \listoftodos
@@ -553,127 +653,3 @@ it can be placed in an Appendix which appears after the list of references.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
-
-
-
-% 
-% \section{Introduction}
-% 
-% This is a simple template for authors to write new MNRAS papers.
-% See \texttt{mnras\_sample.tex} for a more complex example, and \texttt{mnras\_guide.tex}
-% for a full user guide.
-% 
-% All papers should start with an Introduction section, which sets the work
-% in context, cites relevant earlier studies in the field by \citet{Others2013},
-% and describes the problem the authors aim to solve \citep[e.g.][]{Author2012}.
-% 
-% \section{Methods, Observations, Simulations etc.}
-% 
-% Normally the next section describes the techniques the authors used.
-% It is frequently split into subsections, such as Section~\ref{sec:maths} below.
-% 
-% \subsection{Maths}
-% \label{sec:maths} % used for referring to this section from elsewhere
-% 
-% Simple mathematics can be inserted into the flow of the text e.g. $2\times3=6$
-% or $v=220$\,km\,s$^{-1}$, but more complicated expressions should be entered
-% as a numbered equation:
-% 
-% \begin{equation}
-%     x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
-% 	\label{eq:quadratic}
-% \end{equation}
-% 
-% Refer back to them as e.g. equation~(\ref{eq:quadratic}).
-% 
-% \subsection{Figures and tables}
-% 
-% Figures and tables should be placed at logical positions in the text. Don't
-% worry about the exact layout, which will be handled by the publishers.
-% 
-% Figures are referred to as e.g. Fig.~\ref{fig:example_figure}, and tables as
-% e.g. Table~\ref{tab:example_table}.
-% 
-% % Example figure
-% \begin{figure}
-% 	% To include a figure from a file named example.*
-% 	% Allowable file formats are eps or ps if compiling using latex
-% 	% or pdf, png, jpg if compiling using pdflatex
-% 	\includegraphics[width=\columnwidth]{example}
-%     \caption{This is an example figure. Captions appear below each figure.
-% 	Give enough detail for the reader to understand what they're looking at,
-% 	but leave detailed discussion to the main body of the text.}
-%     \label{fig:example_figure}
-% \end{figure}
-% 
-% % Example table
-% \begin{table}
-% 	\centering
-% 	\caption{This is an example table. Captions appear above each table.
-% 	Remember to define the quantities, symbols and units used.}
-% 	\label{tab:example_table}
-% 	\begin{tabular}{lccr} % four columns, alignment for each
-% 		\hline
-% 		A & B & C & D\\
-% 		\hline
-% 		1 & 2 & 3 & 4\\
-% 		2 & 4 & 6 & 8\\
-% 		3 & 5 & 7 & 9\\
-% 		\hline
-% 	\end{tabular}
-% \end{table}
-% 
-% 
-% \section{Conclusions}
-% 
-% The last numbered section should briefly summarise what has been done, and describe
-% the final conclusions which the authors draw from their work.
-% 
-% \section*{Acknowledgements}
-% 
-% The Acknowledgements section is not numbered. Here you can thank helpful
-% colleagues, acknowledge funding agencies, telescopes and facilities used etc.
-% Try to keep it short.
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
-% 
-% % The best way to enter references is to use BibTeX:
-% 
-% %\bibliographystyle{mnras}
-% %\bibliography{example} % if your bibtex file is called example.bib
-% 
-% 
-% % Alternatively you could enter them by hand, like this:
-% % This method is tedious and prone to error if you have lots of references
-% \begin{thebibliography}{99}
-% \bibitem[\protect\citeauthoryear{Author}{2012}]{Author2012}
-% Author A.~N., 2013, Journal of Improbable Astronomy, 1, 1
-% \bibitem[\protect\citeauthoryear{Others}{2013}]{Others2013}
-% Others S., 2012, Journal of Interesting Stuff, 17, 198
-% \end{thebibliography}
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
-% 
-% \appendix
-% 
-% \section{Some extra material}
-% 
-% If you want to present additional material which would interrupt the flow of the main paper,
-% it can be placed in an Appendix which appears after the list of references.
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% 
-% % Don't change these lines
-% \bsp	% typesetting comment
-% \label{lastpage}
-% \end{document}
-% 
-% % End of mnras_template.tex
