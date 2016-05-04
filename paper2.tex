@@ -28,7 +28,7 @@
 \WarningFilter{caption}{Unsupported document class} % caption doesn't know mnras..
 \hbadness = 5000
 \vbadness = 10000
-\usepackage{}
+% \usepackage{}
 
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will be fine) or prefer the old Computer Modern fonts, comment
@@ -60,10 +60,11 @@
 \usepackage{amssymb}	% Extra maths symbols
 %\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
 
+
 % TODO stuff, comment out for final submit
 \usepackage{todonotes} % as long as we are editing...
-\usepackage{showframe} % for debug
-\overfullrule=5pt      % show overfull boxes
+%\usepackage{showframe} % for debug
+%\overfullrule=5pt      % show overfull boxes
 
 % I disabled hyperlink in the cls und included it here because of bugs
 \usepackage{hyperref}   % Hyperlinks
@@ -107,6 +108,10 @@
 	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
 	\includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
 }
+
+\newcommand*{\rot}{\rotatebox{90}}
+\newcommand*{\OK}{\checkmark}
+\newcommand*{\NO}{}
 
 \newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
 \newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
@@ -614,6 +619,19 @@ Finally this category lists all the candidates, that miss redshift measurements 
 \lenstitle{SW55 (ASW0007t5y)}
 
 \lenstitle{SW59 (ASW00085cp)}
+
+
+\subsection{Table}
+
+\begin{table*}
+  \caption{Categorisation of SW models}
+  \label{tab:models}
+\include{table}
+\end{table*}
+
+
+
+\section{Discussions}
 
 
 
