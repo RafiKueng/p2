@@ -58,6 +58,7 @@
 %\usepackage[skip=0pt]{subcaption}
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
+\usepackage{pifont}	% Extra maths symbols
 %\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
 
 
@@ -110,8 +111,8 @@
 }
 
 \newcommand*{\rot}{\rotatebox{90}}
-\newcommand*{\OK}{\checkmark}
-\newcommand*{\NO}{}
+\newcommand*{\OK}{\ding{51}}
+\newcommand*{\NO}{\ding{55}}
 
 \newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
 \newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
