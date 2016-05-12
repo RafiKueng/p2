@@ -1,26 +1,3 @@
-% mnras_template.tex
-%
-% LaTeX template for creating an MNRAS paper
-%
-% v3.0 released 14 May 2015
-% (version numbers match those of mnras.cls)
-%
-% Copyright (C) Royal Astronomical Society 2015
-% Authors:
-% Keith T. Smith (Royal Astronomical Society)
-
-% Change log
-%
-% v3.0 May 2015
-%    Renamed to match the new package name
-%    Version number matches mnras.cls
-%    A few minor tweaks to wording
-% v1.0 September 2013
-%    Beta testing only - never publicly released
-%    First version: a simple (ish) template for creating an MNRAS paper
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Basic setup. Most papers should leave these options alone.
 \documentclass[fleqn,usenatbib]{mnras}
 
 %%% DEBUG SETTINGS - remove at the end %%%%%%%%%%%%%%%
@@ -71,36 +48,6 @@
 \usepackage{hyperref}   % Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
-
-% Please keep new commands to a minimum, and use \newcommand not \def to avoid
-% overwriting existing commands. Example:
-%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
-
-%
-%\newcommand{\inclfig2}[2]{
-  %\centering
-  %\begin{subfigure}{0.5\linewidth}
-    %\includegraphics[width=\linewidth]{spaghetti/#2_input}
-  %\end{subfigure}%
-  %\begin{subfigure}{0.5\linewidth}
-    %\includegraphics[width=\linewidth]{spaghetti/#2_img1}
-  %\end{subfigure}%
-  %\\[-1px]%
-  %\begin{subfigure}{0.5\linewidth}
-    %\includegraphics[width=\linewidth]{spaghetti/#2_img3_ipol}
-  %\end{subfigure}%
-  %\begin{subfigure}{0.5\linewidth}
-    %\includegraphics[width=\linewidth]{spaghetti/#2_img2}
-  %\end{subfigure}%
-  %\\[-1px]%
-  %\begin{subfigure}[b]{\linewidth}
-    %\includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
-  %\end{subfigure}
-%}
-
 \newcommand{\inclfig}[2]{
   \centering
 	\includegraphics[width=0.5\linewidth]{spaghetti/#2_input}%
@@ -117,7 +64,6 @@
 \newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
 \newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
 
-
 \newcommand{\asw}[1]{ASW000#1}
 \newcommand{\sw}[1]{SW~#1}
 \newcommand{\model}[1]{SL model~#1}
@@ -125,13 +71,8 @@
 \newcommand{\figref}[1]{Figure \ref{fig:#1}}
 \newcommand{\Figref}[1]{Figure \ref{fig:#1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
-
-% Title of the paper, and the short title which is used in the headers.
-% Keep the title short and informative.
-\title[Short title, max. 45 characters]{Preliminary categorisation of SpaceWarps candidates}
+\title[Short title, max. 45 characters]{Model of lens candidates from
+  Space Warps CFHTLS}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -149,12 +90,10 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 }
 
 % These dates will be filled out by the publisher
-\date{Accepted XXX. Received YYY; in original form ZZZ}
+% \date{Accepted XXX. Received YYY; in original form ZZZ}
 
 % Enter the current year, for the copyright statements etc.
 \pubyear{2016}
-
-
 
 % Don't change these lines
 \begin{document}
@@ -162,7 +101,6 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 \maketitle
 
-% Abstract of the paper
 \begin{abstract}
 This is a simple template for authors to write new MNRAS papers.
 The abstract should briefly describe the aims, methods, and main results of the paper.
@@ -176,15 +114,16 @@ No references should appear in the abstract.
 keyword1 -- keyword2 -- keyword3
 \end{keywords}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Introduction}
 
-Here we cite \cite{2015MNRAS.447.2170K}.
+Space Warps \citep{2016MNRAS.455.1171M} found lens candidates
+\citep{2016MNRAS.455.1191M}.
+
+Modelling method \citep{2015MNRAS.447.2170K}.
 
 \section{Methods}
+
+\subsection{Stellar mass}
 
 \subsection{Parameterisation of pixel models} \label{sec:parameter}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
@@ -197,33 +136,10 @@ Minimising the residuals function produces the set of parameters that fit the pa
 A least squares fit was used to perform this minimisation.
 
 
-The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \cite{2001astro.ph..2340K}.
+The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \cite{2001astro.ph..2341K}.
 This model is frequently used to describe gravitational lenses as it tends to fit well with observations.
 The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
 By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
-
-
-\subsection{HiRes / Subsampling of central region}
-In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
-We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
-The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
-\Figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
-We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
-  \caption{
-    Circularly averaged mass profile for different subsampling of central region.
-    Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
-    $\cdot / \cdot \cdot \cdot$: $r_\text{subs}=1$ inner pixels, each subdivided into $n_\text{subs}=3$ sub pixels.
-    $\cdot / \cdot \cdot \cdot \cdot \cdot$: $r_\text{subs}=1$, $n_\text{subs}=5$.
-    $\cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=2$, $n_\text{subs}=3$.
-    $\cdot \cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=3$, $n_\text{subs}=3$.
-    }
-  \label{fig:subsampling}
-\end{figure}
-
-
 
 
 \subsection{Additional / Improved Synthetic Image}
@@ -249,34 +165,89 @@ The new synthetic image then reverses the mapping, coloring each pixel in the le
   \label{fig:synthimg}
 \end{figure}
 
+\subsection{HiRes / Subsampling of central region}
+In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
+We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
+The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
+\Figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
+We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
+  \caption{
+    Circularly averaged mass profile for different subsampling of central region.
+    Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
+    $\cdot / \cdot \cdot \cdot$: $r_\text{subs}=1$ inner pixels, each subdivided into $n_\text{subs}=3$ sub pixels.
+    $\cdot / \cdot \cdot \cdot \cdot \cdot$: $r_\text{subs}=1$, $n_\text{subs}=5$.
+    $\cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=2$, $n_\text{subs}=3$.
+    $\cdot \cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=3$, $n_\text{subs}=3$.
+    }
+  \label{fig:subsampling}
+\end{figure}
+
+\section{Example systems}
+
+\begin{figure}
+  \inclfig{SW02}{ASW000619d_011489}
+  \caption{SW02}
+  \label{fig:SW02}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \caption{SW05}
+  \label{fig:SW05}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
+  \caption{SW09}
+  \label{fig:SW09}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \caption{SW28}
+  \label{fig:SW28}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
+  \caption{SW29}
+  \label{fig:SW29}
+\end{figure}
+
+Plausible
+
+\begin{figure}
+  \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
+  \caption{SW58. topleft: user input; top right: resulting contour map of arrival time surface; mid left: synthetic image, renering a TODO{profile} source behind the modelled lens; mid right: mass profile; bottom: lensing mass, obtained from the model against estimate of stellar mass, obtained using photometric redshift assuming TODO(which population model?).}
+  \label{fig:SW58}
+\end{figure}
+
+Uncertain
+
+\begin{figure}
+  \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
+\end{figure}
+
+\begin{figure}
+	\inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
+\end{figure}
 
 
+\begin{figure}
+	\inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
+\end{figure}
 
 
+\section{Summary of models}
 
-\section{Results}
 Throu visual inspection of the most popular models generated for each candidate and data generated by those models we classified the candidates in four categories.
 The data available is shown in \figref{SW58}.
 \todo{better explain criterias?}
 The following sections list all the models for all the categories, each with a short explanation of the reasons.
 Additionally, selected models are presented in figures for demonstration.
-
-% 
-% \subsection{Spectra}
-% Candidates to follow up with a spectral analysis. 
-% 
-% 
-% \subsection{Bad models}
-% Candidates that need more work to be modelled.
-% Or that have features that are hard / impossible to model with the current SpaghettiLens version.
-% Examples are group lenses
-% 
-% 
-% 
-% \subsection{Non Lenses}
-% Those are most probly non lenses, 
-
-
 
 \subsection{plausible}
 
@@ -361,31 +332,12 @@ Thats why we recomend them for a following up study, for example for taking spec
   nice arc, no counter image;
   model prediction really good;
   masses ok
-
-
-good example of plausible
-
-% \begin{figure}
-% 	\inclfig{SW45}{ASW000024id_TSKKYHD3CB}
-% \end{figure}
-
-\begin{figure}
-  \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
-  \caption{SW58. topleft: user input; top right: resulting contour map of arrival time surface; mid left: synthetic image, renering a TODO{profile} source behind the modelled lens; mid right: mass profile; bottom: lensing mass, obtained from the model against estimate of stellar mass, obtained using photometric redshift assuming TODO(which population model?).}
-  \label{fig:SW58}
-\end{figure}
-
+  good example of plausible
 
 \subsubsection{grouplens}
 
-\begin{figure}
-  \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
-\end{figure}
-
+\lenstitle{SW36 (ASW000096t)}
 (like 4dv8 collective modelling)
-
-
-
 
 \subsection{unclear}
 
@@ -464,17 +416,6 @@ They might look like lenses visually, but the modelling failed or prediced addit
   
 
 
-\begin{figure}
-	\inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
-\end{figure}
-
-
-\begin{figure}
-	\inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
-\end{figure}
-
-
-
 \subsection{convincing}
 
 The canidates that looked the most promising and left little doubt about being lenses were grouped into the category ``convincing''.
@@ -503,38 +444,6 @@ but model sfits nicely
 Faint close arc, but reconstruion works very well;
 parameterisation of ellypticity fails.
 \params{0.73}{0.00}{249.80}
-
-\begin{figure}
-  \inclfig{SW02}{ASW000619d_011489}
-  \caption{SW02}
-  \label{fig:SW02}
-\end{figure}
-
-\begin{figure}
-  \inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
-  \caption{SW05}
-  \label{fig:SW05}
-\end{figure}
-
-\begin{figure}
-  \inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
-  \caption{SW09}
-  \label{fig:SW09}
-\end{figure}
-
-\begin{figure}
-  \inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
-  \caption{SW28}
-  \label{fig:SW28}
-\end{figure}
-
-\begin{figure}
-  \inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
-  \caption{SW29}
-  \label{fig:SW29}
-\end{figure}
-
-
 
 
 \subsection{doubtful}
@@ -673,11 +582,4 @@ it can be placed in an Appendix which appears after the list of references.
 \bsp	% typesetting comment
 \label{lastpage}
 \end{document}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
