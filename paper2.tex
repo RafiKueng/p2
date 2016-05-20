@@ -54,7 +54,18 @@
 	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img1}
 	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img3_ipol}%
 	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
-	\includegraphics[width=\linewidth]{masses/#1_#2_mstel_vs_mtot}
+	\includegraphics[width=0.5\linewidth]{masses/#1_#2_mstel_vs_mtot}%
+	\includegraphics[width=0.5\linewidth]{img/M_encl/#2_M_encl}
+}
+
+\newcommand{\inclfign}[2]{
+  \centering
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_input}%
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img1}
+	\includegraphics[width=0.5\linewidth]{img/nsynth/#2_nsynth}%
+	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
+	\includegraphics[width=0.5\linewidth]{masses/#1_#2_mstel_vs_mtot}%
+	\includegraphics[width=0.5\linewidth]{img/M_encl/#2_M_encl}
 }
 
 \newcommand*{\rot}{\rotatebox{90}}
@@ -188,31 +199,31 @@ We can see that even the computationally least expensive settings of $r_\text{su
 \section{Example systems}
 
 \begin{figure}
-  \inclfig{SW02}{ASW000619d_011489}
+  \inclfign{SW02}{ASW000619d_011489}
   \caption{SW02}
   \label{fig:SW02}
 \end{figure}
 
 \begin{figure}
-  \inclfig{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
   \caption{SW05}
   \label{fig:SW05}
 \end{figure}
 
 \begin{figure}
-  \inclfig{SW09}{ASW0002asp_5EKMWWVJHL}
+  \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
   \caption{SW09}
   \label{fig:SW09}
 \end{figure}
 
 \begin{figure}
-  \inclfig{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
   \caption{SW28}
   \label{fig:SW28}
 \end{figure}
 
 \begin{figure}
-  \inclfig{SW29}{ASW0008qsm_TOFS7JNGEK}
+  \inclfign{SW29}{ASW0008qsm_TOFS7JNGEK}
   \caption{SW29}
   \label{fig:SW29}
 \end{figure}
