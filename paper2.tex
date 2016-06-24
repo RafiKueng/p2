@@ -48,24 +48,26 @@
 \usepackage{hyperref}   % Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
+\edef\smallwidth{0.4\linewidth}
+
 \newcommand{\inclfig}[2]{
   \centering
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_input}%
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img1}
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img3_ipol}%
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
-	\includegraphics[width=0.5\linewidth]{masses/#1_#2_mstel_vs_mtot}%
-	\includegraphics[width=0.5\linewidth]{img/M_encl/#2_M_encl}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
+	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}%
+	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand{\inclfign}[2]{
   \centering
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_input}%
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img1}
-	\includegraphics[width=0.5\linewidth]{img/nsynth/#2_nsynth}%
-	\includegraphics[width=0.5\linewidth]{spaghetti/#2_img2}
-	\includegraphics[width=0.5\linewidth]{masses/#1_#2_mstel_vs_mtot}%
-	\includegraphics[width=0.5\linewidth]{img/M_encl/#2_M_encl}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
+	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}
+	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}%
+	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand*{\rot}{\rotatebox{90}}
@@ -196,12 +198,19 @@ We can see that even the computationally least expensive settings of $r_\text{su
   \label{fig:subsampling}
 \end{figure}
 
-\section{Example systems}
+\section{Example systems}\label{sec:examples}
+
+. topleft: user input; top right: resulting contour map of arrival
+time surface; mid left: synthetic image, renering a conical profile
+source behind the modelled lens; mid right: mass profile\todo{Fix
+  distance factor in $\kappa$.}  ; bottom: lensing mass, obtained from
+the model against estimate of stellar mass, obtained using photometric
+redshift assuming \todo{which population model?}
 
 \begin{figure}
-  \inclfign{SW02}{ASW000619d_011489}
-  \caption{SW02}
-  \label{fig:SW02}
+  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \caption{SW28.  See text in Section~\ref{sec:examples} for details.}
+  \label{fig:SW28}
 \end{figure}
 
 \begin{figure}
@@ -211,15 +220,15 @@ We can see that even the computationally least expensive settings of $r_\text{su
 \end{figure}
 
 \begin{figure}
-  \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
-  \caption{SW09}
-  \label{fig:SW09}
+  \inclfign{SW02}{ASW000619d_011489}
+  \caption{SW02}
+  \label{fig:SW02}
 \end{figure}
 
 \begin{figure}
-  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
-  \caption{SW28}
-  \label{fig:SW28}
+  \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
+  \caption{SW09}
+  \label{fig:SW09}
 \end{figure}
 
 \begin{figure}
@@ -232,7 +241,7 @@ Plausible
 
 \begin{figure}
   \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
-  \caption{SW58. topleft: user input; top right: resulting contour map of arrival time surface; mid left: synthetic image, renering a TODO{profile} source behind the modelled lens; mid right: mass profile; bottom: lensing mass, obtained from the model against estimate of stellar mass, obtained using photometric redshift assuming TODO(which population model?).}
+  \caption{SW58}
   \label{fig:SW58}
 \end{figure}
 
@@ -240,15 +249,21 @@ Uncertain
 
 \begin{figure}
   \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
+  \caption{}
+  \label{fig:SW36}
 \end{figure}
 
 \begin{figure}
   \inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
+  \caption{}
+  \label{fig:SW19}
 \end{figure}
 
 
 \begin{figure}
   \inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
+  \caption{}
+  \label{fig:SW57}
 \end{figure}
 
 
@@ -307,7 +322,8 @@ parameterisation of ellypticity fails.
 
 \begin{figure}
   \inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
-  \caption{outlier because very odd mass ratio}
+  \caption{Models of SW42, a doubtful candidate because of an
+    implausible mass ratio. (See text for details.)}
   \label{fig:SW42}
 \end{figure}
 
@@ -377,10 +393,6 @@ it can be placed in an Appendix which appears after the list of references.
 
 \section{TODO}
 \listoftodos
-
-\todo{REMOVE TODOS at the end}
-
-
 
 % Don't change these lines
 \bsp	% typesetting comment
