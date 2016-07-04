@@ -82,7 +82,6 @@
 \newcommand{\model}[1]{SL model~#1}
 
 \newcommand{\figref}[1]{Figure \ref{fig:#1}}
-\newcommand{\Figref}[1]{Figure \ref{fig:#1}}
 
 \title[Short title, max. 45 characters]{Model of lens candidates from
   Space Warps CFHTLS}
@@ -115,44 +114,49 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 \maketitle
 
 \begin{abstract}
-This is a simple template for authors to write new MNRAS papers.
-The abstract should briefly describe the aims, methods, and main results of the paper.
-It should be a single paragraph not more than 250 words (200 words for Letters).
-No references should appear in the abstract.
+We report modelling follow-up of recently-discovered
+gravitational-lens candidates in the CFHT Legacy Survey.  Lens
+modelling was done by a small group of specially-interested volunteers
+from the Space~Warps citizen-science community who originally found
+the candidate lenses.  Models are categorised according to seven
+qualitative and quantitive points.  Also included are some
+improvements to the modelling software used (SpaghettiLens) are
+presented, and discussion of strategies for scaling to future surveys
+with more and frequent discoveries.
+
+The candidates successfully modelled are all galaxies, with inferred
+lensing masses ranging from $\sim10^{11}M_\odot$ to $>10^{13}M_\odot$.
+Stellar masses have also been estimated, using photometry from the
+CFHTLS pipeline and stellar-population models.  The trend well-known
+in nearby galaxies, that star-formation efficiency is maximal for
+total masses of $\approx10^{12}M_\odot$ and reduces for both lower and
+higher masses, is discernable also in these much more distant
+galaxies.
 \end{abstract}
 
-% Select between one and six entries from the list of approved keywords.
-% Don't make up new ones.
 \begin{keywords}
 keyword1 -- keyword2 -- keyword3
 \end{keywords}
 
 \section{Introduction}
 
-Space Warps \citep{2016MNRAS.455.1171M} found lens candidates
-\citep{2016MNRAS.455.1191M}.
+A passing remark in the {\em Feynman Lectures}\footnote{
+  \cite{1963flp..book.....F}} --- ``if you are looking for a good
+problem, the exact details of how the arms are formed and what
+determine the shapes of these galaxies has not been worked out'' ---
+tells us that circa 1960, galaxy dynamics was expected be an easy
+research puzzle, whose solution was just around the corner.  Yet a
+half-century later, galaxies are not nearly as well-understood as
+stars were then.  Two complications, which are clear now but were not
+so clear then, are: (i)~dynamical chaos, because galaxies are not
+spherical, and (ii)~dark matter.
 
-Modelling method \citep{2015MNRAS.447.2170K}.
+The CFHTLS \citep{2012SPIE.8448E..0MC} has been a rich source of
+lenses by arc-finders, by machine learning \citep{2016arXiv160504309P}
+and by visual inspection \citep{2016MNRAS.455.1171M}.  The latter is
+of particular interest here.
 
-\section{Methods}
-
-\subsection{Stellar mass}
-
-\subsection{Parameterisation of pixel models} \label{sec:parameter}
-In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
-This created the residuals function.
-The number of components defined as principle was varied to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
-A masking function was added which selected only the data points that fell inside the image of the lens, and the principal components were clipped in order to keep the values inside the region of the ensemble of models.
-Any value higher than the clip was set to be the clip value.
-This was chosen to be 2.5 as, assuming that the data follows a Gaussian error distribution, almost all the values for the variance should lie between 2 and 3 standard deviations from the mean.
-Minimising the residuals function produces the set of parameters that fit the parameterised function to the original pixelated ensemble most closely.
-A least squares fit was used to perform this minimisation.
-
-
-The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \cite{2001astro.ph..2341K}.
-This model is frequently used to describe gravitational lenses as it tends to fit well with observations.
-The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
-By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
+\section{Lens Modelling}
 
 
 \subsection{Additional / Improved Synthetic Image}
@@ -182,7 +186,7 @@ The new synthetic image then reverses the mapping, coloring each pixel in the le
 In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
 We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
 The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
-\Figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
+\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
 We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
 
 \begin{figure}
@@ -198,20 +202,37 @@ We can see that even the computationally least expensive settings of $r_\text{su
   \label{fig:subsampling}
 \end{figure}
 
+\subsection{Parameterisation of pixel models} \label{sec:parameter}
+In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
+This created the residuals function.
+The number of components defined as principle was varied to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
+A masking function was added which selected only the data points that fell inside the image of the lens, and the principal components were clipped in order to keep the values inside the region of the ensemble of models.
+Any value higher than the clip was set to be the clip value.
+This was chosen to be 2.5 as, assuming that the data follows a Gaussian error distribution, almost all the values for the variance should lie between 2 and 3 standard deviations from the mean.
+Minimising the residuals function produces the set of parameters that fit the parameterised function to the original pixelated ensemble most closely.
+A least squares fit was used to perform this minimisation.
+The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \cite{2001astro.ph..2341K}.
+This model is frequently used to describe gravitational lenses as it tends to fit well with observations.
+The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
+By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
+
+\section{Stellar mass}
+
+
 \section{Example systems}\label{sec:examples}
 
 In this section, we discuss ten systems.
 
 \begin{figure}
-  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
-  \caption{SW28.  See text in Section~\ref{sec:examples} for details.}
-  \label{fig:SW28}
+  \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \caption{SW05.  See text in Section~\ref{sec:examples} for details.}
+  \label{fig:SW05}
 \end{figure}
 
 \begin{figure}
-  \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
-  \caption{SW05}
-  \label{fig:SW05}
+  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \caption{SW28}
+  \label{fig:SW28}
 \end{figure}
 
 \begin{figure}
@@ -264,7 +285,7 @@ In this section, we discuss ten systems.
   \label{fig:SW57}
 \end{figure}
 
-Each of Figures~\ref{fig:SW28}--\ref{fig:SW57} show six panels, as
+Each of Figures~\figref{SW05}--\figref{SW57} show six panels, as
 follows.
 
 \begin{itemize}
@@ -276,8 +297,8 @@ follows.
   modelling.
 
 \item Lower left is synthetic image.
-  Figures~\ref{fig:SW28}--\ref{fig:SW29} include source fitting.
-  Figures~\ref{fig:SW42}--\ref{fig:SW57} uses a simple conical
+  Figures~\figref{SW05}--\figref{SW29} include source fitting.
+  Figures~\figref{SW42}--\figref{SW57} uses a simple conical
   profile.
 
 \item Upper right is a mass map.
@@ -286,39 +307,46 @@ follows.
   $\kappa$.\todo{Fix distance factor in $\kappa$.}
 
 \item Lower right shows stellar vs stellar mass.\todo{which population
-  model?}
+  model?}  Abundance matching \citep{2010ApJ...710..903M}.
 
 \end{itemize}
 
 \begin{itemize}
 
-\item Figures~\ref{fig:SW28}--\ref{fig:SW29} show the five most
-  convincing lens candidates. SW28 shown in Figure~\ref{fig:SW28} is
+\item Figures~\figref{SW28}--\figref{SW29} show the five most
+  convincing lens candidates. SW28 shown in Figure~\figref{SW28} is
   modelled as an arc with three blended images plus a saddle-point
-  closer to the galaxy.  SW05 shown in Figure~\ref{fig:SW05} has four
+  closer to the galaxy.  SW05 shown in Figure~\figref{SW05} has four
   distinct images (two close to blending).  SW02, SW09 and SW29
-  (Figures~\ref{fig:SW02}--\ref{fig:SW29}) have similar
+  (Figures~\figref{SW02}--\figref{SW29}) have similar
   configurations, with a minimum furthest from the galaxy and three
   images blended into an arc.  All five would be massive ellipticals;
   SW05 is the most massive of all the candidates, with a galaxy-group
   scale mass.
 
-\item Figure~\ref{fig:SW42} shows a candidate that modelling indicates
+\item Figure~\figref{SW42} shows a candidate that modelling indicates
   is doubtful.  The images appears to have a similar morphology to the
   last three mentioned.  The implied mass, however, is implausibly
   high.\todo{Check photometry of this candidate.}
 
-\item Figures~\ref{fig:SW58} and \ref{fig:SW19} appear plausible lens
+\item Figures~\figref{SW58} and \figref{SW19} appear plausible lens
   candidates.  Their morphology is similar to SW28, but the
   saddle-point counterimage is not visible.  We consider these lenses
   plausible but less convincing.
 
-\item Figures~\ref{fig:SW36} and \ref{fig:SW57} shows {\em unclear\/}
+\item Figures~\figref{SW36} and \figref{SW57} shows {\em unclear\/}
   cases where modelling failed.
 
 \end{itemize}
 
 \section{Summary of models}
+
+Table~\ref{tab:models} 
+
+\begin{enumerate}
+\item Image morphology.
+\item Whether images unblended.
+\end{enumerate}
 
 Throu visual inspection of the most popular models generated for each candidate and data generated by those models we classified the candidates in four categories.
 The data available is shown in \figref{SW58}.
@@ -341,8 +369,8 @@ They might look like lenses visually, but the modelling failed or prediced addit
 
 \subsection{convincing}
 
-The canidates that looked the most promising and left little doubt about being lenses were grouped into the category ``convincing''.
-In Figures \ref{fig:SW02} to \ref{fig:SW29} we show all the convincing candidates.
+The candidates that looked the most promising and left little doubt about being lenses were grouped into the category ``convincing''.
+In Figures \figref{SW02} to \figref{SW29} we show all the convincing candidates.
 Following we list the parameters, obtained applying the technique described in section~\ref{sec:parameter}
 
 \lenstitle{SW02 (ASW000619d)}
@@ -402,7 +430,7 @@ Finally this category lists all the candidates, that miss redshift measurements 
 
 
 
-\section{Discussions}
+\section{Discussion}
 
 
 
