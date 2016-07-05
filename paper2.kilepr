@@ -37,7 +37,7 @@ encoding=UTF-8
 highlight=BibTeX
 line=0
 mode=BibTeX
-open=true
+open=false
 order=1
 
 [item:paper2.kilepr]
@@ -52,10 +52,10 @@ order=-1
 
 [item:paper2.tex]
 archive=true
-column=51
+column=14
 encoding=UTF-8
 highlight=LaTeX
-line=131
+line=127
 mode=LaTeX
 open=true
 order=0
@@ -67,7 +67,7 @@ JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:paper2.tex]
-CursorColumn=51
-CursorLine=131
+CursorColumn=14
+CursorLine=127
 JumpList=
-ViMarks=.,0,0,[,0,0,],-1,-1
+ViMarks=.,67,60,[,66,0,],-1,-1
