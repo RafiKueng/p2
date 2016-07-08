@@ -83,6 +83,9 @@
 
 \newcommand{\figref}[1]{Figure \ref{fig:#1}}
 
+\newcommand{\Mstel}{M_{\rm stel}}
+\newcommand{\Mhalo}{M_{\rm h}}
+
 \title[Short title, max. 45 characters]{Model of lens candidates from
   Space Warps CFHTLS}
 
@@ -280,6 +283,33 @@ The isothermal ellipsoid model outputs three useful parameters: the radius of th
 By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
 
 \section{Stellar mass}
+
+Based on \cite{2003MNRAS.344.1000B} models.
+
+Following \cite{2010ApJ...710..903M}
+\begin{equation}
+\begin{aligned}
+\frac{\Mstel}{\Mhalo} &= \frac{2C_0}{(\Mhalo/M_1)^{-\beta} +
+                                     (\Mhalo/M_1)^\gamma} \\
+C_0 &= 0.02820, \quad M_1 = 10^{11.884} M_\odot \\
+\beta &= 1.057, \quad \gamma = 0.556.
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\Theta = \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
+\end{equation}
+which we may call the halo-matching index.
+\begin{itemize}
+\item $\Theta < 0$ is unphysical because $M<\Mstel$.
+\item $\Theta = 0$ is when the stellar mass exactly accounts for the
+  lensing mass.
+\item $0 < \Theta < 1$ is the typical situation, where the lens
+  includes stars and dark matter, but not the full halo.
+\item $\Theta = 1$ means that the lens consists of the entire halo.
+\item $\Theta > 1$ is in tension with abundance-matching, because the
+  lensing mass exceeds the expected halo mass.
+\end{itemize}
 
 
 \section{Example systems}\label{sec:examples}
