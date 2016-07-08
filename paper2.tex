@@ -85,6 +85,7 @@
 
 \newcommand{\Mstel}{M_{\rm stel}}
 \newcommand{\Mhalo}{M_{\rm h}}
+\newcommand{\haloindex}{\mathcal{H}}
 
 \title[Short title, max. 45 characters]{Model of lens candidates from
   Space Warps CFHTLS}
@@ -219,8 +220,13 @@ contributions are interdependent.\footnote{For more on how this works,
   see ``Collaborative gravitational lens modelling\dots'' in {\tt
     http://letters.zooniverse.org} especially the model tree.}
 
-Section~\ref{sec:spl} 
+Section~\ref{sec:spl} explains the SpaghettiLens system.
 
+Section~\ref{sec:stellar-mass} is about stellar mass.
+
+Section~\ref{sec:examples} discusses ten systems in detail.
+
+Section~\ref{sec:summary} has a summary table.
 
 \section{Lens Modelling}\label{sec:spl}
 
@@ -282,7 +288,7 @@ This model is frequently used to describe gravitational lenses as it tends to fi
 The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
 By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
 
-\section{Stellar mass}
+\section{Stellar mass}\label{sec:stellar-mass}
 
 Based on \cite{2003MNRAS.344.1000B} models.
 
@@ -297,17 +303,17 @@ C_0 &= 0.02820, \quad M_1 = 10^{11.884} M_\odot \\
 \end{equation}
 
 \begin{equation}
-\Theta = \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
+\haloindex = \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
 \end{equation}
 which we may call the halo-matching index.
 \begin{itemize}
-\item $\Theta < 0$ is unphysical because $M<\Mstel$.
-\item $\Theta = 0$ is when the stellar mass exactly accounts for the
+\item $\haloindex < 0$ is unphysical because $M<\Mstel$.
+\item $\haloindex = 0$ is when the stellar mass exactly accounts for the
   lensing mass.
-\item $0 < \Theta < 1$ is the typical situation, where the lens
+\item $0 < \haloindex < 1$ is the typical situation, where the lens
   includes stars and dark matter, but not the full halo.
-\item $\Theta = 1$ means that the lens consists of the entire halo.
-\item $\Theta > 1$ is in tension with abundance-matching, because the
+\item $\haloindex = 1$ means that the lens consists of the entire halo.
+\item $\haloindex > 1$ is in tension with abundance-matching, because the
   lensing mass exceeds the expected halo mass.
 \end{itemize}
 
@@ -432,7 +438,7 @@ follows.
 
 \end{itemize}
 
-\section{Summary of models}
+\section{Summary of models}\label{sec:summary}
 
 Table~\ref{tab:models} 
 
