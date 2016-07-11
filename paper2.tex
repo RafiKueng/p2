@@ -81,7 +81,7 @@
 \newcommand{\sw}[1]{SW~#1}
 \newcommand{\model}[1]{SL model~#1}
 
-\newcommand{\figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\figref}[1]{\ref{fig:#1}}
 
 \newcommand{\Mstel}{M_{\rm stel}}
 \newcommand{\Mhalo}{M_{\rm h}}
@@ -258,7 +258,7 @@ The new synthetic image then reverses the mapping, coloring each pixel in the le
 In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
 We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
 The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
-\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
+Figure~\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
 We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
 
 \begin{figure}
@@ -320,7 +320,8 @@ which we may call the halo-matching index.
 
 \section{Example systems}\label{sec:examples}
 
-In this section, we discuss ten systems.
+In this section, we discuss ten systems, including the five systems
+most convincingly modelled, but also cases where modelling failed.
 
 \begin{figure}
   \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
