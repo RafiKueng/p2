@@ -53,20 +53,20 @@
 \newcommand{\inclfig}[2]{
   \centering
 	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}
-	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}%
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}%
 	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand{\inclfign}[2]{
   \centering
 	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}
-	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}%
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}%
 	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
 }
 
@@ -81,7 +81,7 @@
 \newcommand{\sw}[1]{SW~#1}
 \newcommand{\model}[1]{SL model~#1}
 
-\newcommand{\figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\figref}[1]{\ref{fig:#1}}
 
 \newcommand{\Mstel}{M_{\rm stel}}
 \newcommand{\Mhalo}{M_{\rm h}}
@@ -320,204 +320,176 @@ which we may call the halo-matching index.
 
 \section{Example systems}\label{sec:examples}
 
-In this section, we discuss ten systems.
+In this section we show modelling results for ten of the lens
+candidates.  The first five (see Figures~\figref{SW05}--\figref{SW29})
+are the most convincingly modelled systems.  The next three cases
+(Figures~\figref{SW42},\figref{SW58}) are less good but still very
+plausible models, and are representative of the majority of the
+sample.  The last two are examples where the models were unconvincing
+(Figures~\figref{SW36}) or completely failed (\figref{SW57}).
 
 \begin{figure}
   \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
-  \caption{SW05.  See text in Section~\ref{sec:examples} for details.}
+  \caption{Model results for SW05 (J143454.4+522850).  See text in
+    Section~\ref{sec:examples} for details.}
   \label{fig:SW05}
 \end{figure}
 
 \begin{figure}
   \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
-  \caption{SW28}
+  \caption{Model results for SW28 (J143055.9+572431).}
   \label{fig:SW28}
 \end{figure}
 
 \begin{figure}
   \inclfign{SW02}{ASW000619d_011489}
-  \caption{SW02}
+  \caption{Model results for SW02 (J140522.2+574333).}
   \label{fig:SW02}
 \end{figure}
 
 \begin{figure}
   \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
-  \caption{SW09}
+  \caption{Model results for SW09 (J020832.1-043315).}
   \label{fig:SW09}
 \end{figure}
 
 \begin{figure}
   \inclfign{SW29}{ASW0008qsm_TOFS7JNGEK}
-  \caption{SW29}
+  \caption{Model results for SW29 (J143838.1+572647).}
   \label{fig:SW29}
 \end{figure}
 
 \begin{figure}
   \inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
-  \caption{Models of SW42, a doubtful candidate because of an
-    implausible mass ratio. (See text for details.)}
+  \caption{Modelling results for SW42 (J221716.5+015826).}
   \label{fig:SW42}
 \end{figure}
 
 \begin{figure}
   \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
-  \caption{SW58}
+  \caption{Model results for SW58 (J143651.6+530705).}
   \label{fig:SW58}
 \end{figure}
 
 \begin{figure}
   \inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
-  \caption{SW19}
+  \caption{Model results for SW19 (J020642.0-095157).}
   \label{fig:SW19}
 \end{figure}
 
 
 \begin{figure}
   \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
-  \caption{SW36}
+  \caption{Model results for SW36 (J090248.4-010232).}
   \label{fig:SW36}
 \end{figure}
 
 \begin{figure}
   \inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
-  \caption{SW57}
+  \caption{Model results for SW57 (J143631.5+571131).}
   \label{fig:SW57}
 \end{figure}
 
-Each of Figures~\figref{SW05}--\figref{SW57} show six panels, as
-follows.
+Let us first consider Figure~\figref{SW05}, which shows model results
+from SW05 (J143454.4+522850).
 
-\begin{itemize}
+\begin{enumerate}
+\item In the upper row we have first a cutout of the Space~Warps
+  image, marked up with a spaghetti diagram.  There are four distinct
+  lensed images, and the spaghetti diagram proposes that they are a
+  minimum nearest to the lensing galaxy, a close minimum-saddle pair,
+  and a minimum further away. In Table~\ref{tab:models} we refer to
+  such configurations as `$1+2+1$'.
+\item Alongside is a synthetic image produced by modelling.  In it,
+  the fitted lensed images are shown in colour, while the lensing
+  galaxy and extraneous objects have been reduced to grayscale.  These
+  two panels are qualitative and display no units, and moreover, the
+  mutual alignment of the two panels is only approximate.
+\item The middle row shows contour maps from the model.  At middle
+  left, we have the arrival-time surface.
+\item At middle right we have the mass distribution in the usual
+  dimensionless form $\kappa$.  Again, these two panels are mainly
+  qualitative: both panels are spatially registered and centred on the
+  density-peak of the lens, but no scales have been included.
+\item The base row supplies spatial and mass scales.  The left panel
+  shows the circularly-averaged $\kappa$ of the model ensemble, with
+  increasing radius (in arcsec).  The four short vertical lines
+  correspond to the minima and saddle points marked in the upper-left
+  panel.  The effective Einstein radius is also shown.  As the radius
+  scale indicates SW05 is comparatively large lens on the
+  sky.\todo{Fix distance factor in $\kappa$.}
+\item Lower right shows the total mass in the model against the
+  estimated stellar mass, alongside the values for the whole sample.
+  The lower-right shaded region is unphysical according to the
+  stellar-population models, because it gives $M<\Mstel$. The
+  upper-left shaded region is unphysical according to abundance
+  matching, because it gives $M>\Mhalo$.  That is to say, the unshaded
+  region is $0<\haloindex<1$.
+\end{enumerate}
 
-\item The upper left panel show a cutout of the Space~Warps image,
-  marked up with a spaghetti diagram.
+Proceeding to Figure~\figref{SW28}, we have one image close to the
+galaxy and an arc further away, which is interpreted as a blend of
+three images (a saddle point with two minima on either side).  We call
+this a '1+3' configuration.  It is an indication of a mass
+distribution elongated along the arc-counterimage direction (along EW
+in this case).
 
-\item Middle left is a contour map of the arrival-time surface after
-  modelling.
+In Figures~\figref{SW02}--\figref{SW29} we see three candidates with
+an arc close the lensing galaxy and one image further away.  The arc
+is interpreted three images (a minimum with two saddle points on
+either side).  We call this a '3+1' configuration.  It is an
+indication of a mass distribution elongated perpendicular to the
+arc-counterimage direction.
 
-\item Lower left is synthetic image.
-  Figures~\figref{SW05}--\figref{SW29} include source fitting.
-  Figures~\figref{SW42}--\figref{SW57} uses a simple conical
-  profile.
+Figures~\figref{SW02}--\figref{SW29} (SW05, SW28, SW02, SW09 and SW29)
+all correspond to the mass range of massive ellipticals.  SW05 is the
+most massive of all the candidates, with a galaxy-group scale mass.
 
-\item Upper right is a mass map.
+Figure~\figref{SW42} shows SW42.  The image morphology is similar to
+SW05 in Figure~\figref{SW05}, but the lens is much smaller on the sky,
+and the inferred mass is at the low end of the sample.  (The synthetic
+image shown is cruder than for the five previous figures, but that
+does not influence the mass models.)  If these preliminary findings
+are confirmed by follow-up observations, this could be the most
+dark-matter dominated lens known.\todo{Check photometry of this
+  candidate.}
 
-\item Middle right shows a circularly averaged profile of
-  $\kappa$.\todo{Fix distance factor in $\kappa$.}
+Figures~\figref{SW58} and \figref{SW19} appear plausible lens
+candidates.  Their morphology is similar to SW28, but the saddle-point
+counterimage is not visible.  We consider these lenses plausible but
+less convincing.
 
-\item Lower right shows stellar vs stellar mass.\todo{which population
-  model?}  Abundance matching \citep{2010ApJ...710..903M}.
+Figures~\figref{SW36} and \figref{SW57} are cases where modelling
+failed.
 
-\end{itemize}
-
-\begin{itemize}
-
-\item Figures~\figref{SW28}--\figref{SW29} show the five most
-  convincing lens candidates. SW28 shown in Figure~\figref{SW28} is
-  modelled as an arc with three blended images plus a saddle-point
-  closer to the galaxy.  SW05 shown in Figure~\figref{SW05} has four
-  distinct images (two close to blending).  SW02, SW09 and SW29
-  (Figures~\figref{SW02}--\figref{SW29}) have similar
-  configurations, with a minimum furthest from the galaxy and three
-  images blended into an arc.  All five would be massive ellipticals;
-  SW05 is the most massive of all the candidates, with a galaxy-group
-  scale mass.
-
-\item Figure~\figref{SW42} shows a candidate that modelling indicates
-  is doubtful.  The images appears to have a similar morphology to the
-  last three mentioned.  The implied mass, however, is implausibly
-  high.\todo{Check photometry of this candidate.}
-
-\item Figures~\figref{SW58} and \figref{SW19} appear plausible lens
-  candidates.  Their morphology is similar to SW28, but the
-  saddle-point counterimage is not visible.  We consider these lenses
-  plausible but less convincing.
-
-\item Figures~\figref{SW36} and \figref{SW57} shows {\em unclear\/}
-  cases where modelling failed.
-
-\end{itemize}
 
 \section{Summary of models}\label{sec:summary}
 
 Table~\ref{tab:models} 
 
 \begin{enumerate}
-\item Image morphology.
-\item Whether images unblended.
+\item The image morphology concisely described: D for double, and
+  quads in sub-categorised in four ways
+  \citep[cf.][]{2003AJ....125.2769S} as LQ for long-axis quads (as in
+  Figure~\figref{SW28}), SQ for short-axis quads (as in
+  Figure~\figref{SW02}, \figref{SW09}, \figref{SW29}, \figref{SW42}),
+  IQ for inclined quads (as in Figure~\figref{SW05}) and CQ for very
+  symmetric core quads.
+\item Whether the images are unblended.  Distinct unblended images (as
+  in Figures~\figref{SW05} and \figref{SW42}) are an advantage in
+  modelling, but not essential.
+\item Whether all images are discernable.  The topography of an
+  arrival-time surface, as encoded by a spaghetti diagram, may require
+  more images than are visible.  For example, in Figure~\figref{SW58},
+  the modeller has put in a conjectural saddle point near the lensing
+  galaxy.
+\item Whether the lens is fairly isolated.
+\item Whether the arrival-time surface and synthetic image are
+  plausible.  In Figure~\figref{SW36} the model implies extra images
+  or a long arc, which are not seen.
+\item Whether the mass map is reasonable.
+\item The halo index $\haloindex$.
 \end{enumerate}
-
-Throu visual inspection of the most popular models generated for each candidate and data generated by those models we classified the candidates in four categories.
-The data available is shown in \figref{SW58}.
-\todo{better explain criterias?}
-The following sections list all the models for all the categories, each with a short explanation of the reasons.
-Additionally, selected models are presented in figures for demonstration.
-
-\subsection{plausible}
-
-The plausible candidates fail in one category, but are quite convincing in all the others.
-One particular reason for a candidate to end up in this category is that is has extended arcs, what is hard to modell with the current version of the program.
-Thats why we recomend them for a following up study, for example for taking spectras or other follow up obersatories and for other modelling programs for a try.
-
-
-\subsection{unclear}
-
-This categy contains the ones that are hard to say.
-They might look like lenses visually, but the modelling failed or prediced additional images.
-
-
-\subsection{convincing}
-
-The candidates that looked the most promising and left little doubt about being lenses were grouped into the category ``convincing''.
-In Figures \figref{SW02} to \figref{SW29} we show all the convincing candidates.
-Following we list the parameters, obtained applying the technique described in section~\ref{sec:parameter}
-
-\lenstitle{SW02 (ASW000619d)}
-Nice arc with counter image;
-additional mass at 12 o'clock doesn't seem to influence the image.
-\params{1.04}{0.32}{-5.18}
-
-\lenstitle{SW05 (ASW0007k4r)}
-The model predicts very steep central mass profile, and thus a very high lensing mass;
-looks otherwise very convincing.
-\params{3.80}{0.15}{52.50}
-  
-\lenstitle{SW09 (ASW0002asp)}
-\params{1.12}{0.00}{88.39}
-  
-\lenstitle{SW28 (ASW0007xrs)}
-Faint, but clearly visible arc and counter image;
-but model sfits nicely
-\params{1.04}{0.33}{66.63}
- 
-\lenstitle{SW29 (ASW0008qsm)}
-Faint close arc, but reconstruion works very well;
-parameterisation of ellypticity fails.
-\params{0.73}{0.00}{249.80}
-
-
-\subsection{doubtful}
-
-SW42
-
-
-\subsection{missing}
-
-Finally this category lists all the candidates, that miss redshift measurements of the lens and thus further analysis is difficult.
-
-\lenstitle{SW03 (ASW0006mea)}
-\lenstitle{SW14 (ASW0004xjk)}
-\lenstitle{SW25 (ASW00007mq)}
-\lenstitle{SW30 (ASW0002p8y)}
-\lenstitle{SW37 (ASW00086xq)}
-\lenstitle{SW39 (ASW0005qiz)}
-\lenstitle{SW40 (ASW0008wmr)}
-\lenstitle{SW48 (ASW0000g95)}
-\lenstitle{SW49 (ASW00007ls)}
-\lenstitle{SW50 (ASW00008a0)}
-\lenstitle{SW55 (ASW0007t5y)}
-\lenstitle{SW59 (ASW00085cp)}
-
 
 \subsection{Table}
 
@@ -526,14 +498,6 @@ Finally this category lists all the candidates, that miss redshift measurements 
   \label{tab:models}
   \include{table}
 \end{table*}
-
-
-
-\section{Discussion}
-
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
@@ -554,8 +518,6 @@ Finally this category lists all the candidates, that miss redshift measurements 
 
 If you want to present additional material which would interrupt the flow of the main paper,
 it can be placed in an Appendix which appears after the list of references.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
