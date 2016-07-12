@@ -205,30 +205,31 @@ Space~Warps, as well as several other projects involving astronomical
 data.  In this paper, we present SpaghettiLens models of
 lens-candidates discovered through Space~Warps.
 
-While SpaghettiLens is citizen science and based on Space~Warps, the
-collaboration with volunteers takes a very different form.  In
-Space~Warps, volunteers in a crowd of $\gtrsim10^4$ make independent
-contributions.  Each person is presented with a random selection of
-survey-patches and invited to (in effect) vote on each.  The system
-estimates each volunteer's skill level according to test-patches
-interspersed with the real data, and weights their votes accordingly
-\citep{2016MNRAS.455.1171M}.  There is an active forum for volunteers,
-but since everyone is seeing different data samples with minimal
-overlap, the forum has little if any influence on votes.  With
-SpaghettiLens there is a small group of volunteers and their
-contributions are interdependent.\footnote{See ``Collaborative
-  gravitational lens modelling\dots'' in {\tt
-    http://letters.zooniverse.org} especially the model tree.}
-
-Section~\ref{sec:spl} summarises the basics of the SpaghettiLens
-system and discusses its ongoing development.  Basically, the system
-delivers free-form reconstructions (with uncertainties) of the
-sky-projected mass distributions of lens candidates.  These represent
-a consensus among modelling volunteers as to the best that could be
-achieved with the available data and software.  Photometric lens
-redshifts are used; source redshifts are set to $z=2$.  The models
-can, however, be trivially rescaled to use better redshift values, as
-and when they become available.
+Section~\ref{sec:spl} summarises the SpaghettiLens system and
+discusses its ongoing development. A SpaghettiLens model consists of a
+statistical ensemble of free-form maps of the sky-projected mass
+distribution responsible for lensing.  Each lens candidates in
+practice gets modelled several times in a collaborative refinement
+process\footnote{See ``Collaborative gravitational lens
+  modelling\dots'' in {\tt http://letters.zooniverse.org} especially
+  the model tree.}  In this paper we report the most recent model for
+each lens, as representing a consensus among modellers, as to the best
+that could be achieved with the available data and software.
+Photometric lens redshifts are used; source redshifts are set to
+$z=2$.  The models can, however, be trivially rescaled to use better
+redshift values, as and when they become available.
+\cite{2015MNRAS.447.2170K} tested the system on simulated lenses and
+identified some areas for improvement.  The first two of those are
+taken up in Section~\ref{sec:spl}, along with a further idea.  In
+\S~\ref{subsec:hires} we show that making mass maps fine-grained in
+the central region relieves a tendency in the earlier work for mass to
+be too shallow. \S~\ref{subsec:sourcefit} we introduce fitting of the
+brightness profiles of the source.  This feature has not yet been
+included in SpaghettiLens, but has been done for in post-processing
+for a few especially interesting candidates. Then in
+\S~\ref{subsec:parameter} we consider the possibility of fitting a
+parametric lens model to the model ensemble; so far we have only been
+successful at extracting an Einstein radius.
 
 Section~\ref{sec:stellar-mass} is about stellar mass.
 
@@ -238,6 +239,20 @@ Section~\ref{sec:summary} has a summary table.
 
 
 \section{Lens Modelling}\label{sec:spl}
+
+SpaghettiLens is an example of a medium-sized collaboration spawned by
+a large citizen-science project (in this case Space~Warps).  While
+collaboration with volunteers is essential to both, the form of
+collaboration is very different.  In Space~Warps, volunteers in a
+crowd of $\gtrsim10^4$ make independent contributions.  Each person is
+presented with a random selection of survey-patches and invited to (in
+effect) vote on each.  The system estimates each volunteer's skill
+level according to test-patches interspersed with the real data, and
+weights their votes accordingly \citep{2016MNRAS.455.1171M}.  There is
+an active forum for volunteers, but since everyone is seeing different
+data samples with minimal overlap, the forum has little if any
+influence on votes.  With SpaghettiLens, on the other hand, there is a
+small group of volunteers and their contributions are interdependent.
 
 \cite{2015MNRAS.447.2170K} introduced and implemented two
 main ideas. One is a `spaghetti diagram,' which is a cartoon-like
@@ -253,7 +268,28 @@ the most recent ones for each lens candidate, but typically they are
 descended from previous models through the contributions of more than
 one individual.
 
-\subsection{Additional / Improved Synthetic Image}
+\subsection{HiRes / Subsampling of central region}\label{subsec:hires}
+
+In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
+We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
+The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
+Figure~\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
+We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
+  \caption{
+    Circularly averaged mass profile for different subsampling of central region.
+    Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
+    $\cdot / \cdot \cdot \cdot$: $r_\text{subs}=1$ inner pixels, each subdivided into $n_\text{subs}=3$ sub pixels.
+    $\cdot / \cdot \cdot \cdot \cdot \cdot$: $r_\text{subs}=1$, $n_\text{subs}=5$.
+    $\cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=2$, $n_\text{subs}=3$.
+    $\cdot \cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=3$, $n_\text{subs}=3$.
+    }
+  \label{fig:subsampling}
+\end{figure}
+
+\subsection{Additional / Improved Synthetic Image}\label{subsec:sourcefit}
 
 Volunteers often ask about better indicators to identify wether the modelling resulted in a ``good'' or ``bad'' model.
 We developped a prototype of a better syntetic image than just the rendering of a \todo{insert currently used source profile} profile.
@@ -276,27 +312,7 @@ The new synthetic image then reverses the mapping, coloring each pixel in the le
   \label{fig:synthimg}
 \end{figure}
 
-\subsection{HiRes / Subsampling of central region}
-In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
-We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
-The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
-Figure~\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
-We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
-  \caption{
-    Circularly averaged mass profile for different subsampling of central region.
-    Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
-    $\cdot / \cdot \cdot \cdot$: $r_\text{subs}=1$ inner pixels, each subdivided into $n_\text{subs}=3$ sub pixels.
-    $\cdot / \cdot \cdot \cdot \cdot \cdot$: $r_\text{subs}=1$, $n_\text{subs}=5$.
-    $\cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=2$, $n_\text{subs}=3$.
-    $\cdot \cdot \cdot / \cdot \cdot \cdot $: $r_\text{subs}=3$, $n_\text{subs}=3$.
-    }
-  \label{fig:subsampling}
-\end{figure}
-
-\subsection{Parameterisation of pixel models} \label{sec:parameter}
+\subsection{Parameterisation of pixel models} \label{subsec:parameter}
 \todo{}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
 This created the residuals function.
