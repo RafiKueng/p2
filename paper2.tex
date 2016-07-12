@@ -220,23 +220,37 @@ $z=2$.  The models can, however, be trivially rescaled to use better
 redshift values, as and when they become available.
 \cite{2015MNRAS.447.2170K} tested the system on simulated lenses and
 identified some areas for improvement.  The first two of those are
-taken up in Section~\ref{sec:spl}, along with a further idea.  In
-\S~\ref{subsec:hires} we show that making mass maps fine-grained in
-the central region relieves a tendency in the earlier work for mass to
-be too shallow. \S~\ref{subsec:sourcefit} we introduce fitting of the
-brightness profiles of the source.  This feature has not yet been
-included in SpaghettiLens, but has been done for in post-processing
-for a few especially interesting candidates. Then in
+taken up in Section~\ref{sec:spl}, along with a further idea. In
+\S~\ref{subsec:sourcefit} we introduce fitting of the brightness
+profiles of the source.  This feature has not yet been included in
+SpaghettiLens, but has been carried out in post-processing for a few
+especially interesting candidates.  In \S~\ref{subsec:hires} we show
+that making mass maps fine-grained in the central region relieves a
+tendency in the earlier work for mass to be too shallow. Then in
 \S~\ref{subsec:parameter} we consider the possibility of fitting a
 parametric lens model to the model ensemble; so far we have only been
 successful at extracting an Einstein radius.
 
-Section~\ref{sec:stellar-mass} is about stellar mass.
+Section~\ref{sec:stellar-mass} explains how we compare the lensing
+mass with the mass in stars in the lensing galaxy.  We estimate the
+stellar mass by comparing galaxy magnitudes from the CFHTLS pipeline
+with the well-known stellar-population models of
+\cite{2003MNRAS.344.1000B}.  We then extrapolate the stellar masses to
+a halo mass using the abundance-matching prescription of
+\cite{2010ApJ...710..903M}.  Naturally, the lensing mass must be more
+than the stellar mass but no more than the total halo mass.  We then
+introduce what we call a halo index $\haloindex$ which gives an idea
+of how the lensing mass compares with these two bounds.
 
-Section~\ref{sec:examples} discusses ten systems in detail.
+Section~\ref{sec:examples} discusses ten of the systems, including six
+systems we found to be particularly interesting.  The online
+supplement gives results for all the modelled systems.
 
-Section~\ref{sec:summary} has a summary table.
-
+In Section~\ref{sec:summary} and Table~\ref{tab:models} we display a
+concise characterisation of each modelled system, according to the
+image morphology and how clear or indistinct it is, whether the mass
+map and synthetic lensed image appear to be plausible, and how the
+model mass compares with the estimated stellar and full-halo masses.
 
 \section{Lens Modelling}\label{sec:spl}
 
@@ -254,21 +268,54 @@ data samples with minimal overlap, the forum has little if any
 influence on votes.  With SpaghettiLens, on the other hand, there is a
 small group of volunteers and their contributions are interdependent.
 
-\cite{2015MNRAS.447.2170K} introduced and implemented two
-main ideas. One is a `spaghetti diagram,' which is a cartoon-like
-markup of a candidate lensing system which encodes a proposal for its
-mass distribution.  It enables volunteers to interact with a
-server-side numerical engine \citep[GLASS, developed
-  by][]{2014MNRAS.445.2181C} in an intuitive way.  The other new idea
-was a `model tree' --- a volunteer can model a lens from scratch, or
-they can modify an existing model and thus try to improve upon it.
-This facility, in conjunction with forum discussion, enables
-development trees of models.  The models reported in this paper are
-the most recent ones for each lens candidate, but typically they are
-descended from previous models through the contributions of more than
-one individual.
+A modeller's main input to SpaghettiLens is a sketch of arrival-time
+contours on a lensed system.  It gives the locations (or best-guess
+locations) of images of point-like sources, along with their ordering
+in arrival time, and their parities (minumum, saddle-point or
+maximum).  Such a sketch, which we call a spaghetti diagram, tends to
+resemble the form of lensed arcs, but it also in effect encodes
+encodes a proposal for its mass distribution.  A spaghetti diagram is
+read by a server-side numerical engine \citep[GLASS, developed
+  by][]{2014MNRAS.445.2181C} which then returns a statistical ensemble
+of mass maps.  The mass maps are made up of mass tiles and are
+free-form, except that they are required to be concentrated around the
+identified lens centre.  They are also required to reproduce the given
+image locations, parities and time ordering exactly.  Graphical
+representations of the mass map and arrival-time surface are returned
+to the user for review.  The user can post these results on a forum,
+or discard them and try again.  Volunteers can start the modelling
+process afresh, or they can take an existing model from the forum and
+modify its input spaghetti diagram or its accompanying options, and
+thus obtain a revised model.
 
-\subsection{HiRes / Subsampling of central region}\label{subsec:hires}
+\subsection{Improved synthetic images}\label{subsec:sourcefit}
+
+Volunteers often ask about better indicators to identify wether the
+modelling resulted in a ``good'' or ``bad'' model.  We developed a
+prototype of a better syntetic image than just the rendering of a
+conical profile.  It operates on the composite input image.  The user
+has to mask the supposed lensed images.  The algorithm then
+establishes a grid on the source plane and projects the masked pixels
+of the lense plane back to the source plane.  Multiple lens plane
+pixels fall onto one source plane pixel and get averaged.  The new
+synthetic image then reverses the mapping, coloring each pixel in the
+lens plane with the corresponding values of the source plane pixel.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{img/new_synth_img_detailed}
+  \caption{
+      Top-left: Orginal image, top-right: improved synthetic image for candidate \sw{5} (\asw{7k4r}) and model \model{12402};
+      bottom from left to right:
+        reconstructed source in color,
+        intensity (grayscale),
+        count of lens plane pixels per source plane pixel,
+        residual of orginal image to improved syntetic image in grayscale
+    }
+  \label{fig:synthimg}
+\end{figure}
+
+
+\subsection{Sub-sampling of central region}\label{subsec:hires}
 
 In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
 We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
@@ -289,28 +336,6 @@ We can see that even the computationally least expensive settings of $r_\text{su
   \label{fig:subsampling}
 \end{figure}
 
-\subsection{Additional / Improved Synthetic Image}\label{subsec:sourcefit}
-
-Volunteers often ask about better indicators to identify wether the modelling resulted in a ``good'' or ``bad'' model.
-We developped a prototype of a better syntetic image than just the rendering of a \todo{insert currently used source profile} profile.
-It operates on the composite input image.
-The user has to mask the supposed lensed images.
-The algorith then establishes a grid on the source plane and projects the masked pixels of the lense plane back to the source plane.
-Multiple lens plane pixels fall onto one source plane pixel and get averaged.
-The new synthetic image then reverses the mapping, coloring each pixel in the lens plane with the corresponding values of the source plane pixel.
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{img/new_synth_img_detailed}
-  \caption{
-      Top-left: Orginal image, top-right: improved synthetic image for candidate \sw{5} (\asw{7k4r}) and model \model{12402};
-      bottom from left to right:
-        reconstructed source in color,
-        intensity (grayscale),
-        count of lens plane pixels per source plane pixel,
-        residual of orginal image to improved syntetic image in grayscale
-    }
-  \label{fig:synthimg}
-\end{figure}
 
 \subsection{Parameterisation of pixel models} \label{subsec:parameter}
 \todo{}
@@ -362,7 +387,7 @@ which we may call the halo-matching index.
 In this section we show modelling results for ten of the lens
 candidates.  The first five (see Figures~\figref{SW05}--\figref{SW29})
 are the most convincingly modelled systems.  The next three cases
-(Figures~\figref{SW42},\figref{SW58}) are less good but still very
+(Figures~\figref{SW42}--\figref{SW19}) are less good but still very
 plausible models, and are representative of the majority of the
 sample.  The last two are examples where the models were unconvincing
 (Figures~\figref{SW36}) or completely failed (\figref{SW57}).
@@ -530,8 +555,6 @@ Table~\ref{tab:models}
 \item The halo index $\haloindex$.
 \end{enumerate}
 
-\subsection{Table}
-
 \begin{table*}
   \caption{Categorisation of SW models}
   \label{tab:models}
@@ -551,12 +574,7 @@ Table~\ref{tab:models}
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\appendix
-
-\section{Some extra material}
-
-If you want to present additional material which would interrupt the flow of the main paper,
-it can be placed in an Appendix which appears after the list of references.
+% \appendix
 
 \clearpage
 
