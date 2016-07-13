@@ -93,30 +93,30 @@
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 
-\author[Küng et al]{Rafael Küng,$^{1}$
+\author[K\"ung et al]{Rafael K\"ung,$^{1}$
 Prasenjit Saha,$^{1}$
 Ignacio Ferreras,$^{2}$
-Anupreeta More,$^{3}$
-Elisabeth Baeten,$^{4}$
+Elisabeth Baeten,$^{3}$
 \newauthor
-Jonathan Coles,$^{5}$
-Claude Cornen,$^{4}$
-Christine Macmillan,$^{4}$
-Phil Marshall,$^{6}$ 
+Jonathan Coles,$^{4}$
+Claude Cornen,$^{3}$
+Christine Macmillan,$^{3}$
+Phil Marshall,$^{5}$ 
+\newauthor
+Anupreeta More,$^{6}$
 Lucy Oswald$^{7}$
-\newauthor
 Aprajita Verma$^{8}$
 and Julianne K. Wilcox$^{4}$
 %
 \\
 %
 $^{1}$Physik-Institut, University of Zurich, Winterthurerstrasse 190, 8057 Zurich, Switzerland\\
-$^{2}$\\
-$^{3}$Kavli Institute for the Physics and Mathematics of the Universe, University of Tokyo, 5-1-5 Kashiwanoha, Kashiwa-shi 277-8583, Japan\\
-$^{4}$Zooniverse, c/o Astrophysics Department, University of Oxford, Oxford OX1 3RH, UK \\
-$^{5}$Exascale Research Computing Lab, Campus Teratec, 2 Rue de la Piquetterie, 91680 Bruyeres-le-Chatel, France\\
-$^{6}$Kavli Institute for Particle Astrophysics and Cosmology, Stanford University, 452 Lomita Mall, Stanford, CA 94035, USA\\
-$^{7}$\\
+$^{2}$Mullard Space Science Laboratory, University College London, Holmbury St Mary, Dorking, Surrey RH5 6NT, UK\\
+$^{3}$Zooniverse, c/o Astrophysics Department, University of Oxford, Oxford OX1 3RH, UK \\
+$^{4}$Exascale Research Computing Lab, Campus Teratec, 2 Rue de la Piquetterie, 91680 Bruyeres-le-Chatel, France\\
+$^{5}$Kavli Institute for Particle Astrophysics and Cosmology, Stanford University, 452 Lomita Mall, Stanford, CA 94035, USA\\
+$^{6}$Kavli Institute for the Physics and Mathematics of the Universe, University of Tokyo, 5-1-5 Kashiwanoha, Kashiwa-shi 277-8583, Japan\\
+$^{7}$Murray Edwards College, University of Cambridge, Cambridge CB3 0DF, UK\\
 $^{8}$Sub-department of Astrophysics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK\\
 }
 
@@ -369,7 +369,6 @@ We can see that even the computationally least expensive settings of $r_\text{su
 
 
 \subsection{Parameterisation of pixel models} \label{subsec:parameter}
-\todo{}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
 This created the residuals function.
 The number of components defined as principle was varied to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
@@ -498,7 +497,7 @@ from SW05 (J143454.4+522850).
 \item Alongside is a synthetic image produced by modelling.  In it,
   the fitted lensed images are shown in colour, while the lensing
   galaxy and extraneous objects have been reduced to grayscale.
-  (Figure~\figref{synthmig} in \S~\ref{subsec:sourcefit} shows a
+  (Figure~\figref{synthimg} in \S~\ref{subsec:sourcefit} shows a
   synthetic image from another model of the same system.) These two
   panels are qualitative and display no units, and moreover, the
   mutual alignment of the two panels is only approximate.
