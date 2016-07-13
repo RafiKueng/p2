@@ -290,6 +290,12 @@ thus obtain a revised model.
 
 \subsection{Improved synthetic images}\label{subsec:sourcefit}
 
+The mass maps produced by current implementation of SpaghettiLens are
+based on images of point-like features.  No information about extended
+images is used, except in so far as they help the user identify images
+of point-like features.  The synthetic images offered to users are
+rudimentary, based on sources with conical light profiles.
+
 Volunteers often ask about better indicators to identify wether the
 modelling resulted in a ``good'' or ``bad'' model.  We developed a
 prototype of a better syntetic image than just the rendering of a
@@ -303,14 +309,13 @@ lens plane with the corresponding values of the source plane pixel.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{img/new_synth_img_detailed}
-  \caption{
-      Top-left: Orginal image, top-right: improved synthetic image for candidate \sw{5} (\asw{7k4r}) and model \model{12402};
-      bottom from left to right:
-        reconstructed source in color,
-        intensity (grayscale),
-        count of lens plane pixels per source plane pixel,
-        residual of orginal image to improved syntetic image in grayscale
-    }
+  \caption{Synthetic image with source-profile fitting in SW05
+    (J143454.4+522850). Top-left: original image; top-right: synthetic
+    image (coloured arcs) with lensing galaxy and unrelated objects in
+    greyscale; bottom from left to right: reconstructed source in
+    colour, intensity (greyscale), count of lens plane pixels per
+    source plane pixel, residual of original image to synthetic
+    image.}
   \label{fig:synthimg}
 \end{figure}
 
@@ -466,8 +471,10 @@ from SW05 (J143454.4+522850).
   such configurations as `$1+2+1$'.
 \item Alongside is a synthetic image produced by modelling.  In it,
   the fitted lensed images are shown in colour, while the lensing
-  galaxy and extraneous objects have been reduced to grayscale.  These
-  two panels are qualitative and display no units, and moreover, the
+  galaxy and extraneous objects have been reduced to grayscale.
+  (Figure~\figref{synthmig} in \S~\ref{subsec:sourcefit} shows a
+  synthetic image from another model of the same system.) These two
+  panels are qualitative and display no units, and moreover, the
   mutual alignment of the two panels is only approximate.
 \item The middle row shows contour maps from the model.  At middle
   left, we have the arrival-time surface.
