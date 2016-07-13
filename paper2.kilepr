@@ -32,12 +32,12 @@ Mode=LaTeX
 
 [item:bib/bibli.bib]
 archive=true
-column=0
+column=16
 encoding=UTF-8
 highlight=BibTeX
-line=0
+line=7
 mode=BibTeX
-open=false
+open=true
 order=1
 
 [item:paper2.kilepr]
@@ -52,22 +52,22 @@ order=-1
 
 [item:paper2.tex]
 archive=true
-column=14
+column=28
 encoding=UTF-8
 highlight=LaTeX
-line=127
+line=108
 mode=LaTeX
 open=true
 order=0
 
 [view-settings,view=0,item:bib/bibli.bib]
-CursorColumn=0
-CursorLine=0
+CursorColumn=16
+CursorLine=7
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:paper2.tex]
-CursorColumn=14
-CursorLine=127
+CursorColumn=28
+CursorLine=108
 JumpList=
-ViMarks=.,67,60,[,66,0,],-1,-1
+ViMarks=.,122,0,[,122,0,],122,0
