@@ -56,8 +56,8 @@
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}%
-	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
+	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
+	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand{\inclfign}[2]{
@@ -66,8 +66,8 @@
 	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
 	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-	\includegraphics[width=\smallwidth]{img/M_encl/#2_M_encl}%
-	\includegraphics[width=\smallwidth]{masses/#1_#2_mstel_vs_mtot}
+	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
+	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
 }
 
 \newcommand*{\rot}{\rotatebox{90}}
@@ -346,7 +346,8 @@ Figure~\figref{subsampling} shows the results of different settings for $r_\text
 We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{hires/007022_kappa_encl}
+  \includegraphics[width=\linewidth]{img/hires_comparison/ASW0000h2m_7022_11_hires_comparison}
+  \includegraphics[width=\linewidth]{img/hires_comparison/ASW0000h2m_7022_13_hires_comparison}
   \caption{
     Circularly averaged mass profile for different subsampling of central region.
     Red line without subsampling, blue lines show subsampling with dash-dot pattern showing the mode.
@@ -415,7 +416,8 @@ sample.  The last two are examples where the models were unconvincing
 (Figures~\figref{SW36}) or completely failed (\figref{SW57}).
 
 \begin{figure}
-  \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
+%  \inclfign{SW05}{ASW0007k4r_AJIBCHQ6EM}
+  \inclfign{SW05}{ASW0007k4r_N7LTELSYTM}
   \caption{Model results for SW05 (J143454.4+522850).  See text in
     Section~\ref{sec:examples} for details.}
   \label{fig:SW05}
