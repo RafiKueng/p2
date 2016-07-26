@@ -88,6 +88,7 @@
 \newcommand{\Mstel}{M_{\rm stel}}
 \newcommand{\Mhalo}{M_{\rm h}}
 \newcommand{\haloindex}{\mathcal{H}}
+\newcommand{\ER}{$\Theta_{\text{E}}$} % einstein radius
 
 \title[Short title, max. 45 characters]{Model of lens candidates from
   Space Warps CFHTLS}
@@ -214,7 +215,7 @@ by a citizen-science volunteers
 discovered an average of four lenses per square degree.  So one can be
 optimistic about finding many thousands of lenses in the next
 generation of wide-field surveys.  The expected flood of new lens
-discoveries will need a similarly huge modelling modelling effort to
+discoveries will need a similarly huge modelling effort to
 reconstruct their mass distributions.  To prepare for the challenge of
 massive-sample lens modelling, \cite{2015MNRAS.447.2170K} developed a
 new modelling strategy, implemented as the SpaghettiLens system.  The
@@ -292,7 +293,7 @@ contours on a lensed system.  It gives the locations (or best-guess
 locations) of images of point-like sources, along with their ordering
 in arrival time, and their parities (minumum, saddle-point or
 maximum).  Such a sketch, which we call a spaghetti diagram, tends to
-resemble the form of lensed arcs, but it also in effect encodes
+resemble the form of lensed arcs, but it also in effect 
 encodes a proposal for its mass distribution.  A spaghetti diagram is
 read by a server-side numerical engine \citep[GLASS, developed
   by][]{2014MNRAS.445.2181C} which then returns a statistical ensemble
@@ -358,14 +359,14 @@ attempted to do so as yet.
     different reconstructions of a simulated lens (sim) from
     Space~Warps.  In each panel, the dashed blue curve is the correct
     answer.  The orange band represents the statistical ensemble from
-    SpaghettiLens, the red line being the ensemble mean.  Locations of
+    SpaghettiLens, the orange line being the ensemble mean.  Locations of
     images (maximum, saddle point, minimum) are marked with vertical
     arrows.  Crossing the horizontal $\kappa=1$ line is the effective
-    Einstein radius, and is so labelled. The upper panel is from
+    Einstein radius \ER, and is so labelled. The upper panel is from
     K\"ung et al., (2015) (see Figure~3 of that paper).  The middle
     panel is the result when the innermost mass tile is replaced by 9
     smaller tiles.  The lower panel results from replacing each of the
-    innermost 9 tiles each with 9 smaller tiles.}
+    innermost 5 by 5 tiles each with 9 smaller tiles.}
   \label{fig:subsampling}
 \end{figure}
 
@@ -379,8 +380,9 @@ near the centre, was suggested as a possible cure.
 Figure~\figref{subsampling} shows an experiment with smaller mass
 tiles in the inner region.  Replacing the very central mass tile with
 9 smaller tiles allows for steeper central profiles.  Doing the same
-for the 21 innermost mass tiles \todo{Check meaning of hires
-  parameters.} solves the problem completely, but doubles the
+for the 25 innermost mass tiles solves the problem completely, but increases
+the number of mass tiles by 40% and thus at least triples the
+% in practice, it's more x4 - x5! 87/22, 86/21, 85/16
 computation time.  The main modelling work in this paper was, however,
 done before the experiments with smaller mass tiles was complete.
 Hence the results in this paper use the intermediate option
@@ -388,6 +390,7 @@ Hence the results in this paper use the intermediate option
 As the results in this paper mainly concern the enclosed mass in the
 outer regions, the remaining shallowness in the central region should
 be inconsequential.
+
 
 \subsection{Parameterisation of pixel models} \label{subsec:parameter}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
@@ -533,7 +536,7 @@ from SW05 (J143454.4+522850).
   shows the circularly-averaged $\kappa$ of the model ensemble, with
   increasing radius (in arcsec).  The four short vertical lines
   correspond to the minima and saddle points marked in the upper-left
-  panel.  The effective Einstein radius is also shown.  As the radius
+  panel.  The effective Einstein radius \ER is also shown.  As the radius
   scale indicates SW05 is comparatively large lens on the
   sky.
 \item Lower right shows the total mass in the model against the
