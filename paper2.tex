@@ -348,22 +348,46 @@ attempted to do so as yet.
 \end{figure}
 
 
-\subsection{Sub-sampling of central region}\label{subsec:hires}
-
-In a previous paper \cite{2015MNRAS.447.2170K} we identified the problem of the tendency of the models to be too shallow.
-We pinned down the problem to the central region and are confident to have it fixed with enabling sub pixel sampling in the central area.
-The software allows for subsampling parameters of radius of pixels $r_\text{subs}$ and amount of subpixels per pixel $n_\text{subs}$.
-Figure~\figref{subsampling} shows the results of different settings for $r_\text{subs}$ and $n_\text{subs}$.
-We can see that even the computationally least expensive settings of $r_\text{subs}=1$ and $n_\text{subs}=3$ leads to drastically improved profiles.
-
 \begin{figure}
-  \includegraphics[width=\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}
-  \includegraphics[width=\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}
-  \includegraphics[width=\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
-  \caption{Same sim as in Figure~3 in the earlier paper.}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
+  \caption{Model improvement resulting from using smaller mass tiles
+    in the inner region of the mass model.  Shown here are the average
+    enclosed $\kappa$ within a given projected radius, for three
+    different reconstructions of a simulated lens (sim) from
+    Space~Warps.  In each panel, the dashed blue curve is the correct
+    answer.  The orange band represents the statistical ensemble from
+    SpaghettiLens, the red line being the ensemble mean.  Locations of
+    images (maximum, saddle point, minimum) are marked with vertical
+    arrows.  Crossing the horizontal $\kappa=1$ line is the effective
+    Einstein radius, and is so labelled. The upper panel is from
+    K\"ung et al., (2015) (see Figure~3 of that paper).  The middle
+    panel is the result when the innermost mass tile is replaced by 9
+    smaller tiles.  The lower panel results from replacing each of the
+    innermost 9 tiles each with 9 smaller tiles.}
   \label{fig:subsampling}
 \end{figure}
 
+\subsection{Sub-sampling of central region}\label{subsec:hires}
+
+The models of simulated lenses in \cite{2015MNRAS.447.2170K} showed a
+tendency to be too shallow.  Allowing smaller mass tiles in the
+central region, thus allowing the pass profile to rise more steeply
+near the centre, was suggested as a possible cure.
+
+Figure~\figref{subsampling} shows an experiment with smaller mass
+tiles in the inner region.  Replacing the very central mass tile with
+9 smaller tiles allows for steeper central profiles.  Doing the same
+for the 21 innermost mass tiles \todo{Check meaning of hires
+  parameters.} solves the problem completely, but doubles the
+computation time.  The main modelling work in this paper was, however,
+done before the experiments with smaller mass tiles was complete.
+Hence the results in this paper use the intermediate option
+(corresponding to the middle panel in Figure~\figref{subsampling}).
+As the results in this paper mainly concern the enclosed mass in the
+outer regions, the remaining shallowness in the central region should
+be inconsequential.
 
 \subsection{Parameterisation of pixel models} \label{subsec:parameter}
 In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
