@@ -52,10 +52,10 @@ order=-1
 
 [item:paper2.tex]
 archive=true
-column=22
+column=82
 encoding=UTF-8
 highlight=LaTeX
-line=87
+line=394
 mode=LaTeX
 open=true
 order=0
@@ -67,7 +67,7 @@ JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:paper2.tex]
-CursorColumn=22
-CursorLine=87
+CursorColumn=82
+CursorLine=394
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
