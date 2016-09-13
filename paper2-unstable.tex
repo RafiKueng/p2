@@ -1,0 +1,721 @@
+\documentclass[fleqn,usenatbib]{mnras}
+
+%%% DEBUG SETTINGS - remove at the end %%%%%%%%%%%%%%%
+\usepackage{silence} % silence error warinings
+\WarningFilter{caption}{Unsupported document class} % caption doesn't know mnras..
+\hbadness = 5000
+\vbadness = 10000
+% \usepackage{}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath} % not yet supported on arxiv and uni computer
+%\usepackage{txfonts}
+
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc} % make sure font is supported
+% \usepackage{ae,aecompl} %obsolete when using modern fonts
+\usepackage[final]{microtype} % make sure font is supported
+% and a suitable font
+\usepackage{lmodern} % use a modern font with T1 support
+%\usepackage{cm-super} % use a modern font with T1 support
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+%\usepackage[dvipdfmx]{graphicx}	% Including figure files
+\usepackage{graphicx} % Including figure files
+%\usepackage[skip=0pt]{subcaption}
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{pifont}	% Extra maths symbols
+%\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
+
+
+% TODO stuff, comment out for final submit
+\usepackage{todonotes} % as long as we are editing...
+%\usepackage{showframe} % for debug
+%\overfullrule=5pt      % show overfull boxes
+
+% I disabled hyperlink in the cls und included it here because of bugs
+\usepackage{hyperref}   % Hyperlinks
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+
+\edef\smallwidth{0.4\linewidth}
+
+\newcommand{\inclfig}[2]{
+  \centering
+	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
+	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}
+%	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
+        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
+%        \includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
+	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
+	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
+}
+
+\newcommand{\inclfign}[2]{
+  \centering
+	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
+	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}
+%        \includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
+        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
+%	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
+        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
+	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
+	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
+}
+
+\newcommand*{\rot}{\rotatebox{90}}
+\newcommand*{\OK}{\ding{51}}
+\newcommand*{\NO}{\ding{55}}
+
+\newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
+\newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
+
+\newcommand{\asw}[1]{ASW000#1}
+\newcommand{\sw}[1]{SW~#1}
+\newcommand{\model}[1]{SL model~#1}
+
+\newcommand{\figref}[1]{\ref{fig:#1}}
+
+\newcommand{\Mstel}{M_{\rm stel}}
+\newcommand{\Mhalo}{M_{\rm h}}
+\newcommand{\haloindex}{\mathcal{H}}
+\newcommand{\ER}{$\Theta_{\text{E}}$} % einstein radius
+
+\title[Lens models for Space Warps CFHTLS]{Models of lens candidates from
+  Space Warps CFHTLS}
+
+\author[K\"ung et al]{Rafael K\"ung,$^{1}$
+Prasenjit Saha,$^{1}$
+Ignacio Ferreras,$^{2}$
+Elisabeth Baeten,$^{3}$
+\newauthor
+Jonathan Coles,$^{4}$
+Claude Cornen,$^{3}$
+Christine Macmillan,$^{3}$
+Phil Marshall,$^{5}$ 
+\newauthor
+Anupreeta More,$^{6}$
+Lucy Oswald$^{7}$
+Aprajita Verma$^{8}$
+and Julianne K. Wilcox$^{4}$
+%
+\\
+%
+$^{1}$Physik-Institut, University of Zurich, Winterthurerstrasse 190, 8057 Zurich, Switzerland\\
+$^{2}$Mullard Space Science Laboratory, University College London, Holmbury St Mary, Dorking, Surrey RH5 6NT, UK\\
+$^{3}$Zooniverse, c/o Astrophysics Department, University of Oxford, Oxford OX1 3RH, UK \\
+$^{4}$Exascale Research Computing Lab, Campus Teratec, 2 Rue de la Piquetterie, 91680 Bruyeres-le-Chatel, France\\
+$^{5}$Kavli Institute for Particle Astrophysics and Cosmology, Stanford University, 452 Lomita Mall, Stanford, CA 94035, USA\\
+$^{6}$Kavli Institute for the Physics and Mathematics of the Universe, University of Tokyo, 5-1-5 Kashiwanoha, Kashiwa-shi 277-8583, Japan\\
+$^{7}$Murray Edwards College, University of Cambridge, Cambridge CB3 0DF, UK\\
+$^{8}$Sub-department of Astrophysics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK\\
+}
+
+
+
+% These dates will be filled out by the publisher
+% \date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+\begin{abstract}
+We report modelling follow-up of recently-discovered
+gravitational-lens candidates in the CFHT Legacy Survey.  Lens
+modelling was done by a small group of specially-interested volunteers
+from the Space~Warps citizen-science community who originally found
+the candidate lenses.  Models are categorised according to seven
+qualitative and quantitive points.  Also included are some
+improvements to the modelling software used (SpaghettiLens),
+and discussion of strategies for scaling to future surveys
+with more and frequent discoveries.
+
+The candidates successfully modelled are all galaxies, with inferred
+lensing masses ranging from $\sim10^{11}M_\odot$ to $>10^{13}M_\odot$.
+Stellar masses have also been estimated, using photometry from the
+CFHTLS pipeline and stellar-population models.  A trend well-known
+in nearby galaxies, that star-formation efficiency is maximal for
+total masses of $\approx10^{12}M_\odot$ and reduces for both lower and
+higher masses, is discernable also in these much more distant
+galaxies.
+\end{abstract}
+
+\begin{keywords}
+gravitational lensing: strong -- keyword2
+\end{keywords}
+
+\section{Introduction}
+
+Light deflection at the rim of the Sun is famously $1.75''$.  The
+deflection angle can also be expressed in terms of the escape velocity
+$2v_{\rm esc}^2/c^2$, with $v_{\rm esc}$ at the solar surface being
+$\simeq620\rm\,km/s$.  The Galactic escape velocity at the Sun's
+location is similar: $\approx500\rm\,km/s$, typical of massive
+galaxies.  Thus, the outer regions of massive galaxies have lensing
+deflections comparable to that at the rim of the Sun.  Yet these
+quantitatively similar deflections have qualitatively different
+consequences.  Light deflection by the Sun must be accounted for in
+modern astrometry \citep[see e.g.,][]{2015CQGra..32p5008C} but is not
+itself a physics probe in the way it was a century ago.  With distant
+galaxies, however, light bending by $\sim1''$ introduces two new
+phenomena.  First, for galaxies distant enough that their apparent
+size is comparable to the bending angle, light deflection can cause
+multiple images of background sources, or strong lensing.  Second, the
+gravitational field is dominated by dark matter, hence strong lensing
+becomes a probe of dark matter in galaxies.
+
+With no unambiguous dark-matter particle detections so far, dark
+matter has studied only through its indirect consequences on galactic
+and larger scales.  In most work, dark matter is taken to be a
+collisionless non-relativistic fluid (cold dark matter or CDM); in
+recent years, the simulation by \cite{2005Natur.435..629S} has been
+particularly influential in studying the formation of CDM structures.
+Other scenarios have also been considered, such as a cold condensing
+boson fluid \citep{2016ApJ...818...89S}.  There is a general
+consensus, however, that the origins of galaxy lie in the
+gravitational collapse, fragmentation, and mergers of dark-matter
+clumps, into which fell gas, cooling through radiative processes to
+form dense clouds and eventually stars.  There is, however, much
+debate about the details, of which \cite{2012RAA....12..917S} provide
+a nice summary.
+
+Strong-lensing galaxies are a useful source of information on the
+mutual dynamics and dark matter and gas in galaxies.  The topic has
+been explored in several studies
+\citep{2009ApJ...703L..51K,2011ApJ...740...97L,2012MNRAS.424..104L,
+  2016MNRAS.459.3677L,2016MNRAS.456..870B} but it is desirable to
+enlarge the samples from tens of lensing galaxies to thousands.  Doing
+so requires finding more lenses, of course, but also modelling their
+masses.
+
+Recent searches through the CFHTLS \citep{2012SPIE.8448E..0MC} using
+arc-finders
+\citep{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G} by
+machine learning \citep{2016arXiv160504309P} and by visual inspection
+by a citizen-science volunteers
+\citep[Space~Warps][]{2016MNRAS.455.1191M} have between them
+discovered an average of four lenses per square degree.  So one can be
+optimistic about finding many thousands of lenses in the next
+generation of wide-field surveys.  The expected flood of new lens
+discoveries will need a similarly huge modelling effort to
+reconstruct their mass distributions.  To prepare for the challenge of
+massive-sample lens modelling, \cite{2015MNRAS.447.2170K} developed a
+new modelling strategy, implemented as the SpaghettiLens system.  The
+idea is to collaborate with experienced members of the citizen-science
+community, who have already participated in lens discovery through
+Space~Warps, as well as several other projects involving astronomical
+data.  In this paper, we present SpaghettiLens models of
+lens-candidates discovered through Space~Warps.
+
+Section~\ref{sec:spl} summarises the SpaghettiLens system and
+discusses its ongoing development. A SpaghettiLens model consists of a
+statistical ensemble of free-form maps of the sky-projected mass
+distribution responsible for lensing.  Each lens candidates in
+practice gets modelled several times in a collaborative refinement
+process\footnote{See ``Collaborative gravitational lens
+  modelling\dots'' in {\tt http://letters.zooniverse.org} especially
+  the model tree.}  In this paper we report the most recent model for
+each lens, as representing a consensus among modellers, as to the best
+that could be achieved with the available data and software.
+Photometric lens redshifts are used; source redshifts are set to
+$z=2$ unless an unambiguous photometric redshift is available.
+The models can, however, be trivially rescaled to use better
+redshift values, as and when they become available.
+\cite{2015MNRAS.447.2170K} tested the system on simulated lenses and
+identified some areas for improvement.  The first two of those are
+taken up in Section~\ref{sec:spl}, along with a further idea. In
+\S~\ref{subsec:sourcefit} we introduce fitting of the brightness
+profiles of the source.  This feature has not yet been included in
+SpaghettiLens, but has been carried out in post-processing for a few
+especially interesting candidates.  In \S~\ref{subsec:hires} we show
+that making mass maps fine-grained in the central region relieves a
+tendency in the earlier work for mass to be too shallow. Then in
+\S~\ref{subsec:parameter} we consider the possibility of fitting a
+parametric lens model to the model ensemble; so far we have only been
+successful at extracting an Einstein radius.
+
+Section~\ref{sec:stellar-mass} explains how we compare the lensing
+mass with the mass in stars in the lensing galaxy.  We estimate the
+stellar mass by comparing galaxy magnitudes from the CFHTLS pipeline
+with the well-known stellar-population models of
+\cite{2003MNRAS.344.1000B}.  We then extrapolate the stellar masses to
+a halo mass using the abundance-matching prescription of
+\cite{2010ApJ...710..903M}.  Naturally, the lensing mass must be more
+than the stellar mass but no more than the total halo mass.  We then
+introduce what we call a halo index $\haloindex$ which gives an idea
+of how the lensing mass compares with these two bounds.
+
+Section~\ref{sec:examples} discusses ten of the systems, including six
+systems we found to be particularly interesting.  The online
+supplement gives results for all the modelled systems.
+
+In Section~\ref{sec:summary} and Table~\ref{tab:models} we display a
+concise characterisation of each modelled system, according to the
+image morphology and how clear or indistinct it is, whether the mass
+map and synthetic lensed image appear to be plausible, and how the
+model mass compares with the estimated stellar and full-halo masses.
+
+\def\pwidth{.32\linewidth}
+
+\def\includeten#1#2{
+\includegraphics[width=\pwidth]{#1ASW0007k4r_N7LTELSYTM#2}%
+\includegraphics[width=\pwidth]{#1ASW00096rm_4Q3YCEWGLN#2}%
+\includegraphics[width=\pwidth]{#1ASW0007xrs_JHC3J2HYV7#2}\\
+\includegraphics[width=\pwidth]{#1ASW0007iwp_4XBJWT3COV#2}%
+\includegraphics[width=\pwidth]{#1ASW000619d_011489#2}%
+\includegraphics[width=\pwidth]{#1ASW0001ld7_OS3CYAKLRT#2}\\
+\includegraphics[width=\pwidth]{#1ASW0002asp_5EKMWWVJHL#2}%
+%\includegraphics[width=\pwidth]{#1ASW000096t_7IPP7LWVOF#2}%
+\includegraphics[width=\pwidth]{#1ASW0008qsm_TOFS7JNGEK#2}%
+\includegraphics[width=\pwidth]{#1ASW0008pag_5SXGXQYY6V#2}\\
+}
+
+\def\includezehn#1#2{
+\includegraphics[width=\pwidth]{#1SW05_ASW0007k4r_N7LTELSYTM#2}%
+\includegraphics[width=\pwidth]{#1SW42_ASW00096rm_4Q3YCEWGLN#2}%
+\includegraphics[width=\pwidth]{#1SW28_ASW0007xrs_JHC3J2HYV7#2}\\
+\includegraphics[width=\pwidth]{#1SW58_ASW0007iwp_4XBJWT3COV#2}%
+\includegraphics[width=\pwidth]{#1SW02_ASW000619d_011489#2}%
+\includegraphics[width=\pwidth]{#1SW19_ASW0001ld7_OS3CYAKLRT#2}\\
+\includegraphics[width=\pwidth]{#1SW09_ASW0002asp_5EKMWWVJHL#2}%
+%\includegraphics[width=\pwidth]{#1SW36_ASW000096t_7IPP7LWVOF#2}\\
+\includegraphics[width=\pwidth]{#1SW29_ASW0008qsm_TOFS7JNGEK#2}%
+\includegraphics[width=\pwidth]{#1SW57_ASW0008pag_5SXGXQYY6V#2}\\
+}
+
+\begin{figure*}
+\includeten{spaghetti/}{_input}
+\caption{}
+\end{figure*}
+
+%\begin{figure*}
+%\includeten{spaghetti/}{_nsynth}
+%\caption{}
+%\end{figure*}
+
+\begin{figure*}
+\includezehn{img/arrival_spaghetti/}{_arrival_spaghetti}
+\caption{}
+\end{figure*}
+
+\begin{figure*}
+\includezehn{img/kappa_map/}{_kappa_map}
+\caption{}
+\end{figure*}
+
+
+\begin{figure*}
+\includezehn{img/kappa_encl/}{_kappa_encl}
+\caption{}
+\end{figure*}
+
+\begin{figure*}
+\includezehn{img/mlens_vs_mstel/}{_mstel_vs_mtot}
+\caption{}
+\end{figure*}
+
+\end{document}
+
+\end{document}
+
+\section{Lens Modelling}\label{sec:spl}
+
+SpaghettiLens is an example of a medium-sized collaboration spawned by
+a large citizen-science project (in this case Space~Warps).  While
+collaboration with volunteers is essential to both, the form of
+collaboration is very different.  In Space~Warps, volunteers in a
+crowd of $\gtrsim10^4$ make independent contributions.  Each person is
+presented with a random selection of survey-patches and invited to (in
+effect) vote on each.  The system estimates each volunteer's skill
+level according to test-patches interspersed with the real data, and
+weights their votes accordingly \citep{2016MNRAS.455.1171M}.  There is
+an active forum for volunteers, but since everyone is seeing different
+data samples with minimal overlap, the forum has little if any
+influence on votes.  With SpaghettiLens, on the other hand, there is a
+small group of volunteers and their contributions are interdependent.
+
+A modeller's main input to SpaghettiLens is a sketch of arrival-time
+contours on a lensed system.  It gives the locations (or best-guess
+locations) of images of point-like sources, along with their ordering
+in arrival time, and their parities (minumum, saddle-point or
+maximum).  Such a sketch, which we call a spaghetti diagram, tends to
+resemble the form of lensed arcs, but it also in effect 
+encodes a proposal for its mass distribution.  A spaghetti diagram is
+read by a server-side numerical engine \citep[GLASS, developed
+  by][]{2014MNRAS.445.2181C} which then returns a statistical ensemble
+of mass maps.  The mass maps are made up of mass tiles and are
+free-form, except that they are required to be concentrated around the
+identified lens centre.  They are also required to reproduce the given
+image locations, parities and time ordering exactly.  Graphical
+representations of the mass map and arrival-time surface are returned
+to the user for review.  The user can post these results on a forum,
+or discard them and try again.  Volunteers can start the modelling
+process afresh, or they can take an existing model from the forum and
+modify its input spaghetti diagram or its accompanying options, and
+thus obtain a revised model.
+
+\subsection{Improved synthetic images}\label{subsec:sourcefit}
+
+The mass maps produced by current implementation of SpaghettiLens are
+based on images of point-like features.  No information about extended
+images is used, except in so far as they help the user identify images
+of point-like features.  The synthetic images offered to users are
+rudimentary, based on sources with conical light profiles.
+
+We have now developed a prototype of better way to generate synthetic
+images.  Figure~\figref{synthimg} illustrates.  First, areas
+containing lensed images are selected (green frames in the figure).
+The selected areas must contain no light from the lensing galaxy or
+from extraneous objects.  Pixels within the selected areas are mapped
+to a grid on the source plane, using bending angles given by the mass
+model.  The mapping from lens-plane pixels to source-plane grid cells
+is many-to-one, because of image multiplicity and magnification.  The
+brightness of each source-plane pixel is set to the mean of all the
+lens-plane pixels mapping to it.  Finally, the mapping is run back to
+the lens plane.  The result is a synthetic image.  In effect, one is
+reconstructing a source-plane brightness map by least-squares.
+
+The procedure is not yet implemented in SpaghettiLens but can be
+applied in post-processing.  The new synthetic images could be used to
+improve the mass reconstruction, by weighting the ensemble of maps
+according to how good the synthetic images are, but we have not
+attempted to do so as yet.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{img/new_synth_img_detailed}
+  \caption{Synthetic lensed image with source-profile fitting in SW05
+    (J143454.4+522850). Top-left: original image, with areas
+    containing lensed images enclosed within green frames.  Top-right:
+    synthetic image (coloured arcs) with lensing galaxy and unrelated
+    objects in greyscale.  Bottom from left to right: reconstructed
+    source in colour, intensity (greyscale), count of lens plane
+    pixels per source plane pixel, residual of original image to
+    synthetic image.}
+  \label{fig:synthimg}
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}
+  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
+  \caption{Model improvement resulting from using smaller mass tiles
+    in the inner region of the mass model.  Shown here are the average
+    enclosed $\kappa$ within a given projected radius, for three
+    different reconstructions of a simulated lens (sim) from
+    Space~Warps.  In each panel, the dashed blue curve is the correct
+    answer.  The orange band represents the statistical ensemble from
+    SpaghettiLens, the orange line being the ensemble mean.  Locations of
+    images (maximum, saddle point, minimum) are marked with vertical
+    arrows.  Crossing the horizontal $\kappa=1$ line is the effective
+    Einstein radius \ER, and is so labelled. The upper panel is from
+    K\"ung et al., (2015) (see Figure~3 of that paper).  The middle
+    panel is the result when the innermost mass tile is replaced by 9
+    smaller tiles.  The lower panel results from replacing each of the
+    innermost 5 by 5 tiles each with 9 smaller tiles.}
+  \label{fig:subsampling}
+\end{figure}
+
+\subsection{Sub-sampling of central region}\label{subsec:hires}
+
+The models of simulated lenses in \cite{2015MNRAS.447.2170K} showed a
+tendency to be too shallow.  Allowing smaller mass tiles in the
+central region, thus allowing the mass profile to rise more steeply
+near the centre, was suggested as a possible cure.
+
+Figure~\figref{subsampling} shows an experiment with smaller mass
+tiles in the inner region.  Replacing the very central mass tile with
+9 smaller tiles allows for steeper central profiles.  Doing the same
+for the 25 innermost mass tiles solves the problem completely, but
+increases the number of mass tiles by 40\% and significantly increases
+the computational time.
+% 689 / 489 = 1.40899; in practice, runtime is more like x4 - x5!
+% runtimes from logfiles: 87/22, 86/21, 85/16
+The main modelling work in this paper was, however, done before the
+experiments with smaller mass tiles was complete.  Some of the models
+presented in this paper apply the intermediate option (corresponding
+to the middle panel in Figure~\figref{subsampling}) while others use
+the old system.  The results in this paper, however, mainly concern
+the enclosed mass in the outer regions, so shallowness in the central
+region should be inconsequential.
+
+\subsection{Parameterisation of pixel models} \label{subsec:parameter}
+In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principle components of the data, which were calculated using classical Principle Component Analysis.
+This created the residuals function.
+The number of components defined as principle was varied to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
+A masking function was added which selected only the data points that fell inside the image of the lens, and the principal components were clipped in order to keep the values inside the region of the ensemble of models.
+Any value higher than the clip was set to be the clip value.
+This was chosen to be 2.5 as, assuming that the data follows a Gaussian error distribution, almost all the values for the variance should lie between 2 and 3 standard deviations from the mean.
+Minimising the residuals function produces the set of parameters that fit the parameterised function to the original pixelated ensemble most closely.
+A least squares fit was used to perform this minimisation.
+The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \cite{2001astro.ph..2341K}.
+This model is frequently used to describe gravitational lenses as it tends to fit well with observations.
+The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
+By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
+
+Preliminary results on recovery of Einstein radii are shown in
+Figure~\ref{fig:parameter}. \todo{Einstein radii from parametric
+  model-fitting.}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{img/rE_comp/rE_comp.png}
+  \caption{Comparison of Einstein radii. {\em To be extended.}}
+  \label{fig:parameter}
+\end{figure}
+
+\section{Stellar mass}\label{sec:stellar-mass}
+
+Based on \cite{2003MNRAS.344.1000B} models.\todo{Description of
+  stellar-population models.}
+
+Following \cite{2010ApJ...710..903M}
+\begin{equation}
+\begin{aligned}
+\frac{\Mstel}{\Mhalo} &= \frac{2C_0}{(\Mhalo/M_1)^{-\beta} +
+                                     (\Mhalo/M_1)^\gamma} \\
+C_0 &= 0.02820, \quad M_1 = 10^{11.884} M_\odot \\
+\beta &= 1.057, \quad \gamma = 0.556.
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\haloindex = \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
+\end{equation}
+which we may call the halo-matching index.
+\begin{itemize}
+\item $\haloindex < 0$ is unphysical because $M<\Mstel$.
+\item $\haloindex = 0$ is when the stellar mass exactly accounts for the
+  lensing mass.
+\item $0 < \haloindex < 1$ is the typical situation, where the lens
+  includes stars and dark matter, but not the full halo.
+\item $\haloindex = 1$ means that the lens consists of the entire halo.
+\item $\haloindex > 1$ is in tension with abundance-matching, because the
+  lensing mass exceeds the expected halo mass.
+\end{itemize}
+
+
+\section{Example systems}\label{sec:examples}
+
+In this section we show modelling results for ten of the lens
+candidates.  The first five (see Figures~\figref{SW05}--\figref{SW29})
+are the most convincingly modelled systems.  The next three cases
+(Figures~\figref{SW42}--\figref{SW19}) are less good but still very
+plausible models, and are representative of the majority of the
+sample.  The last two are examples where the models were unconvincing
+(Figures~\figref{SW36}) or completely failed (\figref{SW57}).
+
+
+\begin{figure}
+  \inclfign{SW05}{ASW0007k4r_N7LTELSYTM}
+  \caption{Model results for SW05 (J143454.4+522850).  See text in
+    Section~\ref{sec:examples} for details.}
+  \label{fig:SW05}
+\end{figure}
+
+\begin{figure}
+  \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
+  \caption{Model results for SW28 (J143055.9+572431).}
+  \label{fig:SW28}
+\end{figure}
+
+\begin{figure}
+  \inclfign{SW02}{ASW000619d_011489}
+  \caption{Model results for SW02 (J140522.2+574333).}
+  \label{fig:SW02}
+\end{figure}
+
+\begin{figure}
+  \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
+  \caption{Model results for SW09 (J020832.1-043315).}
+  \label{fig:SW09}
+\end{figure}
+
+\begin{figure}
+  \inclfign{SW29}{ASW0008qsm_TOFS7JNGEK}
+  \caption{Model results for SW29 (J143838.1+572647).}
+  \label{fig:SW29}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
+  \caption{Modelling results for SW42 (J221716.5+015826).}
+  \label{fig:SW42}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
+  \caption{Model results for SW58 (J143651.6+530705).}
+  \label{fig:SW58}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
+  \caption{Model results for SW19 (J020642.0-095157).}
+  \label{fig:SW19}
+\end{figure}
+
+
+\begin{figure}
+  \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
+  \caption{Model results for SW36 (J090248.4-010232).}
+  \label{fig:SW36}
+\end{figure}
+
+\begin{figure}
+  \inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
+  \caption{Model results for SW57 (J143631.5+571131).}
+  \label{fig:SW57}
+\end{figure}
+
+Let us first consider Figure~\figref{SW05}, which shows model results
+from SW05 (J143454.4+522850).
+
+\begin{enumerate}
+\item In the upper row we have first a cutout of the Space~Warps
+  image, marked up with a spaghetti diagram.  There are four distinct
+  lensed images, and the spaghetti diagram proposes that they are a
+  minimum nearest to the lensing galaxy, a close minimum-saddle pair,
+  and a minimum further away. In Table~\ref{tab:models} we refer to
+  such configurations as IQ for inclined quad.
+\item Alongside is a synthetic image produced by modelling.  In it,
+  the fitted lensed images are shown in colour, while the lensing
+  galaxy and extraneous objects have been reduced to grayscale.
+  (Figure~\figref{synthimg} in \S~\ref{subsec:sourcefit} shows a
+  synthetic image from another model of the same system.) These two
+  panels are qualitative and display no units, and moreover, the
+  mutual alignment of the two panels is only approximate.
+\item The middle row shows contour maps from the model.  At middle
+  left, we have the arrival-time surface.
+\item At middle right we have the mass distribution in the usual
+  dimensionless form $\kappa$.  Again, these two panels are mainly
+  qualitative: both panels are spatially registered and centred on the
+  density-peak of the lens, but no scales have been included.
+\item The base row supplies spatial and mass scales.  The left panel
+  shows the circularly-averaged $\kappa$ of the model ensemble, with
+  increasing radius (in arcsec).  The four short vertical lines
+  correspond to the minima and saddle points marked in the upper-left
+  panel.  The effective Einstein radius \ER is also shown.  As the radius
+  scale indicates SW05 is comparatively large lens on the
+  sky.
+\item Lower right shows the total mass in the model against the
+  estimated stellar mass, alongside the values for the whole sample.
+  The lower-right shaded region is unphysical according to the
+  stellar-population models, because it gives $M<\Mstel$. The
+  upper-left shaded region is unphysical according to abundance
+  matching, because it gives $M>\Mhalo$.  That is to say, the unshaded
+  region is $0<\haloindex<1$.
+\end{enumerate}
+
+Proceeding to Figure~\figref{SW28}, we have one image close to the
+galaxy and an arc further away, which is interpreted as a blend of
+three images (a saddle point with two minima on either side).  We call
+this a long-axis quad or LQ configuration.  It is an indication of a
+mass distribution elongated along the arc-counterimage direction
+(along EW in this case).
+
+In Figures~\figref{SW02}--\figref{SW29} we see three candidates with
+an arc close the lensing galaxy and one image further away.  The arc
+is interpreted three images (a minimum with two saddle points on
+either side).  We call this a short-axis quad or SQ configuration.  It
+is an indication of a mass distribution elongated perpendicular to the
+arc-counterimage direction.
+
+Figures~\figref{SW02}--\figref{SW29} (SW05, SW28, SW02, SW09 and SW29)
+all correspond to the mass range of massive ellipticals.  SW05 is the
+most massive of all the candidates, with a galaxy-group scale mass.
+
+Figure~\figref{SW42} shows SW42.  The image morphology is similar to
+SW05 in Figure~\figref{SW05}, but the lens is much smaller on the sky,
+and the inferred mass is at the low end of the sample.  (The synthetic
+image shown is cruder than for the five previous figures, but that
+does not influence the mass models.)  If these preliminary findings
+are confirmed by follow-up observations, this could be the most
+dark-matter dominated lens known.\todo{Check photometry of this
+  candidate.}
+
+Figures~\figref{SW58} and \figref{SW19} appear plausible lens
+candidates.  Their morphology is similar to SW28, but the saddle-point
+counterimage is not visible.  We consider these lenses plausible but
+less convincing.
+
+Figures~\figref{SW36} and \figref{SW57} are cases where modelling
+failed.
+
+
+\section{Summary of models}\label{sec:summary}
+
+Table~\ref{tab:models} shows a summary of the analysis for many candidates.
+Missing rows are due to photometry data not available.
+
+\begin{enumerate}
+\item The image morphology concisely described: D for double, and
+  quads in sub-categorised in four ways
+  \citep[cf.][]{2003AJ....125.2769S} as LQ for long-axis quads (as in
+  Figure~\figref{SW28}), SQ for short-axis quads (as in
+  Figure~\figref{SW02}, \figref{SW09}, \figref{SW29}, \figref{SW42}),
+  IQ for inclined quads (as in Figure~\figref{SW05}) and CQ for very
+  symmetric core quads.
+\item Whether the images are unblended.  Distinct unblended images (as
+  in Figures~\figref{SW05} and \figref{SW42}) are an advantage in
+  modelling, but not essential.
+\item Whether all images are discernable.  The topography of an
+  arrival-time surface, as encoded by a spaghetti diagram, may require
+  more images than are visible.  For example, in Figure~\figref{SW58},
+  the modeller has put in a conjectural saddle point near the lensing
+  galaxy.
+\item Whether the lens is fairly isolated.
+\item Whether the arrival-time surface and synthetic image are
+  plausible.  In Figure~\figref{SW36} the model implies extra images
+  or a long arc, which are not seen.
+\item Whether the mass map is reasonable.
+\item The halo index $\haloindex$.
+\end{enumerate}
+
+\begin{table*}
+  \caption{Categorisation of SW models}
+  \label{tab:models}
+  \include{table}
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+\bibliographystyle{mnras}
+\bibliography{bib/bibli} % if your bibtex file is called example.bib
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \appendix
+
+\clearpage
+
+\section{TODO}
+\listoftodos
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
