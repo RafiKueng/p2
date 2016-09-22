@@ -46,6 +46,18 @@
 {Cuillandre} J.-C.~J.,  et~al., 2012, in Observatory Operations: Strategies,
   Processes, and Systems IV. p. 84480M, \mn@doi{10.1117/12.925584}
 
+\bibitem[\protect\citeauthoryear{{Ferreras}, {Saha}  \& {Burles}}{{Ferreras}
+  et~al.}{2008}]{2008MNRAS.383..857F}
+{Ferreras} I.,  {Saha} P.,   {Burles} S.,  2008, \mn@doi [\mnras]
+  {10.1111/j.1365-2966.2007.12606.x}, \href
+  {http://adsabs.harvard.edu/abs/2008MNRAS.383..857F} {383, 857}
+
+\bibitem[\protect\citeauthoryear{{Gallazzi} \& {Bell}}{{Gallazzi} \&
+  {Bell}}{2009}]{2009ApJS..185..253G}
+{Gallazzi} A.,  {Bell} E.~F.,  2009, \mn@doi [\apjs]
+  {10.1088/0067-0049/185/2/253}, \href
+  {http://adsabs.harvard.edu/abs/2009ApJS..185..253G} {185, 253}
+
 \bibitem[\protect\citeauthoryear{{Gavazzi}, {Marshall}, {Treu}  \&
   {Sonnenfeld}}{{Gavazzi} et~al.}{2014}]{2014ApJ...785..144G}
 {Gavazzi} R.,  {Marshall} P.~J.,  {Treu} T.,   {Sonnenfeld} A.,  2014, \mn@doi
@@ -144,6 +156,12 @@
   et~al.}{2005}]{2005Natur.435..629S}
 {Springel} V.,  et~al., 2005, \mn@doi [\nat] {10.1038/nature03597}, \href
   {http://adsabs.harvard.edu/abs/2005Natur.435..629S} {435, 629}
+
+\bibitem[\protect\citeauthoryear{{Taylor} et~al.,}{{Taylor}
+  et~al.}{2011}]{2011MNRAS.418.1587T}
+{Taylor} E.~N.,  et~al., 2011, \mn@doi [\mnras]
+  {10.1111/j.1365-2966.2011.19536.x}, \href
+  {http://adsabs.harvard.edu/abs/2011MNRAS.418.1587T} {418, 1587}
 
 \makeatother
 \end{thebibliography}
