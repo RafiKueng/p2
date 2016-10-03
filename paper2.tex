@@ -193,74 +193,11 @@ gravitational lensing: strong -- keyword2
 
 \input parts/spl
 
+\input parts/morph
+
 \input parts/massmodel
 
-\input parts/synthimage
-
 \input parts/stelmass
-
-\section{Example systems}\label{sec:examples}
-
-In this section we show modelling results for ten of the lens
-candidates.  The first five (see Figures~\figref{SW05}--\figref{SW29})
-are the most convincingly modelled systems.  The next three cases
-(Figures~\figref{SW42}--\figref{SW19}) are less good but still very
-plausible models, and are representative of the majority of the
-sample.  The last two are examples where the models were unconvincing
-(Figures~\figref{SW36}) or completely failed (\figref{SW57}).
-
-
-\begin{enumerate}
-
-\item Alongside is a synthetic image produced by modelling.  In it,
-  the fitted lensed images are shown in colour, while the lensing
-  galaxy and extraneous objects have been reduced to grayscale.
-  (Figure~\figref{synthimg} in \S~\ref{subsec:sourcefit} shows a
-  synthetic image from another model of the same system.) These two
-  panels are qualitative and display no units, and moreover, the
-  mutual alignment of the two panels is only approximate.
-\item The middle row shows contour maps from the model.  At middle
-  left, we have the arrival-time surface.
-\item At middle right we have the mass distribution in the usual
-  dimensionless form $\kappa$.  Again, these two panels are mainly
-  qualitative: both panels are spatially registered and centred on the
-  density-peak of the lens, but no scales have been included.
-\item The base row supplies spatial and mass scales.  The left panel
-  shows the circularly-averaged $\kappa$ of the model ensemble, with
-  increasing radius (in arcsec).  The four short vertical lines
-  correspond to the minima and saddle points marked in the upper-left
-  panel.  The effective Einstein radius \ER is also shown.  As the radius
-  scale indicates SW05 is comparatively large lens on the
-  sky.
-\item Lower right shows the total mass in the model against the
-  estimated stellar mass, alongside the values for the whole sample.
-  The lower-right shaded region is unphysical according to the
-  stellar-population models, because it gives $M<\Mstel$. The
-  upper-left shaded region is unphysical according to abundance
-  matching, because it gives $M>\Mhalo$.  That is to say, the unshaded
-  region is $0<\haloindex<1$.
-\end{enumerate}
-
-Figures~\figref{SW02}--\figref{SW29} (SW05, SW28, SW02, SW09 and SW29)
-all correspond to the mass range of massive ellipticals.  SW05 is the
-most massive of all the candidates, with a galaxy-group scale mass.
-
-For SW42 the inferred mass is at the low end of the sample.  (The
-synthetic image shown is cruder than for the five previous figures,
-but that does not influence the mass models.)  If these preliminary
-findings are confirmed by follow-up observations, this could be the
-most dark-matter dominated lens known.\todo{Check photometry of this
-  candidate.}
-
-Figures~\figref{SW58} and \figref{SW19} appear plausible lens
-candidates.  Their morphology is similar to SW28, but the saddle-point
-counterimage is not visible.  We consider these lenses plausible but
-less convincing.
-
-Figures~\figref{SW36} and \figref{SW57} are cases where modelling
-failed.
-
-\section{Summary of models}\label{sec:summary}
 
 
 \begin{table*}
@@ -282,154 +219,17 @@ failed.
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{TODO}
+\listoftodos
+
 \clearpage
 
 \appendix
 
-\section{SpaghettiLens developments}
-
-\subsection{Improved synthetic images}\label{subsec:sourcefit}
-
-
-
-\begin{figure}
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
-  \caption{Model improvement resulting from using smaller mass tiles
-    in the inner region of the mass model.  Shown here are the average
-    enclosed $\kappa$ within a given projected radius, for three
-    different reconstructions of a simulated lens (sim) from
-    Space~Warps.  In each panel, the dashed blue curve is the correct
-    answer.  The orange band represents the statistical ensemble from
-    SpaghettiLens, the orange line being the ensemble mean.  Locations of
-    images (maximum, saddle point, minimum) are marked with vertical
-    arrows.  Crossing the horizontal $\kappa=1$ line is the effective
-    Einstein radius \ER, and is so labelled. The upper panel is from
-    K\"ung et al., (2015) (see Figure~3 of that paper).  The middle
-    panel is the result when the innermost mass tile is replaced by 9
-    smaller tiles.  The lower panel results from replacing each of the
-    innermost 5 by 5 tiles each with 9 smaller tiles.}
-  \label{fig:subsampling}
-\end{figure}
-
-\subsection{Sub-sampling of central region}\label{subsec:hires}
-
-The models of simulated lenses in \cite{2015MNRAS.447.2170K} showed a
-tendency to be too shallow.  Allowing smaller mass tiles in the
-central region, thus allowing the mass profile to rise more steeply
-near the centre, was suggested as a possible cure.
-
-Figure~\figref{subsampling} shows an experiment with smaller mass
-tiles in the inner region.  Replacing the very central mass tile with
-9 smaller tiles allows for steeper central profiles.  Doing the same
-for the 25 innermost mass tiles solves the problem completely, but
-increases the number of mass tiles by 40\% and significantly increases
-the computational time.
-% 689 / 489 = 1.40899; in practice, runtime is more like x4 - x5!
-% runtimes from logfiles: 87/22, 86/21, 85/16
-The main modelling work in this paper was, however, done before the
-experiments with smaller mass tiles was complete.  Some of the models
-presented in this paper apply the intermediate option (corresponding
-to the middle panel in Figure~\figref{subsampling}) while others use
-the old system.  The results in this paper, however, mainly concern
-the enclosed mass in the outer regions, so shallowness in the central
-region should be inconsequential.
-
-\subsection{Parameterisation of pixel models} \label{subsec:parameter}
-In order to fit the set of pixelated models to a single parameterised model, a program was written that took a parameterised function and subtracted from it the mean and the principal components of the data, which were calculated using classical Principal Component Analysis.
-This created the residuals function.
-The number of components used in the analysis was varied, to test how this affected the output, and it was found that using 5 principle components tended to give a reasonable approximation.
-A masking function was added which selected only the data points that fell inside the image of the lens, and the principal components were clipped in order to keep the values inside the region of the ensemble of models.
-Any value higher than the clip was set to be the clip value.
-This was chosen to be 2.5 as, assuming that the data follows a Gaussian error distribution, almost all the values for the variance should lie between 2 and 3 standard deviations from the mean.
-Minimising the residuals function produces the set of parameters that fit the parameterised function to the original pixelated ensemble most closely.
-A least squares fit was used to perform this minimisation.
-The parameterised model function was obtained from the gravitational potential of an isothermal ellipsoid mass distribution \citep{2001astro.ph..2341K}.
-This model is frequently used to describe gravitational lenses as it tends to fit well with observations.
-The isothermal ellipsoid model outputs three useful parameters: the radius of the Einstein ring, the ellipticity of the model and the angle of the ellipticity from the vertical, giving the orientation of the galaxy.
-By applying this model to simulated lenses for which the values of these parameters were already known, it was possible to gain an estimate of the projected accuracy of the results, before applying the model to the candidate lensing galaxies.
-
-Preliminary results on recovery of Einstein radii are shown in
-Figure~\ref{fig:parameter}. \todo{Einstein radii from parametric
-  model-fitting.}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{img/rE_comp/rE_comp.png}
-  \caption{Comparison of Einstein radii. {\em To be extended.}}
-  \label{fig:parameter}
-\end{figure}
-
-
-\section{TODO}
-\listoftodos
+\input parts/app.tex
 
 % Don't change these lines
 \bsp	% typesetting comment
 \label{lastpage}
 \end{document}
-
-
-
-% \begin{figure}
-%   \inclfign{SW05}{ASW0007k4r_N7LTELSYTM}
-%   \caption{Model results for SW05 (J143454.4+522850).  See text in
-%     Section~\ref{sec:examples} for details.}
-%   \label{fig:SW05}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfign{SW28}{ASW0007xrs_JHC3J2HYV7}
-%   \caption{Model results for SW28 (J143055.9+572431).}
-%   \label{fig:SW28}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfign{SW02}{ASW000619d_011489}
-%   \caption{Model results for SW02 (J140522.2+574333).}
-%   \label{fig:SW02}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfign{SW09}{ASW0002asp_5EKMWWVJHL}
-%   \caption{Model results for SW09 (J020832.1-043315).}
-%   \label{fig:SW09}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfign{SW29}{ASW0008qsm_TOFS7JNGEK}
-%   \caption{Model results for SW29 (J143838.1+572647).}
-%   \label{fig:SW29}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfig{SW42}{ASW00096rm_4Q3YCEWGLN}
-%   \caption{Modelling results for SW42 (J221716.5+015826).}
-%   \label{fig:SW42}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfig{SW58}{ASW0007iwp_4XBJWT3COV}
-%   \caption{Model results for SW58 (J143651.6+530705).}
-%   \label{fig:SW58}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfig{SW19}{ASW0001ld7_OS3CYAKLRT}
-%   \caption{Model results for SW19 (J020642.0-095157).}
-%   \label{fig:SW19}
-% \end{figure}
-% 
-% 
-% \begin{figure}
-%   \inclfig{SW36}{ASW000096t_7IPP7LWVOF}
-%   \caption{Model results for SW36 (J090248.4-010232).}
-%   \label{fig:SW36}
-% \end{figure}
-% 
-% \begin{figure}
-%   \inclfig{SW57}{ASW0008pag_5SXGXQYY6V}
-%   \caption{Model results for SW57 (J143631.5+571131).}
-%   \label{fig:SW57}
-% \end{figure}
 
