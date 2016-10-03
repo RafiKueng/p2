@@ -1,0 +1,36 @@
+\section{SpaghettiLens}\label{sec:spl}
+
+SpaghettiLens is an example of a medium-sized collaboration spawned by
+a large citizen-science project (in this case Space~Warps).  While
+collaboration with volunteers is essential to both, the form of
+collaboration is very different.  In Space~Warps, volunteers in a
+crowd of $\gtrsim10^4$ make independent contributions.  Each person is
+presented with a random selection of survey-patches and invited to (in
+effect) vote on each.  The system estimates each volunteer's skill
+level according to test-patches interspersed with the real data, and
+weights their votes accordingly \citep{2016MNRAS.455.1171M}.  There is
+an active forum for volunteers, but since everyone is seeing different
+data samples with minimal overlap, the forum has little if any
+influence on votes.  With SpaghettiLens, on the other hand, there is a
+small group of volunteers and their contributions are interdependent.
+
+A modeller's main input to SpaghettiLens is a sketch of arrival-time
+contours on a lensed system.  It gives the locations (or best-guess
+locations) of images of point-like sources, along with their ordering
+in arrival time, and their parities (minumum, saddle-point or
+maximum).  Such a sketch, which we call a spaghetti diagram, tends to
+resemble the form of lensed arcs, but it also in effect 
+encodes a proposal for its mass distribution.  A spaghetti diagram is
+read by a server-side numerical engine \citep[GLASS, developed
+  by][]{2014MNRAS.445.2181C} which then returns a statistical ensemble
+of mass maps.  The mass maps are made up of mass tiles and are
+free-form, except that they are required to be concentrated around the
+identified lens centre.  They are also required to reproduce the given
+image locations, parities and time ordering exactly.  Graphical
+representations of the mass map and arrival-time surface are returned
+to the user for review.  The user can post these results on a forum,
+or discard them and try again.  Volunteers can start the modelling
+process afresh, or they can take an existing model from the forum and
+modify its input spaghetti diagram or its accompanying options, and
+thus obtain a revised model.
+
