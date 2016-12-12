@@ -48,32 +48,6 @@
 \usepackage{hyperref}   % Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
-\edef\smallwidth{0.4\linewidth}
-
-\newcommand{\inclfig}[2]{
-  \centering
-	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}
-%	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
-%        \includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
-	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
-	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
-}
-
-\newcommand{\inclfign}[2]{
-  \centering
-	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}
-%        \includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
-%	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
-	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
-	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
-}
-
 \newcommand*{\rot}{\rotatebox{90}}
 \newcommand*{\OK}{\ding{51}}
 \newcommand*{\NO}{\ding{55}}
@@ -163,7 +137,7 @@ gravitational lensing: strong -- keyword2
 
 \input parts/intro
 
-\input parts/spl
+% \input parts/spl
 
 \input parts/morph
 

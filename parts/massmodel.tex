@@ -1,4 +1,25 @@
-\section{Mass models}
+\section{Mass models}\label{sec:massmodels}
+
+A SpaghettiLens model consists of a statistical ensemble of free-form
+maps of the sky-projected mass distribution responsible for lensing.
+  Photometric lens
+redshifts are used; source redshifts are set to $z=2$ unless an
+unambiguous photometric redshift is available.  The models can,
+however, be trivially rescaled to use better redshift values, as and
+when they become available.
+
+A spaghetti diagram is read by a server-side numerical engine
+\citep[GLASS, developed by][]{2014MNRAS.445.2181C} which then returns
+a statistical ensemble of mass maps.  The mass maps are made up of
+mass tiles and are free-form, except that they are required to be
+concentrated around the identified lens centre.  They are also
+required to reproduce the given image locations, parities and time
+ordering exactly.  Graphical representations of the mass map and
+arrival-time surface are returned to the user for review.  The user
+can post these results on a forum, or discard them and try again.
+Volunteers can start the modelling process afresh, or they can take an
+existing model from the forum and modify its input spaghetti diagram
+or its accompanying options, and thus obtain a revised model.
 
 Alongside is a synthetic image produced by modelling.  In it, the
 fitted lensed images are shown in colour, while the lensing galaxy and
