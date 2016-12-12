@@ -48,32 +48,6 @@
 \usepackage{hyperref}   % Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
-\edef\smallwidth{0.4\linewidth}
-
-\newcommand{\inclfig}[2]{
-  \centering
-	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{spaghetti/#2_img3_ipol}
-%	\includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
-%        \includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
-	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
-	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
-}
-
-\newcommand{\inclfign}[2]{
-  \centering
-	\includegraphics[width=\smallwidth]{spaghetti/#2_input}%
-	\includegraphics[width=\smallwidth]{img/nsynth/#2_nsynth}
-%        \includegraphics[width=\smallwidth]{spaghetti/#2_img1}%
-        \includegraphics[width=\smallwidth]{img/arrival_spaghetti/#1_#2_arrival_spaghetti}%
-%	\includegraphics[width=\smallwidth]{spaghetti/#2_img2}
-        \includegraphics[width=\smallwidth]{img/kappa_map/#1_#2_kappa_map}
-	\includegraphics[width=\smallwidth]{img/kappa_encl/#1_#2_kappa_encl}%
-	\includegraphics[width=\smallwidth]{img/mlens_vs_mstel/#1_#2_mstel_vs_mtot}
-}
-
 \newcommand*{\rot}{\rotatebox{90}}
 \newcommand*{\OK}{\ding{51}}
 \newcommand*{\NO}{\ding{55}}
@@ -161,45 +135,15 @@ galaxies.
 gravitational lensing: strong -- keyword2
 \end{keywords}
 
-\def\pwidth{.32\linewidth}
-
-\def\includeten#1#2{
-\includegraphics[width=\pwidth]{#1ASW0007iwp_4XBJWT3COV#2}%
-\includegraphics[width=\pwidth]{#1ASW0007xrs_JHC3J2HYV7#2}%
-\includegraphics[width=\pwidth]{#1ASW0008pag_5SXGXQYY6V#2}\\
-\includegraphics[width=\pwidth]{#1ASW0007k4r_N7LTELSYTM#2}%
-\includegraphics[width=\pwidth]{#1ASW00096rm_4Q3YCEWGLN#2}%
-\includegraphics[width=\pwidth]{#1ASW0001ld7_OS3CYAKLRT#2}\\
-\includegraphics[width=\pwidth]{#1ASW0002asp_5EKMWWVJHL#2}%
-\includegraphics[width=\pwidth]{#1ASW0008qsm_TOFS7JNGEK#2}%
-\includegraphics[width=\pwidth]{#1ASW000619d_011489#2}\\
-%\includegraphics[width=\pwidth]{#1ASW000096t_7IPP7LWVOF#2}%
-}
-
-\def\includezehn#1#2{
-\includegraphics[width=\pwidth]{#1SW58_ASW0007iwp_4XBJWT3COV#2}%   L
-\includegraphics[width=\pwidth]{#1SW28_ASW0007xrs_JHC3J2HYV7#2}%   L
-\includegraphics[width=\pwidth]{#1SW57_ASW0008pag_5SXGXQYY6V#2}\\% X
-\includegraphics[width=\pwidth]{#1SW05_ASW0007k4r_N7LTELSYTM#2}%   I
-\includegraphics[width=\pwidth]{#1SW42_ASW00096rm_4Q3YCEWGLN#2}%   I
-\includegraphics[width=\pwidth]{#1SW19_ASW0001ld7_OS3CYAKLRT#2}\\% I
-\includegraphics[width=\pwidth]{#1SW09_ASW0002asp_5EKMWWVJHL#2}%   S
-\includegraphics[width=\pwidth]{#1SW29_ASW0008qsm_TOFS7JNGEK#2}%   S
-\includegraphics[width=\pwidth]{#1SW02_ASW000619d_011489#2}\\%     S
-%\includegraphics[width=\pwidth]{#1SW36_ASW000096t_7IPP7LWVOF#2}%
-}
-
 \input parts/intro
 
-\input parts/spl
+% \input parts/spl
 
 \input parts/morph
 
 \input parts/massmodel
 
 \input parts/stelmass
-
-\clearpage
 
 \input parts/summary
 
@@ -214,6 +158,12 @@ gravitational lensing: strong -- keyword2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\input parts/figures
+
+\clearpage
 
 % \section{TODO}
 % \listoftodos

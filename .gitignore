@@ -135,6 +135,9 @@ sympy-plots-for-*.tex/
 *.bak
 *.sav
 
+# emacs
+*~
+
 *.tex.backup
 paper2.pdf
 
