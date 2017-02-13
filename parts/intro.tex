@@ -58,38 +58,47 @@ new modelling strategy, implemented as the SpaghettiLens system.  The
 idea is to collaborate with experienced members of the citizen-science
 community, who have already participated in lens discovery through
 Space~Warps, as well as several other projects involving astronomical
-data.  In this paper, we present SpaghettiLens models of lens-candidates
-discovered through Space~Warps.
+data.
 
-Purpose is twofold.  First, see if plausible mass models can produce
-the overall configuration.  Second, interpretation as lensing
-galaxies.  
+In this paper, we present SpaghettiLens models of lens-candidates
+discovered through Space~Warps.  Purpose is twofold.  First, see if
+plausible mass models can produce the overall configuration.  Second,
+interpretation as lensing galaxies.
 
-Each lens candidates in practice gets modelled several times in a
-collaborative refinement process.  This represents a consensus among
-modellers, as to the best that could be achieved with the available
-data and software.
+Each lens candidates is modelled in a collaborative refinement
+process, where anyone interested can creata a new model or modify an
+existing model to try and make it better.\footnote{This is in contrast
+  to the main Space~Warps project for discovering lenses, where
+  volunteers in a crowd of $\gtrsim10^4$ make independent
+  contributions.  Each person is presented with a random selection of
+  survey-patches and invited to (in effect) vote on each.  The system
+  estimates each volunteer's skill level according to test-patches
+  interspersed with the real data, and weights their votes accordingly
+  \citep{2016MNRAS.455.1171M}.  There is an active forum for
+  volunteers, but since everyone is seeing different data samples with
+  minimal overlap, the forum has little if any influence on votes.}
+The result represents a consensus among contributors, as to the best
+that could be achieved with the available data and software.
 
-We introduce some diagnostics.  There are three kinds of diagnostics.
+The modelling process assigns seven diagnostics to each lens
+candidate, as follows.
 
 \begin{itemize}
-\item First we have diagnostics based on morphology of the system.
-  Section~\ref{sec:morph} and Figure~\ref{fig:splinput} explain.
+\item First we have diagnostics based on morphology of the
+  system.\todo{Make ordering consistent in text and
+    Table~\ref{tab:models}.}  Section~\ref{sec:morph} and
+  Figure~\ref{fig:splinput} explain.
 \begin{itemize}
-\item The image morphology concisely described: D for double, and
-  quads in sub-categorised in four ways
-  \citep[cf.][]{2003AJ....125.2769S} as LQ for long-axis quads (as in
-  SW28), SQ for short-axis quads (as in Figure~SW02,
-  SW09, SW29, SW42), IQ for inclined quads and CQ for very symmetric core quads.
-\item Whether the images are unblended.  Distinct unblended images (as
-  in Figures~SW05 and SW42) are an advantage in
-  modelling, but not essential.
+\item Whether the images are unblended.  Distinct unblended images are
+  an advantage in modelling, but not essential.
 \item Whether all images are discernable.  The topography of an
   arrival-time surface, as encoded by a spaghetti diagram, may require
-  more images than are visible.  For example, in Figure~SW58,
-  the modeller has put in a conjectural saddle point near the lensing
-  galaxy.
+  more images than are visible, in which case the modeller has to
+  insert conjectural image positions.
 \item Whether the lens is fairly isolated.
+\item The image morphology concisely described: double or quads,
+  further sub-categorised to indicate the elongation direction of the
+  lensing mass.
 \end{itemize}
 \item Second we have mass models, covered in Section~\ref{sec:massmodels}.
 \begin{itemize}
@@ -130,3 +139,4 @@ tendency in the earlier work for mass to be too shallow. Then in
 \S~\ref{subsec:parameter} we consider the possibility of fitting a
 parametric lens model to the model ensemble; so far we have only been
 successful at extracting an Einstein radius.
+
