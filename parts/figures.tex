@@ -15,48 +15,59 @@
 \end{figure*}
 
 \begin{figure*}
-\inclGrid{kappa_map_interpol}
-\caption{Mass distribution $\kappa$ in the systems from
-  Figures~\ref{fig:splinput}.
-\label{fig:kappa}}
-\end{figure*}
-
-\begin{figure*}
-\inclGrid{kappa_encl}
-\caption{Enclosed mass within a given projected radius, expressed as
-  the mean $\kappa$ with a given number of arcsec from the centre of
-  the lensing galaxy.  The systems are the same as in
-  Figures~\ref{fig:splinput}--\ref{fig:kappa}.  The orange band in
-  each panel refers to the full ensemble of mass maps in the model,
-  while the red curve is the ensemble average.  The dashed vertical
-  line indicates the notional Einstein radius, or where the mean
-  enclosed $\kappa$ is unity.  The short vertical arrows indicate the
-  positions of the images (maxima, saddle points and minima).
-  \label{fig:encl}}
-\end{figure*}
-
-
-\begin{figure*}
 \inclGrid{arrival_spaghetti}
-\caption{Arrival-time surfaces of the systems from
-  Figure~\ref{fig:splinput}--\ref{fig:encl}.
+\caption{Arrival-time surfaces for models of the systems from
+  Figure~\ref{fig:splinput}.  These are cleaned-up versions of the
+  original spaghetti diagrams.  The registration differs slightly from
+  Figure~\ref{fig:splinput}, but the coloured dots represent exactly
+  the sky positions specified in the earlier figure.  The orange
+  contours only qualitatively resemble the earlier pink curves, as
+  they are now precise saddle-point contours from lens models.
   \label{fig:arriv}}
 \end{figure*}
 
 \begin{figure*}
 \inclGrid{nsynth}
 \caption{Synthetic images of the systems from
-  Figures~\ref{fig:splinput}--\ref{fig:arriv}.
+  Figures~\ref{fig:splinput}, derived from the lens models.  The
+  reconstructed lensed features are keep the Space~Warps false-colour
+  scheme from Figures~\ref{fig:splinput}.  The rest has been changed
+  to black-and-white.
   \label{fig:synth}}
+\end{figure*}
+
+
+\begin{figure*}
+\inclGrid{kappa_map_interpol}
+\caption{Mass distribution $\kappa$ for which the results
+  Figures~\ref{fig:arriv}--\ref{fig:synth} were derived.
+\label{fig:kappa}}
+\end{figure*}
+
+\begin{figure*}
+\inclGrid{kappa_encl}
+\caption{Cumulative circular-averages of the mass maps from
+  \ref{fig:kappa}, with uncertainties.  More precisely, we show the
+  enclosed mass within a given projected radius, expressed as the mean
+  $\kappa$ with a given number of arcsec from the centre of the
+  lensing galaxy.  The orange bands refer to the full ensemble of mass
+  maps for the models, while the red curves show the ensemble
+  averages.  The dashed vertical line indicates the notional Einstein
+  radius, or where the mean enclosed $\kappa$ is unity.  The short
+  vertical arrows marks the positions of the images (maxima, saddle
+  points and minima).
+  \label{fig:encl}}
 \end{figure*}
 
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{img/mlens_vs_mstel_one/mstel_vs_mtot_one}
 \caption{Total mass in the model against the estimated stellar mass,
-  alongside the values for the whole sample.  The lower-right shaded
-  region is unphysical according to the stellar-population models,
-  because it gives $M<\Mstel$. The upper-left shaded region is
+  alongside the values for the whole sample.  (The labelled orange
+  bars are the systems shown in detail in
+  Figures~\ref{fig:splinput}--\ref{fig:encl}.)  The lower-right
+  shaded region is unphysical according to the stellar-population
+  models, because it gives $M<\Mstel$. The upper-left shaded region is
   unphysical according to abundance matching, because it gives
   $M>\Mhalo$.  That is to say, the unshaded region is
   $0<\haloindex<1$. \label{fig:stelmass}}
