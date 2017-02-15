@@ -1,31 +1,57 @@
 \section{Mass models}\label{sec:massmodels}
 
-A SpaghettiLens model consists of a statistical ensemble of free-form
-maps of the sky-projected mass distribution responsible for lensing.
-  Photometric lens
-redshifts are used; source redshifts are set to $z=2$ unless an
-unambiguous photometric redshift is available.  The models can,
-however, be trivially rescaled to use better redshift values, as and
-when they become available.
+Once a spaghetti diagram has been drawn on a web browser, it is
+forwarded to a server-side numerical framework, which searches for
+mass maps consistent with the given image locations, parities and time
+ordering.  The mass maps are made up of mass tiles and are free-form,
+but are required to be concentrated around the identified lens centre
+\citep[see][for the precise formulation of the search
+  problem.]{2014MNRAS.445.2181C} Assuming such mass distributions can
+be found (in practise, usually the case) a statistical ensemble of
+two-dimensional mass maps is returned.  This ensemble, along with
+derived quantities and uncertainties, makes up one SpaghettiLens
+model.
 
-A spaghetti diagram is read by a server-side numerical engine
-\citep[GLASS, developed by][]{2014MNRAS.445.2181C} which then returns
-a statistical ensemble of mass maps.  The mass maps are made up of
-mass tiles and are free-form, except that they are required to be
-concentrated around the identified lens centre.  They are also
-required to reproduce the given image locations, parities and time
-ordering exactly.  Graphical representations of the mass map and
-arrival-time surface are returned to the user for review.  The user
-can post these results on a forum, or discard them and try again.
-Volunteers can start the modelling process afresh, or they can take an
-existing model from the forum and modify its input spaghetti diagram
-or its accompanying options, and thus obtain a revised model.
+The mass distribution will naturally depend on the lens and source
+redshifts, which are unknown when a lens candidate is first
+identified.  But this is not a problem, because a model can be
+trivially rescaled to use better redshift values, as and when they
+become available.  This paper uses pipeline photometric redshifts for
+the candidate lensing galaxies.  Source redshifts are set to $z=2$
+unless an unambiguous photometric redshift is available.
+
+Figure~\ref{fig:kappa}
+
+Figure~\ref{fig:encl} shows the circularly-averaged $\kappa$ of the
+model ensemble, with increasing radius (in arcsec).  The effective
+Einstein radius \ER is also shown.
+
+Figure~\ref{fig:arriv}
+
+Figure~\ref{fig:synth}
+New method, see also Figure~\figref{synthimg} in
+Appendix~\ref{subsec:sourcefit}.
+
+\endinput
+
+
+
+  The ensemble average
+can, however, be a useful representative of the whole ensemble.  The
+user interface of SpaghettiLens returns graphical representations of
+the ensemble-average mass map and some derived quantities to the
+modeller for review.  The modeller can post these results on a forum,
+or discard them and try again.  Other volunteers can start the
+modelling process afresh, or they can take an existing model from the
+forum and modify its input spaghetti diagram or its accompanying
+options, and thus obtain a revised model.
+
+
 
 Alongside is a synthetic image produced by modelling.  In it, the
 fitted lensed images are shown in colour, while the lensing galaxy and
 extraneous objects have been reduced to grayscale.
-(Figure~\figref{synthimg} in Appendix~\ref{subsec:sourcefit} shows a
-synthetic image from another model of the same system.) These two
+) These two
 panels are qualitative and display no units, and moreover, the mutual
 alignment of the two panels is only approximate.
 
@@ -45,12 +71,7 @@ failed.
   qualitative: both panels are spatially registered and centred on the
   density-peak of the lens, but no scales have been included.
 \item The base row supplies spatial and mass scales.  The left panel
-  shows the circularly-averaged $\kappa$ of the model ensemble, with
-  increasing radius (in arcsec).  The four short vertical lines
-  correspond to the minima and saddle points marked in the upper-left
-  panel.  The effective Einstein radius \ER is also shown.  As the radius
-  scale indicates SW05 is comparatively large lens on the
-  sky.
+
 \item 
 \end{enumerate}
 
