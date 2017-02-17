@@ -130,10 +130,9 @@
   {http://adsabs.harvard.edu/abs/2010ApJ...710..903M} {710, 903}
 
 \bibitem[\protect\citeauthoryear{{Paraficz} et~al.,}{{Paraficz}
-  et~al.}{2016}]{2016arXiv160504309P}
-{Paraficz} D.,  et~al., 2016, preprint, \href
-  {http://adsabs.harvard.edu/abs/2016arXiv160504309P} {} (\mn@eprint {arXiv}
-  {1605.04309})
+  et~al.}{2016}]{2016A&A...592A..75P}
+{Paraficz} D.,  et~al., 2016, \mn@doi [\aap] {10.1051/0004-6361/201527971},
+  \href {http://adsabs.harvard.edu/abs/2016A\&A...592A..75P} {592, A75}
 
 \bibitem[\protect\citeauthoryear{{Saha} \& {Williams}}{{Saha} \&
   {Williams}}{2003}]{2003AJ....125.2769S}

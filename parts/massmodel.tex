@@ -48,12 +48,26 @@ image is consistent with the data would need to allow for PSF
 dependence and unmodelled substructure ---otherwise all models would
 be summarily rejected--- and it is not clear how to do this.
 
-Figure~\ref{fig:kappa}
+Figure~\ref{fig:kappa} shows projected mass maps of the example
+systems.  This figure shows the tiled character of the mass map.  (The
+mass maps displayed during modelling interpolated over the tiles.)
+The modelling numerics uses an analytical integral over square tiles,
+so the lens equation is always continuous and the arrival time is
+smooth.  We also remark that this figure refers to the ensemble
+average of each model, and the spread in the ensemble is not shown
+here; the arrival-time surfaces and synthetic images in the two
+previous figures also derive from the ensemble-average mass
+distribution.  Figure~\ref{fig:encl} shows the enclosed-mass profiles,
+expressed as the average convergence $\kappa$ within circles of given
+projected radius.  This time, uncertainties are included.
+Appendix~\ref{subsec:hires} describes improvements made since our
+earlier work \citep{2015MNRAS.447.2170K}, to allow for steeper
+profiles in the inner regions.  The enclosed mass is typically best
+constrained at the notional Einstein radius, becoming more uncertain
+at larger and smaller radii.
 
-Figure~\ref{fig:encl}. Appendix~\ref{subsec:hires} describes
-improvements made since our earlier work \citep{2015MNRAS.447.2170K}
-
-
+The mass maps and mass profiles are the basis of a further diagnostic:
+are the mass distributions plausible?
 
 \endinput
 
@@ -68,8 +82,6 @@ or discard them and try again.  Other volunteers can start the
 modelling process afresh, or they can take an existing model from the
 forum and modify its input spaghetti diagram or its accompanying
 options, and thus obtain a revised model.
-
-
 
 Alongside is a synthetic image produced by modelling.  In it, the
 fitted lensed images are shown in colour, while the lensing galaxy and
