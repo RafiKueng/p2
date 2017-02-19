@@ -7,10 +7,10 @@ ordering.  The mass maps are made up of mass tiles and are free-form,
 but are required to be concentrated around the identified lens centre
 \citep[see][for the precise formulation of the search
   problem.]{2014MNRAS.445.2181C} Assuming such mass distributions can
-be found (in practise, usually the case) a statistical ensemble of
-two-dimensional mass maps is returned.  This ensemble, along with
-derived quantities and uncertainties, makes up one SpaghettiLens
-model.
+be found (which in practise is usually the case) a statistical
+ensemble of two-dimensional mass maps is returned.  This ensemble,
+along with derived quantities and uncertainties, makes up one
+SpaghettiLens model.
 
 The mass will naturally depend on the lens and source redshifts, which
 are unknown when a lens candidate is first identified.  But this is
@@ -49,15 +49,24 @@ dependence and unmodelled substructure ---otherwise all models would
 be summarily rejected--- and it is not clear how to do this.
 
 Figure~\ref{fig:kappa} shows projected mass maps of the example
-systems.  This figure shows the tiled character of the mass map.  (The
-mass maps displayed during modelling interpolated over the tiles.)
-The modelling numerics uses an analytical integral over square tiles,
-so the lens equation is always continuous and the arrival time is
-smooth.  We also remark that this figure refers to the ensemble
-average of each model, and the spread in the ensemble is not shown
-here; the arrival-time surfaces and synthetic images in the two
-previous figures also derive from the ensemble-average mass
-distribution.  Figure~\ref{fig:encl} shows the enclosed-mass profiles,
+systems.  Actually, this figure only shows the ensemble-average mass
+maps, and not the variation within the ensemble, from which
+uncertainties can be inferred.  (The same applies to the arrival-time
+surfaces and synthetic images in the two previous figures.
+Uncertainties will be shown in a concise form later, with
+Figure~\ref{fig:encl}.)  Figure~\ref{fig:kappa} makes evident the
+tiled nature of the mass model.  The tiles can be smoothed over by
+interpolating, and this was actually done in the mass maps shown
+online during the modelling process.  It is interesting, however, to
+see the tiling artifacts, if only as a reminder that the substructure
+in the mass distribution are very uncertain, even if some integrated
+quantities are very well constrained.  How the free-form mass maps
+relate to parameterised lens models is discussed in
+Appendix~\ref{subsec:parameter}.  Note that the arrival-time surface
+does not have discontinuous jumps, because the modelling numerics uses
+an analytical integral over square tiles; likewise the lens equation.
+
+Figure~\ref{fig:encl} shows the enclosed-mass profiles,
 expressed as the average convergence $\kappa$ within circles of given
 projected radius.  This time, uncertainties are included.
 Appendix~\ref{subsec:hires} describes improvements made since our
