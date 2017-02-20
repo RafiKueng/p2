@@ -52,12 +52,12 @@ order=-1
 
 [item:paper2.tex]
 archive=true
-column=18
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=141
+line=176
 mode=LaTeX
-open=true
+open=false
 order=0
 
 [view-settings,view=0,item:bib/bibli.bib]
@@ -67,7 +67,7 @@ JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:paper2.tex]
-CursorColumn=18
-CursorLine=141
+CursorColumn=0
+CursorLine=176
 JumpList=
 ViMarks=.,94,48,[,94,48,],94,48
