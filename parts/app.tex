@@ -52,9 +52,12 @@ near the centre, was suggested as a possible cure.
 Figure~\figref{subsampling} shows an experiment with smaller mass
 tiles in the inner region.  Replacing the very central mass tile with
 9 smaller tiles allows for steeper central profiles.  Doing the same
-for the 25 innermost mass tiles solves the problem completely, but
-increases the number of mass tiles by 40\% and significantly increases
-the computational time.
+for the 25 innermost mass tiles allows for still steeper central
+profiles, eliminating the systematic shallowness.  This is, however,
+still not a completely satisfactory solution, because (a)~it increases
+the number of mass tiles by 40\% and significantly increases the
+computational time, and (b)~the square boundary between area with
+different tile sizes is rather undesirable.
 % 689 / 489 = 1.40899; in practice, runtime is more like x4 - x5!
 % runtimes from logfiles: 87/22, 86/21, 85/16
 The main modelling work in this paper was, however, done before the
