@@ -22,7 +22,7 @@ With no unambiguous dark-matter particle detections so far, dark
 matter has studied only through its indirect consequences on galactic
 and larger scales.  In most work, dark matter is taken to be a
 collisionless non-relativistic fluid (cold dark matter or CDM); in
-recent years, the ``millenium'' simulation by \cite{2005Natur.435..629S} has been
+recent years, the millenium simulation by \cite{2005Natur.435..629S} has been
 particularly influential in studying the formation of CDM structures.
 Other scenarios have also been considered, such as a cold condensing
 boson fluid \citep{2016ApJ...818...89S}.  There is a general
@@ -34,7 +34,7 @@ debate about the details, of which \cite{2012RAA....12..917S} provide
 a nice summary.
 
 Strong-lensing galaxies are a useful source of information on the
-mutual dynamics and dark matter and gas in galaxies.  The topic has
+mutual dynamics of dark matter and gas in galaxies.  The topic has
 been explored in several studies
 \citep{2009ApJ...703L..51K,2011ApJ...740...97L,2012MNRAS.424..104L,
   2016MNRAS.459.3677L,2016MNRAS.456..870B} but it is desirable to
@@ -46,7 +46,7 @@ Recent searches through the CFHTLS \citep{2012SPIE.8448E..0MC} using
 arc-finders
 \citep{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G} by
 machine learning \citep{2016A&A...592A..75P} and by visual inspection
-by a citizen-science volunteers
+by citizen-science volunteers
 \citep[Space~Warps][]{2016MNRAS.455.1191M} have between them
 discovered an average of four lenses per square degree.  So one can be
 optimistic about finding many thousands of lenses in the next
@@ -60,10 +60,20 @@ community, who have already participated in lens discovery through
 Space~Warps, as well as several other projects involving astronomical
 data.
 
-In this paper, we present SpaghettiLens models of lens-candidates
-discovered through Space~Warps.  It's purpose is twofold: First, to see if
-plausible mass models can produce the overall configuration.  Second, to
-check their interpretation as lensing galaxies.
+In this paper, we present SpaghettiLens models of lens-candidates discovered through Space~Warps.
+It's purpose is twofold.
+First to check if the created models look like plausible lenses and whether the shortcomings diagnosed in \cite{2015MNRAS.447.2170K} were fixed.
+Second to introduce diagnostic criteria that help filter out the most probable lens candidates and the possibly most rewarding for future follow up observations.
+While introducing these diagnostic criteria, we also gain some preliminary estimations of some properties of the lens-candidates as galaxies.
+
+
+The analysis presented in this paper is somewhat limited by the fact that no source redshifts are available\footnote{Source redshifts were set to z=2 for all systems.} yet and that the redshifts of the lenses have large error bars.
+Nevertheless it is interesting to see what trends we can observe with the already available data.
+One should also keep in mind that the existing pipeline allows to replace those values with more precise ones as soon as they are available and rerun this analysis without any further work involved.
+
+% It's purpose is twofold: First, to see if
+% plausible mass models can produce the overall configuration.  Second, to
+% check their interpretation as lensing galaxies.
 
 Each lens candidate is modelled in a collaborative refinement
 process, where anyone interested can create a new model or modify an
