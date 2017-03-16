@@ -1,71 +1,54 @@
 \section{Introduction}
 
-Light deflection at the rim of the Sun due to its gravitational field is famously $1.75''$.  The
-deflection angle can also be expressed in terms of the escape velocity
-$2v_{\rm esc}^2/c^2$, with $v_{\rm esc}$ at the solar surface being
-$\simeq620\rm\,km/s$.  The Galactic escape velocity at the Sun's
-location is similar: $\approx500\rm\,km/s$, typical of massive
-galaxies.  Thus, the outer regions of massive galaxies have lensing
-deflections comparable to that at the rim of the Sun.  Yet these
-quantitatively similar deflections have qualitatively different
-consequences.  Light deflection by the Sun must be accounted for in
-modern astrometry \citep[see e.g.,][]{2015CQGra..32p5008C} but is not
-itself a physics probe in the way it was a century ago.  With distant
-galaxies, however, light bending by $\sim1''$ introduces two new
-phenomena.  First, for galaxies distant enough that their apparent
-size is comparable to the bending angle, light deflection can cause
-multiple images of background sources, or strong lensing.  Second, the
-gravitational field is dominated by dark matter, hence strong lensing
-becomes a probe of dark matter in galaxies.
+By coincidence, the typical escape velocity of massive galaxies is
+such that $v_{\rm esc}^2/c^2$ is comparable to the apparent sizes of a
+galaxies at cosmological distances.  This coincidence is fortunate,
+because it makes the lensing deflection angle (which is $2v_{\rm
+  esc}^2/c^2$) of distant galaxies comparable to their size on the
+sky, and as a result, strong lensing by galaxies tends to produce
+images that probe the dark halos of those galaxies.  This is
+important, because while there is a general consensus that basic
+mechanism of galaxy formation involve gravitational collapse,
+fragmentation, and mergers of dark-matter clumps, into which gas fell,
+cooling through radiative processes to form dense clouds and
+eventually stars, there is much debate about the details \citep[for a
+  summary, see][]{2012RAA....12..917S}.  In particular, the nature of
+dark matter remains mysterious: most researchers take it to be a
+collisionless non-relativistic fluid (cold dark matter or CDM) readily
+studied by simulations \citep[for example, the millenium simulation
+  by][which has been particularly influential]{2005Natur.435..629S}.
+But other scenarios have also been considered, such as a cold
+condensing boson fluid \citep{2016ApJ...818...89S}, or dark matter
+particles with internal degrees of freedom
+\citep{2010MNRAS.405...77S}, or not matter at all but a modification
+of gravity \citep{2016PhRvL.117t1101M}.
 
-With no unambiguous dark-matter particle detections so far, dark
-matter has been studied only through its indirect consequences on galactic
-and larger scales.  In most work, dark matter is taken to be a
-collisionless non-relativistic fluid (cold dark matter or CDM); in
-recent years, the millennium simulation by \cite{2005Natur.435..629S} has been
-particularly influential in studying the formation of CDM structures.
-Other scenarios have also been considered, such as a cold condensing
-boson fluid \citep{2016ApJ...818...89S} 
-or even dark matter particles with internal degrees of freedom 
-\citep{2011MNRAS..405...77}. %(Saxton & Ferreras 2010 MNRAS 405, 77)
-There is a general
-consensus, however, that 
-basic mechanism of galaxy formation involve
-gravitational collapse, fragmentation, and mergers of dark-matter
-clumps, into which gas fell, cooling through radiative processes to
-form dense clouds and eventually stars.  There is, however, much
-debate about the details, of which \cite{2012RAA....12..917S} provide
-a summary.
-
-Strong gravitational lensing over galaxy scales provides
-a useful source of information on the
-mutual dynamics of dark matter and gas in galaxies.  The topic has
-been explored in numerous studies
+All this motivates using galaxy lenses to study the mutual dynamics of
+dark matter and gas in galaxies.  Several studies in recent years have
+done so
 \citep{2009ApJ...703L..51K,2011ApJ...740...97L,2012MNRAS.424..104L,
   2016MNRAS.459.3677L,2016MNRAS.456..870B} but it is desirable to
 enlarge the samples from tens of lensing galaxies to thousands.  Doing
-so requires both finding more lenses and also modelling their
-masses.
-
+so requires both finding more lenses and also modelling their masses.
 Recent searches through the CFHTLS \citep{2012SPIE.8448E..0MC} using
 arc-finders
 \citep{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G} by
 machine learning \citep{2016A&A...592A..75P} and by visual inspection
-by citizen-science volunteers
-\citep[Space~Warps][]{2016MNRAS.455.1191M} have, between them,
-discovered an average of four lenses per square degree.  So one can be
-optimistic about finding many thousands of lenses in the next
-generation of wide-field surveys.  The expected flood of new lens
-discoveries
-with surveys such as Euclid or WFIRST,
-will need a similarly huge modelling effort to reconstruct
-their mass distributions.  To prepare for the challenge of
-massive-sample lens modelling, \cite{2015MNRAS.447.2170K} developed a
-new modelling strategy, implemented as the SpaghettiLens system.  The
-idea is to collaborate with experienced members of the citizen-science
-community, who have already participated in lens discovery through
-Space~Warps, as well as several other projects involving astronomical
-data.
+by citizen-science volunteers in Space~Warps
+\citep{2016MNRAS.455.1191M} have, between them, discovered an average
+of four lenses per square degree.  So one can be optimistic about
+finding many thousands of lenses in the next generation of wide-field
+surveys, from the LSST in optical and the SKA in radio on the ground,
+and Euclid and WFIRST in orbit.  The expected flood of new lens
+discoveries will need a similarly huge modelling effort to reconstruct
+their mass distributions.
+
+To prepare for the challenge of massive-sample lens modelling,
+\cite{2015MNRAS.447.2170K} developed a new modelling strategy,
+implemented as the SpaghettiLens system.  The idea is to collaborate
+with experienced members of the citizen-science community, who have
+already participated in lens discovery through Space~Warps, as well as
+several other projects involving astronomical data.
 
 In this paper, we present SpaghettiLens models of lens-candidates discovered through Space~Warps.
 Its purpose is twofold.
