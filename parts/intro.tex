@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Light deflection at the rim of the Sun is famously $1.75''$.  The
+Light deflection at the rim of the Sun due to its gravitational field is famously $1.75''$.  The
 deflection angle can also be expressed in terms of the escape velocity
 $2v_{\rm esc}^2/c^2$, with $v_{\rm esc}$ at the solar surface being
 $\simeq620\rm\,km/s$.  The Galactic escape velocity at the Sun's
@@ -19,27 +19,32 @@ gravitational field is dominated by dark matter, hence strong lensing
 becomes a probe of dark matter in galaxies.
 
 With no unambiguous dark-matter particle detections so far, dark
-matter has studied only through its indirect consequences on galactic
+matter has been studied only through its indirect consequences on galactic
 and larger scales.  In most work, dark matter is taken to be a
 collisionless non-relativistic fluid (cold dark matter or CDM); in
-recent years, the millenium simulation by \cite{2005Natur.435..629S} has been
+recent years, the millennium simulation by \cite{2005Natur.435..629S} has been
 particularly influential in studying the formation of CDM structures.
 Other scenarios have also been considered, such as a cold condensing
-boson fluid \citep{2016ApJ...818...89S}.  There is a general
-consensus, however, that the origins of galaxy lie in the
+boson fluid \citep{2016ApJ...818...89S} 
+or even dark matter particles with internal degrees of freedom 
+\citep{2011MNRAS..405...77}. %(Saxton & Ferreras 2010 MNRAS 405, 77)
+There is a general
+consensus, however, that 
+basic mechanism of galaxy formation involve
 gravitational collapse, fragmentation, and mergers of dark-matter
-clumps, into which fell gas, cooling through radiative processes to
+clumps, into which gas fell, cooling through radiative processes to
 form dense clouds and eventually stars.  There is, however, much
 debate about the details, of which \cite{2012RAA....12..917S} provide
-a nice summary.
+a summary.
 
-Strong-lensing galaxies are a useful source of information on the
+Strong gravitational lensing over galaxy scales provides
+a useful source of information on the
 mutual dynamics of dark matter and gas in galaxies.  The topic has
-been explored in several studies
+been explored in numerous studies
 \citep{2009ApJ...703L..51K,2011ApJ...740...97L,2012MNRAS.424..104L,
   2016MNRAS.459.3677L,2016MNRAS.456..870B} but it is desirable to
 enlarge the samples from tens of lensing galaxies to thousands.  Doing
-so requires finding more lenses, of course, but also modelling their
+so requires both finding more lenses and also modelling their
 masses.
 
 Recent searches through the CFHTLS \citep{2012SPIE.8448E..0MC} using
@@ -47,11 +52,13 @@ arc-finders
 \citep{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G} by
 machine learning \citep{2016A&A...592A..75P} and by visual inspection
 by citizen-science volunteers
-\citep[Space~Warps][]{2016MNRAS.455.1191M} have between them
+\citep[Space~Warps][]{2016MNRAS.455.1191M} have, between them,
 discovered an average of four lenses per square degree.  So one can be
 optimistic about finding many thousands of lenses in the next
 generation of wide-field surveys.  The expected flood of new lens
-discoveries will need a similarly huge modelling effort to reconstruct
+discoveries
+with surveys such as Euclid or WFIRST,
+will need a similarly huge modelling effort to reconstruct
 their mass distributions.  To prepare for the challenge of
 massive-sample lens modelling, \cite{2015MNRAS.447.2170K} developed a
 new modelling strategy, implemented as the SpaghettiLens system.  The
@@ -61,13 +68,15 @@ Space~Warps, as well as several other projects involving astronomical
 data.
 
 In this paper, we present SpaghettiLens models of lens-candidates discovered through Space~Warps.
-It's purpose is twofold.
+Its purpose is twofold.
 First to check if the created models look like plausible lenses and whether the shortcomings diagnosed in \cite{2015MNRAS.447.2170K} were fixed.
 Second to introduce diagnostic criteria that help filter out the most probable lens candidates and the possibly most rewarding for future follow up observations.
 While introducing these diagnostic criteria, we also gain some preliminary estimations of some properties of the lens-candidates as galaxies.
 
 
-The analysis presented in this paper is somewhat limited by the fact that no source redshifts are available\footnote{Source redshifts were set to z=2 for all systems.} yet and that the redshifts of the lenses have large error bars.
+The analysis presented in this paper is somewhat limited by the fact that no source redshifts are available yet and that the redshifts of the lenses have large error bars.
+Source redshifts were set to z=2 for all systems. %TODO justify z=2.
+
 Nevertheless it is interesting to see what trends we can observe with the already available data.
 One should also keep in mind that the existing pipeline allows to replace those values with more precise ones as soon as they are available and rerun this analysis without any further work involved.
 
@@ -100,7 +109,7 @@ candidate, as follows.
 \begin{itemize}
 \item Whether the images are unblended.  Distinct unblended images are
   an advantage in modelling, but not essential.
-\item Whether all images are discernable.  The topography of an
+\item Whether all images are discernible.  The topography of an
   arrival-time surface, as encoded by a spaghetti diagram, may require
   more images than are visible, in which case the modeller has to
   insert conjectural image positions.
@@ -118,7 +127,7 @@ candidate, as follows.
   Figures~\ref{fig:arriv} and \ref{fig:synth} and \ref{fig:encl}.
 \end{itemize}
 \item Third, whether the implied lensing mass is plausible, given the
-  star-light in the lensing galaxy.  Section~\ref{sec:stellar-mass}
+  photometric data of the lensing galaxy.  Section~\ref{sec:stellar-mass}
   explains how we compare the lensing mass with the mass in stars in
   the lensing galaxy.  We estimate the stellar mass by comparing
   galaxy magnitudes from the CFHTLS pipeline with the well-known
@@ -127,8 +136,8 @@ candidate, as follows.
   abundance-matching prescription of \cite{2010ApJ...710..903M}.
   Naturally, the lensing mass must be more than the stellar mass but
   no more than the total halo mass.  We then introduce what we call a
-  halo index $\haloindex$ which gives an idea of how the lensing mass
-  compares with these two bounds.  Figure~\ref{fig:stelmass}.
+  halo index ($\haloindex$) which gives an idea of how the lensing mass
+  compares with these two contraints.  Figure~\ref{fig:stelmass}.
 \end{itemize}
 
 Section~\ref{sec:summary} summarises and tabulates the diagnostics in
@@ -137,7 +146,8 @@ Table~\ref{tab:models}.
 The online supplement gives results for all the modelled systems generated
 for all the lensing candidates.
 
-Appendices devoted to various technical issues relating to modelling.
+There is an appendix section
+devoted to various technical issues relating to modelling.
 \cite{2015MNRAS.447.2170K} tested the system on simulated lenses and
 identified some areas for improvement.
 In \S~\ref{subsec:sourcefit} we introduce fitting of the brightness
