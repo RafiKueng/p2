@@ -2,4 +2,4 @@
 
 BASECOMMIT=81e9900496
 
-./git-latexdiff --bibtex $BASECOMMIT
+./git-latexdiff --bibtex --main paper2.tex --output paper2_diff.pdf $BASECOMMIT
