@@ -1,5 +1,5 @@
 #!/bin/bash
 
-BASECOMMIT=83f19d0f675e
+BASECOMMIT=81e9900496
 
 ./git-latexdiff --bibtex $BASECOMMIT

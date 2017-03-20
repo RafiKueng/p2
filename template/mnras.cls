@@ -36,7 +36,7 @@
 \def\@releasedate{2015/05/22}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mnras}[\@releasedate\ v\@version\ LaTeX2e MNRAS document class]
+\ProvidesClass{template/mnras}[\@releasedate\ v\@version\ LaTeX2e MNRAS document class]
 
 \typeout{MNRAS document style v\@version, released \@releasedate}
 
