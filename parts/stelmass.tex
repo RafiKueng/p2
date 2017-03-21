@@ -5,7 +5,7 @@ the photometric data with M/L estimates from population synthesis
 models.  In principle, a detailed analysis of the spectral energy
 distribution is needed to derive accurate stellar masses
 \citep[e.g.][]{2009ApJS..185..253G,2011MNRAS.418.1587T}.  However,
-estimates to within 0.3\,dex in $\log($M$_s$/M$_\odot)$ can be derived
+estimates to within 0.3\,dex in $\log(\Mstel/\Msun)$ can be derived
 with a single colour, preferably tracing a rest-frame colour similar
 to $U-V$ \citep[see Fig.~1 of][]{2008MNRAS.383..857F}. 
 
@@ -16,11 +16,9 @@ the variation of this relation is at most 1\,dex.  A further possible
 systematic error is contamination of the light of the lensing galaxy
 by the lensed galaxy.  Reducing or eliminating the latter would
 require detailed fitting of light distributions for each candidate
-%TODO cite Leier et al 2011 \citep{}
-,
-which we have not yet attempted.  These caveats notwithstanding, it is
-still interesting to compare the derived stellar mass with the lensing
-mass.
+\citep[see][]{2011ApJ...740...97L}, which we have not yet attempted.  These 
+caveats notwithstanding, it is still interesting to compare the derived
+stellar mass with the lensing mass.
 
 We make use of the \citet{2003MNRAS.344.1000B} models to derive two
 functional forms of the stellar mass with respect to SDSS-$i$ band
@@ -35,7 +33,7 @@ Figure~\ref{fig:stelmass}
 shows a comparison of stellar and total masses.  The comparatively
 large uncertainty in the stellar mass will be improved in future work
 by using available optical and NIR magnitudes to derive more accurate
-constrains on the stellar populations.
+constraints on the stellar populations.
 
 In addition, we also derive halo masses for the lenses by use of the
 standard abundance matching technique, whereby a comparison of the
@@ -50,9 +48,9 @@ derivation of dark matter halo properties in lensing galaxies. We
 follow the prescription of \citet{2010ApJ...710..903M}, namely:
 \begin{equation}
 \begin{aligned}
-\frac{\Mstel}{\Mhalo} &= \frac{2C_0}{(\Mhalo/M_1)^{-\beta} +
-                                     (\Mhalo/M_1)^\gamma} \\
-C_0 &= 0.02820, \quad M_1 = 10^{11.884} M_\odot \\
+\frac{\Mstel}{\Mhalo} &= \frac{2C_0}{(\Mhalo/\Mone)^{-\beta} +
+                                     (\Mhalo/\Mone)^\gamma} \\
+C_0 &= 0.02820, \quad \Mone = 10^{11.884} \Msun \\
 \beta &= 1.057, \quad \gamma = 0.556.
 \end{aligned}
 \end{equation}
