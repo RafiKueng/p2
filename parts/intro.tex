@@ -16,11 +16,11 @@ eventually stars, there is much debate about the details \citep[for a
 dark matter remains mysterious: most researchers take it to be a
 collisionless non-relativistic fluid (cold dark matter or CDM) readily
 studied by simulations \citep[for example, the influential millenium
-  simulation by][]{2005Natur.435..629S}.  But other scenarios have
-also been considered, such as a cold condensing boson fluid
-\citep{2016ApJ...818...89S}, or dark matter particles with internal
-degrees of freedom \citep{2010MNRAS.405...77S}, or not matter at all
-but a modification of gravity \citep{2016PhRvL.117t1101M}.
+  simulation by][]{2005Natur.435..629S}.  But other scenarios, where
+dark matter has exotic dynamical properties
+\citep{2010MNRAS.405...77S,2016ApJ...818...89S}, or is not really
+matter at all but a modification of gravity
+\citep{2016PhRvL.117t1101M}, have also been considered.
 
 All this motivates using galaxy lenses to study the mutual dynamics of
 dark matter, gas and stars in galaxies.  Several studies in recent
@@ -35,8 +35,7 @@ arc-finders
 by machine learning
 \citep[e.g.,][]{2016A&A...592A..75P,2017arXiv170302642L} and by visual
 inspection by citizen-science volunteers in Space~Warps
-\citep{2016MNRAS.455.1191M,2016MNRAS.455.1171M} have, between them,
-discovered an average
+\citep{2016MNRAS.455.1191M} have, between them, discovered an average
 of four lenses per square degree, so one can be optimistic about
 finding many thousands of lenses in the next generation of wide-field
 surveys, from the LSST in optical and the SKA in radio on the ground,
@@ -48,32 +47,29 @@ for the challenge of massive-sample lens modelling,
 \cite{2015MNRAS.447.2170K} developed a new modelling strategy,
 implemented as the SpaghettiLens system.  The idea is to collaborate
 with experienced members of the citizen-science community, who have
-already participated in lens discovery through {\SW}, as well as
-several other projects involving astronomical data.  The system was
-tested on a sample of simulated lenses\footnote{
-  Those simulated lenses were generated as part of the training set used
-  in {\SW} (see \cite{2016MNRAS.455.1191M,2016MNRAS.455.1171M} for further
-  information)}
-from \SW.
+already participated in lens discovery through \SW, as well as several
+other projects involving astronomical data.  The system was tested on
+a sample of simulated lenses, which were part of the training and
+testing set in \SW.
 
 This paper continues that study by applying SpaghettiLens to
-lens-candidates
-discovered through Space~Warps.  We present results from modelling of
-56 of the 59 lens candidates reported by \cite{2016MNRAS.455.1191M}.
-Each lens candidate was modelled in a collaborative refinement
-process, where anyone interested can create a new model or modify an
-existing model to try and make it better.\footnote{This is in contrast
-  to the main Space~Warps project for discovering lenses, where
-  volunteers in a crowd of $\gtrsim10^4$ make independent
-  contributions.  Each person is presented with a random selection of
-  survey-patches and invited to (in effect) vote on each.  The system
-  estimates each volunteer's skill level according to test-patches
-  interspersed with the real data, and weights their votes accordingly
-  \citep{2016MNRAS.455.1171M}.  There is an active forum for
-  volunteers, but since everyone is seeing different data samples with
-  minimal overlap, the forum has little if any influence on votes.}
-The result model represents a consensus among contributors, as to the
-best that could be achieved with the available data and software.
+lens-candidates discovered through Space~Warps.  We present results
+from modelling of 56 of the 59 lens candidates reported by
+\cite{2016MNRAS.455.1191M}.  Each lens candidate was modelled in a
+collaborative refinement process, where anyone interested can create a
+new model or modify an existing model to try and make it
+better.\footnote{This is in contrast to the main Space~Warps project
+  for discovering lenses, where volunteers in a crowd of $\gtrsim10^4$
+  make independent contributions.  Each person is presented with a
+  random selection of survey-patches and invited to (in effect) vote
+  on each.  The system estimates each volunteer's skill level
+  according to test-patches interspersed with the real data, and
+  weights their votes accordingly \citep{2016MNRAS.455.1171M}.  There
+  is an active forum for volunteers, but since everyone is seeing
+  different data samples with minimal overlap, the forum has little if
+  any influence on votes.}  The result model represents a consensus
+among contributors, as to the best that could be achieved with the
+available data and software.
 
 We characterise each model with seven diagnostics, grouped into three 
 categories, whose purpose is to help identify which systems are most probably 
