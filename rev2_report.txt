@@ -1,0 +1,146 @@
+ 
+
+Scientific Editor's Comments:
+
+The first referee recommended rejection, for the reasons given in the report. 
+The second is more lenient, but there are still major concerns over how quickly 
+a system might be modelled, the mass models used, and the lack of clear new 
+scientific results. Please address these points in any revision.
+
+
+Reviewer's Comments:
+
+Reviewer: 2
+
+Comments to the Author
+With the large numbers of gravitational lenses being discovered by current and 
+future surveys, new strategies for finding and modeling these systems are needed 
+to maximize the scientific output from these discoveries.  This paper builds on 
+the unique SpaceWarps project and SpaghettiLens code to further develop a tool 
+for citizen scientists to contribute to lens modeling efforts.  The importance 
+of this work is clear and timely, and this paper warrants publication once some 
+issues are addressed.
+
+My primary comments on this paper are that it is too light on details in some 
+aspects, and often lacks a coherent flow and focus.  Further elaboration on some 
+of the data and methods used will enhance the clarity and impact of this study. 
+and the paper could be better-organized into its various sections and 
+subsections.  My comments on the paper are numbered and listed below, roughly in 
+the order which they occur in the paper.
+
+—
+
+Abstract: Typo: "Space Warpscitizen-science"
+
+Sec. 1, 2nd paragraph: Arc-finders references should also include a recent 
+arc-finder developed by Sonnenfeld et al. (2017).
+
+Sec. 1, 4th paragraph: Typo: "The result model" -> "The resulting model"
+
+Sec. 1: The first time you mention "lensing mass", be sure to define it.  It is 
+not clear whether it is referring to the mass within the Einstein radius 
+determined from lens modeling, or whether it is a total mass that extrapolates 
+from the lens model results.  This is a common confusion I had throughout the 
+paper.
+
+Sec. 1: When you start talking about the diagnostics, it seems that you have 
+moved beyond the introduction and are now into the details of your work.  This 
+would be better placed in a separate section, leaving Sec. 1 to background and 
+motivation.
+
+Sec. 1, 6th paragraph: This paragraph concludes with, "it is interesting to see 
+what trends we can observe with the already-available data."  What are the 
+trends that are observed?  While the authors concede that interpretation of the 
+results are tentative, there is little follow-up discussion about what you 
+learned about the sample or the diagnostics themselves by tabulating these.  How 
+were these diagnostics decided upon and is it meant to be an exhaustive list, or 
+do the authors anticipate developing more diagnostics in the future?  Are some 
+diagnostics more useful than others?  This issue also applies more broadly to 
+Sections 2 and 3 when the authors describe the diagnostics in more detail.
+
+Sec. 2: I think a short section or subsection that summarizes the details of the 
+imaging data would be helpful, e.g. depth, bands, area of the survey, etc.  
+Also, some details on the sample itself would help to better frame things: are 
+the lens galaxies uniformly early-type galaxies?  What is the redshift/mass 
+range and their uncertainties?  While some of these details are presented in 
+Table 1 and in previous papers, I feel that a brief summary in the text would 
+make the entire paper more clear.
+
+Sec. 2, 5th paragraph: How is the size of the cutout shown to the viewer 
+determined?  Since they are not uniform, doesn't this create a bias toward 
+finding nearby galaxies for lenses where a larger cutout is shown?
+
+Sec. 2, last paragraph: It might be useful for the authors to relate their 
+classifications (LQ/SQ/IQ) to the typical lensing configurations 
+(cross/fold/cusp).
+
+Sec. 3, 2nd paragraph: "…provided it is larger than to the lens redshift, we 
+assumed all sources to lie at…"  I don't think either "to" is needed here.
+
+Sec. 3, last sentence: "are the mass distributions plausible?"  This is a fairly 
+abrupt ending to this section that I guess this is meant to lead into the next 
+section where you check to see whether the lensing mass is consistent with the 
+stellar mass and total mass, but that is not clear.  Evaluating the plausibility 
+of the mass distribution seems to imply checks on things like the shape, profile 
+slope, clumpiness, etc.  Some additional text connecting this sentence to the 
+next section would be good.
+
+Sec. 4, first paragraph: I am skeptical of the claim that stellar masses can be 
+estimated to within 0.3 dex from just a rest-frame U-V color, especially with 
+just photometric redshifts.  The authors cite a single paper from 2008 to 
+support this, but SPS modeling has advanced in recent years, and I would like to 
+see them investigate other references to support this claim.  For example, 
+Collett et al. (2013) claim that with photo-zs alone, stellar mass uncertainties 
+are 0.45 dex, and they use more than just a single color.
+
+Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the stellar masses 
+calculated?  It is stated that using the magnitude-stellar mass relation can 
+have an error of "at most 1 dex", which seems like it should dominate the 
+uncertainties shown in Figure 6.
+
+Sec. 4, 3rd paragraph: Studies of early-type lens galaxies (e.g. SLACS; Auger et 
+al. 2010) find that a Salpeter IMF is more consistent with observations.  
+Justify the use of a Chabrier IMF, and/or comment on these other studies and 
+their effects on your results.
+
+Sec. 4, 3rd/4th paragraph and Figure 6: Figure 6 is plotting "lensing mass" vs. 
+"stellar mass", but the 4th paragraph of Sec. 4 says it is a comparison of 
+"stellar and total masses".  Is this the stellar and total mass within the 
+Einstein radius?  If so, how do you calculate the stellar mass within that 
+radius?
+
+Sec. 5, 2nd paragraph: Typo: "The way mass models also needs to change"
+
+Sec. 5: Some of the details here, such as the 4th through 6th paragraphs, I 
+think can be moved to the end of Sec. 4.  It seems more natural to discuss the 
+results of the previous section within that section.  As currently constructed, 
+Sec. 5 starts as a summary of the paper, then presents further analysis which 
+was missing from the previous section, then goes back to summarizing the paper.
+
+Table 1: Put uncertainties on the redshifts and stellar masses of the lenses.  
+Also, the stylized "X"s and checkmarks may be nice for someone reading the 
+paper, but hopefully the machine-readable version will use ASCII characters that 
+can be easily read in by a computer.
+
+Table 1: While I understand that the primary goal is to show the diagnostics, 
+why not also show the inferred lens model parameters such as r_E?  Perhaps the 
+authors are saving those for a future paper, but this should at least be 
+discussed somewhere in the text.  After all, the title of the paper is "Models 
+of gravitational lens candidates"!
+
+Appendix: These details on the improvements to the SpaghettiLens code feel a bit 
+out of place in this paper.  Do the authors plan a follow-up SpaghettiLens paper 
+where these details might be more relevant?  If not, I suppose placing them in 
+an Appendix of this paper is reasonable, it just seemed odd to me.
+
+A2: How is the initial size of the mass tiles chosen?  From Figure 4, it seems 
+to vary from lens to lens.
+
+A3: Typo: "2.5 as"
+
+Figure A3 caption: Typos: "princible" -> "principal"; "parametrisation" -> 
+"parameterization"
+
+Figure A3: The models always overestimate the true r_E, which was also noted in 
+the 2015 SpaghettiLens paper.  Has the discrepancy improved at all due to the 
+recent upgrades to the code?

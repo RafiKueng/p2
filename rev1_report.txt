@@ -1,0 +1,51 @@
+
+Scientific Editor's Comments:
+
+The first referee recommended rejection, for the reasons given in the report. 
+The second is more lenient, but there are still major concerns over how quickly 
+a system might be modelled, the mass models used, and the lack of clear new 
+scientific results. Please address these points in any revision.
+
+
+Reviewer's Comments:
+
+Reviewer 1:
+
+
+The paper discusses the usage of SpagettiLens on a sample of 59 lens candidates 
+from Space Worps. This tool allows non-professional volunteers to produce 
+tentative mass models of gravitationally lensing galaxies with the help of a 
+graphical web interface within the context of Citizen-Science Projects. This is 
+an attempt to face the growing number of lens candidates. Apart from the method 
+which has already been published, the paper discusses the labels used to 
+describe the appearance of the lenses/images, makes use of stellar mass 
+estimates as a diagnostic and presents a tentative estimate of the mass profile 
+of the 59 candidates. In the two appendixes the authors briefly mention some 
+improvement in the synthetic data used to train the volunteers and the fact that 
+they introduced more degrees of freedom in the mass modelling by increasing the 
+number of pixels in the central region.
+
+- The authors claim that this approach would allow the analysis of a large 
+number of lens candidates. This is a crucial point for this paper but no 
+indication, even tentative, of the time required to obtain a sufficiently 
+reliable model is given.
+
+- The mass mapping method published in Küng et al. (2015) has been slightly 
+modified by using more pixels in the central region. This change is not 
+substantial and is of dubious utility as discussed in the next point.
+
+- My major concern is about the mass models. The lens configuration shown in the 
+images allows to quantify the mass within the Einstein radius only. It is 
+therefore impossible to derive a radial profile as shown in figure 5. The 
+constraints are just insufficient to obtain a radial profile. The images of the 
+sample are well reproduced by the models but this is only because of the large 
+number of degrees of freedom involved in the modelling and the little 
+constraints which are available. This rises serious doubts about the reliability 
+of the models and their possible usage.
+
+- A stellar mass and a lensing mass estimate, assuming the candidates to be real 
+lenses, without any relevant interpretation or relevant conclusion is not 
+enough. No significant scientific results are presented.
+
+For these reasons the results so far presented are not sufficient to justify a 
+publication on MNRAS.
