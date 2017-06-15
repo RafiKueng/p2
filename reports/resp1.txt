@@ -1,5 +1,3 @@
-| Reviewer's Comments:
-|
 | Reviewer 1:
 
 | The paper discusses the usage of SpagettiLens on a sample of 59 lens
