@@ -1,12 +1,4 @@
- 
-
-Scientific Editor's Comments:
-
-The first referee recommended rejection, for the reasons given in the report. 
-The second is more lenient, but there are still major concerns over how quickly 
-a system might be modelled, the mass models used, and the lack of clear new 
-scientific results. Please address these points in any revision.
-
+The comments from Reviewer 2 were very helpful in improving the paper.
 
 Reviewer's Comments:
 
