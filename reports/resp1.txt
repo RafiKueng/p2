@@ -16,7 +16,7 @@
 | pixels in the central region.
 
 The remark above "synthetic data used to train the volunteers" is
-curious, as the paper mentions no such thing.  The word "synthetic"
+puzzling, as the paper mentions no such thing.  The word "synthetic"
 appears only for synthetic images, which are introduced (in the
 Mass-Models section) as follows:
 
@@ -84,6 +84,17 @@ Leier, Falco, Ferreras & Saha 2016MNRAS.456..870B).
 | relevant conclusion is not enough. No significant scientific results
 | are presented.  For these reasons the results so far presented are
 | not sufficient to justify a publication on MNRAS.
+
+The main science result (Figure 6) is presently cautiously --
+correctly so, given the current uncertainties -- but is far from
+trivial.
+
+We see that galaxies whose total mass is comparable to the Milky Way's
+_stellar_ mass are very inefficient at forming stars (SN feedback?)
+Star-formation becomes more efficient for masses a few times that, and
+then cuts off again (AGN feedback?).  Other data sets lead to similar
+conclusions, but to see the whole range emerging out of a preliminary
+sample is very exciting.
 
 TODO: Expand interpretation of Figure 6.
 
