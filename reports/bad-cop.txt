@@ -85,16 +85,15 @@ Leier, Falco, Ferreras & Saha 2016MNRAS.456..870B).
 | are presented.  For these reasons the results so far presented are
 | not sufficient to justify a publication on MNRAS.
 
-The main science result (Figure 6) is presently cautiously --
-correctly so, given the current uncertainties -- but is far from
-trivial.
+In fact, the main science result (Figure 6), although presented
+cautiously -- correctly so, given the current uncertainties -- is
+very exciting.
 
 We see that galaxies whose total mass is comparable to the Milky Way's
 _stellar_ mass are very inefficient at forming stars (SN feedback?)
 Star-formation becomes more efficient for masses a few times that, and
-then cuts off again (AGN feedback?).  Other data sets lead to similar
-conclusions, but to see the whole range emerging out of a preliminary
-sample is very exciting.
+then cuts off again (AGN feedback?).  To see the whole range in a
+single sample is, all caveats notwithstanding, indeed exciting.
 
 TODO: Expand interpretation of Figure 6.
 
