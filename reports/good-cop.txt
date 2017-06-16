@@ -103,8 +103,13 @@ Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 | results.
 
 We have added a brief discussion of the current debates on the IMF,
-with a reference to Smith et al 2015MNRAS.454L..71S -- which nicely
-illustrates the problems.
+with a reference to Smith et al 2015MNRAS.454L..71S -- which concisely
+covers all the issues.  For the present sample, however, at this stage
+redshift and photometric uncertainties are more important.
+
+Incidentally, the present authors include representatives from studies
+which disagree about stellar masses: Auger et al. 2009ApJ...705.1099A
+Leier et al. 2016MNRAS.459.3677L
 
 | Sec. 4, 3rd/4th paragraph and Figure 6: Figure 6 is plotting "lensing
 | mass" vs.  "stellar mass", but the 4th paragraph of Sec. 4 says it is
@@ -138,6 +143,9 @@ illustrates the problems.
 | follow-up SpaghettiLens paper where these details might be more
 | relevant?  If not, I suppose placing them in an Appendix of this paper
 | is reasonable, it just seemed odd to me.
+
+The latter is indeed the case -- we feel the improvements merit
+presentation, but not a whole new paper, hence the Appendix.
  
 | A2: How is the initial size of the mass tiles chosen?  From Figure 4,
 | it seems to vary from lens to lens.
