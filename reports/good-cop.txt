@@ -18,12 +18,18 @@
 | order which they occur in the paper.
 
 | Abstract: Typo: "Space Warpscitizen-science"
+
+Now fixed.
  
 | Sec. 1, 2nd paragraph: Arc-finders references should also include a
 | recent arc-finder developed by Sonnenfeld et al. (2017).
+
+Now cited.
  
 | Sec. 1, 4th paragraph: Typo: "The result model" -> "The resulting
 | model"
+
+Now fixed.
  
 | Sec. 1: The first time you mention "lensing mass", be sure to define
 | it.  It is not clear whether it is referring to the mass within the
@@ -71,6 +77,8 @@ Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 | Sec. 3, 2nd paragraph: "…provided it is larger than to the lens
 | redshift, we assumed all sources to lie at…" I don't think either "to"
 | is needed here.
+
+Typo fixed.
  
 | Sec. 3, last sentence: "are the mass distributions plausible?"  This
 | is a fairly abrupt ending to this section that I guess this is meant
@@ -119,6 +127,8 @@ Leier et al. 2016MNRAS.459.3677L
  
 | Sec. 5, 2nd paragraph: Typo: "The way mass models also needs to
 | change"
+
+Typo fixed.
  
 | Sec. 5: Some of the details here, such as the 4th through 6th
 | paragraphs, I think can be moved to the end of Sec. 4.  It seems more
@@ -151,10 +161,24 @@ presentation, but not a whole new paper, hence the Appendix.
 | it seems to vary from lens to lens.
  
 | A3: Typo: "2.5 as"
+
+Changed "as" -> "because".  We hope the sentence is clearer now.
  
 | Figure A3 caption: Typos: "princible" -> "principal";
 | "parametrisation" -> "parameterization"
+
+Typos fixed.  We see that MNRAS uses parametrize/parametrization
+and have changed all occurrences accordingly.
  
 | Figure A3: The models always overestimate the true r_E, which was also
 | noted in the 2015 SpaghettiLens paper.  Has the discrepancy improved
 | at all due to the recent upgrades to the code?
+
+The overestimates in r_E were a result of the too-shallow mass
+profiles.  (This is now noted in the text of Appendix A2).  As the
+Appendix discusses, sub-sampling the central region appears to the way
+to cure the problem, but we do not have a completely satisfactory
+implementation as yet.
+
+
+
