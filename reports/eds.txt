@@ -10,6 +10,11 @@ Assistant Editor Comments:
 
 - Please present the abstract as a single paragraph. 
 
+* mass profile captions
+* mstel vs mlens axis labels
+* hires
+
+
 - Please ensure that all textual labels in figures are at least as large as the 
 caption text; any smaller and they become too difficult to read.
 

@@ -36,12 +36,19 @@ Now fixed.
 | Einstein radius determined from lens modeling, or whether it is a
 | total mass that extrapolates from the lens model results.  This is a
 | common confusion I had throughout the paper.
- 
+
+TODO: note: ~ twice distance of outermost image.
+
+
+
 | Sec. 1: When you start talking about the diagnostics, it seems that
 | you have moved beyond the introduction and are now into the details of
 | your work.  This would be better placed in a separate section, leaving
 | Sec. 1 to background and motivation.
- 
+
+TODO: move to new secion
+
+
 | Sec. 1, 6th paragraph: This paragraph concludes with, "it is
 | interesting to see what trends we can observe with the
 | already-available data."  What are the trends that are observed?
@@ -53,7 +60,10 @@ Now fixed.
 | diagnostics in the future?  Are some diagnostics more useful than
 | others?  This issue also applies more broadly to Sections 2 and 3 when
 | the authors describe the diagnostics in more detail.
- 
+
+TODO: evaluate diagnostics in conclusion
+
+
 | Sec. 2: I think a short section or subsection that summarizes the
 | details of the imaging data would be helpful, e.g. depth, bands, area
 | of the survey, etc.  Also, some details on the sample itself would
@@ -62,18 +72,27 @@ Now fixed.
 | uncertainties?  While some of these details are presented in Table 1
 | and in previous papers, I feel that a brief summary in the text would
 | make the entire paper more clear.
+
+TODO: put in new sect. 2 with diagnostics
+
+
  
 | Sec. 2, 5th paragraph: How is the size of the cutout shown to the
 | viewer determined?  Since they are not uniform, doesn't this create a
 | bias toward finding nearby galaxies for lenses where a larger cutout
 | is shown?
+
+TODO: explain zoom in.
+
+
  
 | Sec. 2, last paragraph: It might be useful for the authors to relate
 | their classifications (LQ/SQ/IQ) to the typical lensing configurations
 | (cross/fold/cusp).
 
 Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
- 
+
+
 | Sec. 3, 2nd paragraph: "…provided it is larger than to the lens
 | redshift, we assumed all sources to lie at…" I don't think either "to"
 | is needed here.
@@ -88,7 +107,10 @@ Typo fixed.
 | distribution seems to imply checks on things like the shape, profile
 | slope, clumpiness, etc.  Some additional text connecting this sentence
 | to the next section would be good.
- 
+
+TODO: do so.
+
+
 | Sec. 4, first paragraph: I am skeptical of the claim that stellar
 | masses can be estimated to within 0.3 dex from just a rest-frame U-V
 | color, especially with just photometric redshifts.  The authors cite a
@@ -97,12 +119,18 @@ Typo fixed.
 | references to support this claim.  For example, Collett et al. (2013)
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
+
+Ask Ignacio!!
+
  
 | Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the
 | stellar masses calculated?  It is stated that using the
 | magnitude-stellar mass relation can have an error of "at most 1 dex",
 | which seems like it should dominate the uncertainties shown in Figure
 | 6.
+
+TODO: add to sect on stellar masses
+
  
 | Sec. 4, 3rd paragraph: Studies of early-type lens galaxies
 | (e.g. SLACS; Auger et al. 2010) find that a Salpeter IMF is more
@@ -124,7 +152,10 @@ Leier et al. 2016MNRAS.459.3677L
 | a comparison of "stellar and total masses".  Is this the stellar and
 | total mass within the Einstein radius?  If so, how do you calculate
 | the stellar mass within that radius?
- 
+
+TODO: No total, not encl in E_r, clarify!
+
+
 | Sec. 5, 2nd paragraph: Typo: "The way mass models also needs to
 | change"
 
@@ -136,18 +167,29 @@ Typo fixed.
 | section.  As currently constructed, Sec. 5 starts as a summary of the
 | paper, then presents further analysis which was missing from the
 | previous section, then goes back to summarizing the paper.
- 
+
+TODO: leave it there, but expand
+
+
+
 | Table 1: Put uncertainties on the redshifts and stellar masses of the
 | lenses.  Also, the stylized "X"s and checkmarks may be nice for
 | someone reading the paper, but hopefully the machine-readable version
 | will use ASCII characters that can be easily read in by a computer.
- 
+
+TODO: ascii
+TODO: discuss uncertainties on redshifts in text.
+
+
 | Table 1: While I understand that the primary goal is to show the
 | diagnostics, why not also show the inferred lens model parameters such
 | as r_E?  Perhaps the authors are saving those for a future paper, but
 | this should at least be discussed somewhere in the text.  After all,
 | the title of the paper is "Models of gravitational lens candidates"!
- 
+
+TODO: answer: because of not really a physical parameter, not that important in this case.
+
+
 | Appendix: These details on the improvements to the SpaghettiLens code
 | feel a bit out of place in this paper.  Do the authors plan a
 | follow-up SpaghettiLens paper where these details might be more
@@ -156,20 +198,25 @@ Typo fixed.
 
 The latter is indeed the case -- we feel the improvements merit
 presentation, but not a whole new paper, hence the Appendix.
- 
+
 | A2: How is the initial size of the mass tiles chosen?  From Figure 4,
 | it seems to vary from lens to lens.
- 
+
+TODO: modeller chosen
+
+
 | A3: Typo: "2.5 as"
 
 Changed "as" -> "because".  We hope the sentence is clearer now.
- 
+
+
 | Figure A3 caption: Typos: "princible" -> "principal";
 | "parametrisation" -> "parameterization"
 
 Typos fixed.  We see that MNRAS uses parametrize/parametrization
 and have changed all occurrences accordingly.
- 
+
+
 | Figure A3: The models always overestimate the true r_E, which was also
 | noted in the 2015 SpaghettiLens paper.  Has the discrepancy improved
 | at all due to the recent upgrades to the code?
