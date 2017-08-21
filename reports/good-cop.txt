@@ -136,6 +136,8 @@ Typo fixed.
 | section.  As currently constructed, Sec. 5 starts as a summary of the
 | paper, then presents further analysis which was missing from the
 | previous section, then goes back to summarizing the paper.
+
+The discussion of Figure 6 has been moved to the previous section.
  
 | Table 1: Put uncertainties on the redshifts and stellar masses of the
 | lenses.  Also, the stylized "X"s and checkmarks may be nice for
