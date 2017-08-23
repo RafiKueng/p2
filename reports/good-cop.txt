@@ -38,8 +38,7 @@ Now fixed.
 | common confusion I had throughout the paper.
 
 Now fixed.
-(intro.tex:119; sec2:Third...)
-
+(sec:The candidates and models; item:Third...)
 
 
 | Sec. 1: When you start talking about the diagnostics, it seems that
@@ -83,14 +82,15 @@ TODO: put in new sect. 2 with diagnostics
 | bias toward finding nearby galaxies for lenses where a larger cutout
 | is shown?
 
-TODO: explain zoom in.
-
+Now fixed.
+(explained in sec:Image morphology; paragraph 2)
 
  
 | Sec. 2, last paragraph: It might be useful for the authors to relate
 | their classifications (LQ/SQ/IQ) to the typical lensing configurations
 | (cross/fold/cusp).
 
+Now fixed.
 Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 
 
