@@ -169,6 +169,7 @@ Typo fixed.
 | previous section, then goes back to summarizing the paper.
 
 TODO: leave it there, but expand
+The discussion of Figure 6 has been moved to the previous section.
 
 
 
