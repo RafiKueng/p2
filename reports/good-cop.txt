@@ -37,7 +37,8 @@ Now fixed.
 | total mass that extrapolates from the lens model results.  This is a
 | common confusion I had throughout the paper.
 
-TODO: note: ~ twice distance of outermost image.
+Now fixed.
+(intro.tex:119; sec2:Third...)
 
 
 
@@ -46,7 +47,7 @@ TODO: note: ~ twice distance of outermost image.
 | your work.  This would be better placed in a separate section, leaving
 | Sec. 1 to background and motivation.
 
-TODO: move to new secion
+Now fixed.
 
 
 | Sec. 1, 6th paragraph: This paragraph concludes with, "it is
