@@ -6,18 +6,31 @@ concerns over how quickly a system might be modelled, the mass
 models used, and the lack of clear new scientific results. Please
 address these points in any revision.
 
-Assistant Editor Comments:
-
-- Please present the abstract as a single paragraph. 
-
-* mass profile captions
-* mstel vs mlens axis labels
-* hires
 
 
-- Please ensure that all textual labels in figures are at least as large as the 
-caption text; any smaller and they become too difficult to read.
 
-- Please ensure that all references to arxiv papers also include the preprint 
-number, e.g. arXiv:1506.08817.
+
+
+| Assistant Editor Comments:
+| 
+| - Please present the abstract as a single paragraph. 
+
+TODO
+
+
+| * mass profile captions
+| * mstel vs mlens axis labels
+| * hires
+| 
+| - Please ensure that all textual labels in figures are at least as large as
+| the caption text; any smaller and they become too difficult to read.
+ 
+TODO
+
+
+| - Please ensure that all references to arxiv papers also include the preprint 
+| number, e.g. arXiv:1506.08817.
+
+Now fixed.
+
 
