@@ -83,6 +83,7 @@ TODO: put in new sect. 2 with diagnostics
 | is shown?
 
 Now fixed.
+The cutouts are uniform, but user can zoom in.
 (explained in sec:Image morphology; paragraph 2)
 
  
@@ -99,6 +100,7 @@ Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 | is needed here.
 
 Typo fixed.
+
  
 | Sec. 3, last sentence: "are the mass distributions plausible?"  This
 | is a fairly abrupt ending to this section that I guess this is meant
@@ -109,7 +111,8 @@ Typo fixed.
 | slope, clumpiness, etc.  Some additional text connecting this sentence
 | to the next section would be good.
 
-TODO: do so.
+Now fixed.
+It is actually not a segway. Expanded this into a paragraph.
 
 
 | Sec. 4, first paragraph: I am skeptical of the claim that stellar
@@ -121,7 +124,7 @@ TODO: do so.
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
 
-Ask Ignacio!!
+Ask Ignacio!! -> Waiting for response
 
  
 | Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the
@@ -147,6 +150,7 @@ redshift and photometric uncertainties are more important.
 Incidentally, the present authors include representatives from studies
 which disagree about stellar masses: Auger et al. 2009ApJ...705.1099A
 Leier et al. 2016MNRAS.459.3677L
+
 
 | Sec. 4, 3rd/4th paragraph and Figure 6: Figure 6 is plotting "lensing
 | mass" vs.  "stellar mass", but the 4th paragraph of Sec. 4 says it is
