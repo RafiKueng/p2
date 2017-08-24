@@ -133,7 +133,9 @@ Ask Ignacio!! -> Waiting for response
 | which seems like it should dominate the uncertainties shown in Figure
 | 6.
 
-TODO: add to sect on stellar masses
+Now fixed.
+Added few words to clarify in Sec.4 par.4:
+The span/uncertainties displayed are due to the differences between the two age trends.
 
  
 | Sec. 4, 3rd paragraph: Studies of early-type lens galaxies
