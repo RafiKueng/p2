@@ -160,14 +160,18 @@ Leier et al. 2016MNRAS.459.3677L
 | total mass within the Einstein radius?  If so, how do you calculate
 | the stellar mass within that radius?
 
-TODO: No total, not encl in E_r, clarify!
+Now fixed.
+It is "total lensing mass". Replaced "total mass" with "lensing mass" for clarification.
+With previously fixed def of lensing mass it should be clear now.
+(sec:The candidates and models; item:Third ...)
 
 
 | Sec. 5, 2nd paragraph: Typo: "The way mass models also needs to
 | change"
 
 Typo fixed.
- 
+
+
 | Sec. 5: Some of the details here, such as the 4th through 6th
 | paragraphs, I think can be moved to the end of Sec. 4.  It seems more
 | natural to discuss the results of the previous section within that
