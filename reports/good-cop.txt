@@ -189,8 +189,12 @@ The discussion of Figure 6 has been moved to the previous section.
 | someone reading the paper, but hopefully the machine-readable version
 | will use ASCII characters that can be easily read in by a computer.
 
-TODO: ascii
 TODO: discuss uncertainties on redshifts in text.
+
+Updated the table, but the requested values don't fit onto the page.
+Added ascii / csv online supplement of table 1 with additional data.
+
+TODO ask PS: is this allowed?
 
 
 | Table 1: While I understand that the primary goal is to show the
