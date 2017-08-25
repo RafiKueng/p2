@@ -75,16 +75,14 @@ TODO: evaluate diagnostics in conclusion
 
 TODO: put in new sect. 2 with diagnostics
 
-
  
 | Sec. 2, 5th paragraph: How is the size of the cutout shown to the
 | viewer determined?  Since they are not uniform, doesn't this create a
 | bias toward finding nearby galaxies for lenses where a larger cutout
 | is shown?
 
-Now fixed.
+Now fixed. (explained in sec:Image morphology; par:2)
 The cutouts are uniform, but user can zoom in.
-(explained in sec:Image morphology; paragraph 2)
 
  
 | Sec. 2, last paragraph: It might be useful for the authors to relate
@@ -101,7 +99,7 @@ Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 
 Typo fixed.
 
- 
+
 | Sec. 3, last sentence: "are the mass distributions plausible?"  This
 | is a fairly abrupt ending to this section that I guess this is meant
 | to lead into the next section where you check to see whether the
@@ -111,7 +109,7 @@ Typo fixed.
 | slope, clumpiness, etc.  Some additional text connecting this sentence
 | to the next section would be good.
 
-Now fixed.
+Now fixed. (sec:3 par:last)
 It is actually not a segway. Expanded this into a paragraph.
 
 
@@ -203,7 +201,8 @@ TODO ask PS: is this allowed?
 | this should at least be discussed somewhere in the text.  After all,
 | the title of the paper is "Models of gravitational lens candidates"!
 
-TODO: answer: because of not really a physical parameter, not that important in this case.
+TODO ask PS: I got it, shall I add it? it's already in the online supplement..
+answer: because of not really a physical parameter, not that important in this case.
 
 
 | Appendix: These details on the improvements to the SpaghettiLens code
@@ -215,10 +214,14 @@ TODO: answer: because of not really a physical parameter, not that important in 
 The latter is indeed the case -- we feel the improvements merit
 presentation, but not a whole new paper, hence the Appendix.
 
+
 | A2: How is the initial size of the mass tiles chosen?  From Figure 4,
 | it seems to vary from lens to lens.
 
-TODO: modeller chosen
+Fixed now. (sec:App2 par:1)
+The modeller can choose the "resolution" as the Radius in
+pixels (before subsampling). Typical values are 8 -- 12, where there
+is an obvidous significant runtime difference between those two.
 
 
 | A3: Typo: "2.5 as"

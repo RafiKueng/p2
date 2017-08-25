@@ -42,12 +42,16 @@ attempted to do so as yet.
   \label{fig:synthimg}
 \end{figure}
 
+
 \subsection{Sub-sampling of central region}\label{subsec:hires}
 
-The models of simulated lenses in \cite{2015MNRAS.447.2170K} showed a tendency 
+The models of simulated lenses in \cite{2015MNRAS.447.2170K} showed a 
+tendency 
 to produce density profiles which were too shallow, resulting typically
 in overestimates of the Einstein radius.
-Allowing smaller mass tiles in the
+Volunteers could already set the size of the pixels by defining the radius of 
+the lens in pixels, typical values range between 8 and 12.
+Additionally allowing smaller mass tiles in the
 central region, thus allowing the mass profile to rise more steeply
 near the centre, was suggested as a possible cure.
 
@@ -71,9 +75,9 @@ the enclosed mass in the outer regions, so shallowness in the central
 region should be inconsequential.
 
 \begin{figure}
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}\\
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}\\
-  \includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
+\includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_11_hires_comparison}\\
+\includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_13_hires_comparison}\\
+\includegraphics[width=.9\linewidth]{img/hires_comparison/ASW000102p_6941_33_hires_comparison}
   \caption{Model improvement resulting from using smaller mass tiles
     in the inner region of the mass model.  Shown here are the average
     enclosed $\kappa$ within a given projected radius, for three
@@ -84,7 +88,7 @@ region should be inconsequential.
     images (maximum, saddle point, minimum) are marked with vertical
     arrows.  Crossing the horizontal $\kappa=1$ line is the effective
     Einstein radius \ER. The upper panel is from
-    K\"ung et al., (2015) (see Figure~3 of that paper).  The middle
+    \citet{2015MNRAS.447.2170K}, see Figure~3 of that paper.  The middle
     panel is the result when the innermost mass tile is replaced by 9
     smaller tiles.  The lower panel results from replacing each of the
     innermost 5 by 5 tiles each with 9 smaller tiles.}
@@ -95,18 +99,22 @@ region should be inconsequential.
 
 In order to fit the set of pixelated models to a single parametrized model, a 
 program was written that took a parametrized function and subtracted from it 
-the mean and the principal components of the data, which were calculated using 
+the mean and the principal components of the data, which were calculated 
+using 
 classical Principal Component Analysis.
 This created the residuals function.
 The number of components used in the analysis was varied, to test how this 
-affected the output, and it was found that using 5 principal components tended 
+affected the output, and it was found that using 5 principal components 
+tended 
 to give a reasonable approximation.
 A masking function was added which selected only the data points that fell 
 inside the image of the lens, and the principal components were clipped in 
 order to keep the values inside the region of the ensemble of models.
 Any value higher than the clip was set to be the clip value.
-This was chosen to be 2.5 because, assuming that the data follows a Gaussian error 
-distribution, almost all the values for the variance should lie between 2 and 3 
+This was chosen to be 2.5 because, assuming that the data follows a Gaussian 
+error 
+distribution, almost all the values for the variance should lie between 2 and 
+3 
 standard deviations from the mean.
 Minimising the residuals function produces the set of parameters that fit the 
 parametrized function to the original pixelated ensemble most closely.
