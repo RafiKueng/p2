@@ -61,7 +61,7 @@ Now fixed.
 | others?  This issue also applies more broadly to Sections 2 and 3 when
 | the authors describe the diagnostics in more detail.
 
-TODO: evaluate diagnostics in conclusion
+Added paragraph discussion the criteria in summary.
 
 
 | Sec. 2: I think a short section or subsection that summarizes the
