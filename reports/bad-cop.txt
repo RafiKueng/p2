@@ -27,12 +27,14 @@ Mass-Models section) as follows:
 
 Was the reviewer perhaps thinking of training sets in machine learning?
 
+
 | - The authors claim that this approach would allow the analysis of a
 | large number of lens candidates. This is a crucial point for this
 | paper but no indication, even tentative, of the time required to
 | obtain a sufficiently reliable model is given.
 
 TODO: Talk about time.
+
 
 | - The mass mapping method published in Küng et al. (2015) has been
 | slightly modified by using more pixels in the central region. This
@@ -42,6 +44,7 @@ TODO: Talk about time.
 The smaller pixels in the central region are indeed a detail
 (hence discussed in an Appendix) but they are not "dubious",
 see below.
+
 
 | - My major concern is about the mass models. The lens configuration
 | shown in the images allows to quantify the mass within the Einstein
@@ -79,6 +82,7 @@ lens-degeneracy paper (Falco, Gorenstein & Shapiro, 1985) is also
 co-author on work using the present technique (Bruderer, Read, Coles,
 Leier, Falco, Ferreras & Saha 2016MNRAS.456..870B).
 
+
 | - A stellar mass and a lensing mass estimate, assuming the
 | candidates to be real lenses, without any relevant interpretation or
 | relevant conclusion is not enough. No significant scientific results
@@ -96,4 +100,6 @@ then cuts off again (AGN feedback?).  To see the whole range in a
 single sample is, all caveats notwithstanding, indeed exciting.
 
 TODO: Expand interpretation of Figure 6.
+
+
 

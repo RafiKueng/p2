@@ -82,7 +82,7 @@ TODO: put in new sect. 2 with diagnostics
 | is shown?
 
 Now fixed. (explained in sec:Image morphology; par:2)
-The cutouts are uniform, but user can zoom in.
+The cutouts are uniform, but the users can zoom in manually.
 
  
 | Sec. 2, last paragraph: It might be useful for the authors to relate
@@ -110,7 +110,7 @@ Typo fixed.
 | to the next section would be good.
 
 Now fixed. (sec:3 par:last)
-It is actually not a segway. Expanded this into a paragraph.
+It is actually not a segway. Expanded this into a paragraph to make it clear.
 
 
 | Sec. 4, first paragraph: I am skeptical of the claim that stellar
@@ -177,9 +177,8 @@ Typo fixed.
 | paper, then presents further analysis which was missing from the
 | previous section, then goes back to summarizing the paper.
 
-TODO: leave it there, but expand
-The discussion of Figure 6 has been moved to the previous section.
-
+Some of the discussion of Figure 6 has been moved to the previous section.
+The detail of Fig6 are discussed in sec:5, the overall trend in sec:6.
 
 
 | Table 1: Put uncertainties on the redshifts and stellar masses of the
@@ -187,12 +186,16 @@ The discussion of Figure 6 has been moved to the previous section.
 | someone reading the paper, but hopefully the machine-readable version
 | will use ASCII characters that can be easily read in by a computer.
 
-TODO: discuss uncertainties on redshifts in text.
-
 Updated the table, but the requested values don't fit onto the page.
-Added ascii / csv online supplement of table 1 with additional data.
+Added ascii / csv online supplement of table 1 with additional data used to generate the halo matching index (m_moster) and raw values.
+Mentioned stellar mass "span" of <0.8dex (sec:Stellar.. par:4)
 
-TODO ask PS: is this allowed?
+TODO: discuss uncertainties on redshifts in text.
+I did add the statement that the lens properties are taken from the
+CFHTLS photometric catalog (Coupon et al. 2009) 2009A&A...500..981C
+
+ASK PS: are there any sources for the uncertainties of the redshifts?
+
 
 
 | Table 1: While I understand that the primary goal is to show the
@@ -201,8 +204,11 @@ TODO ask PS: is this allowed?
 | this should at least be discussed somewhere in the text.  After all,
 | the title of the paper is "Models of gravitational lens candidates"!
 
-TODO ask PS: I got it, shall I add it? it's already in the online supplement..
+ASK PS: I got it, shall I add it? it's already in the online supplement..
+
 answer: because of not really a physical parameter, not that important in this case.
+
+
 
 
 | Appendix: These details on the improvements to the SpaghettiLens code
