@@ -113,18 +113,18 @@ successful at extracting an Einstein radius.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{img/timelapse3}
-  \caption{ Amount of generated models over time, since an arb. starting point; top figure shows all models, bottom figure shows five selected candidates with the most activity in logarithmic scaling. Eight users contributed more than five models per person for 56 lens candidates. }
+  \caption{ Number of models generated over time in days since an arbitrary starting point; black line shows all models, colored lines show five most active candidates. Total of 365 models were generated for 56 lens candidates, eight users contributed more than five models per person. }
   \label{fig:time}
 \end{figure}
 
-The volunteers were encouraged to create models of objects found in Space~Warps before they were classified as plausible candidates.
-Figure~\ref{fig:time} shows the evolution of the total number of models the users generated, models created for systems that turned out to be non candidates were not included.
-The first beta version of SpaghettiLens was launched around day 140 and additional features were implemented on the fly.
+The volunteers were encouraged to create models of objects found in \SW before they were classified as plausible candidates.
+Figure~\ref{fig:time} shows the total number of models generated over time, models created for systems that turned out to be non candidates were not included.
+The first beta version of \SpL was launched around day 140 and additional features were implemented on the fly.
 The system was tested by eight major contributors, volunteers that at least generated five models.
-Around day 200 a modelling challenge for the candidate later to be identified as SW~01 was proposed.
+Around day 200 (Aug. 2013) a modelling challenge for the candidate later to be identified as \sw{01} was launched.
 A group of five volunteers converged to a set of favorite models that they presented in an online letter after about 65 days and 30 models have been created for this particular system.
-At day 820 the first full version of SpaghettiLens was presented online for testing, around the same time the list of identified candidates was available.
-At this stage, we can see for example with candidate SW~29, the volunteers converged to a favorable model after 15 models generated in 30 days.
+Around day 820 (Apr. 2015) the first full version of \SpL was presented for testing, around the same time the list of identified candidates was available \citep[as a preprint of the later work][]{2016MNRAS.455.1191M}.
+At this stage, after a call to model candidates that have been neglected up to that date, candidate \sw{29} shows that the volunteers converged to a favorable model after 15 models generated in 30 days.
 
 
 We characterise each model with seven diagnostics, grouped into three 
@@ -157,12 +157,13 @@ observations. The diagnostics are as follows.
   where they are not observed signal an unsatisfactory model.
   Figures~\ref{fig:arriv} and \ref{fig:synth} and \ref{fig:encl}.
 \end{enumerate}
-\item Third, whether the total implied lensing mass\footnote{
-    In this work we define lensing mass as the sum of all mass tiles
-    needed to model a lens. Those tiles reach out to typically twice
-    the radius of the the outermost image. }
+\item Third, whether the total implied lensing mass
   determined from the lens model is plausible, given the
-  photometry of the lensing galaxy.  Section~\ref{sec:stellar-mass}
+  photometry of the lensing galaxy.
+  In this work we define lensing mass as the sum of all mass tiles
+  needed to model a lens. These mass tiles reach out to typically twice
+  the radius of the the outermost image.
+  Section~\ref{sec:stellar-mass}
   explains how we compare the lensing mass with the mass in stars in
   the lensing galaxy.  We estimate the stellar mass by comparing
   galaxy magnitudes from the CFHTLS pipeline with the well-known

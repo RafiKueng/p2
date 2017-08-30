@@ -41,6 +41,7 @@
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{pifont}	% Extra maths symbols
 %\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
+\usepackage{xspace} % handling of spaces after shortcuts
 
 
 % TODO stuff, comment out for final submit
@@ -58,14 +59,14 @@
 \newcommand*{\UK}{\ensuremath{\text{--}}}
 
 
-\newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
-\newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
+%\newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
+%\newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
 
-\newcommand{\SW}{Space~Warps}
-\newcommand{\SpL}{SpaghettiLens}
-\newcommand{\asw}[1]{ASW000#1}
-\newcommand{\sw}[1]{SW~#1}
-\newcommand{\model}[1]{SL model~#1}
+\newcommand{\SW}{Space~Warps\xspace}
+\newcommand{\SpL}{SpaghettiLens\xspace}
+\newcommand{\asw}[1]{ASW000#1\xspace}
+\newcommand{\sw}[1]{SW~#1\xspace}
+%\newcommand{\model}[1]{SL model~#1}
 
 \newcommand{\figref}[1]{\ref{fig:#1}}
 
