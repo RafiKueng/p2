@@ -122,16 +122,15 @@ It is actually not a segway. Expanded this into a paragraph to make it clear.
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
 
-Ask Ignacio!! -> Waiting for response
+[TODO add figure in email]
 
- 
+
 | Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the
 | stellar masses calculated?  It is stated that using the
 | magnitude-stellar mass relation can have an error of "at most 1 dex",
 | which seems like it should dominate the uncertainties shown in Figure
 | 6.
 
-Now fixed.
 Added few words to clarify in Sec.4 par.4:
 The span/uncertainties displayed are due to the differences between the two age trends.
 
@@ -158,7 +157,6 @@ Leier et al. 2016MNRAS.459.3677L
 | total mass within the Einstein radius?  If so, how do you calculate
 | the stellar mass within that radius?
 
-Now fixed.
 It is "total lensing mass". Replaced "total mass" with "lensing mass" for clarification.
 With previously fixed def. of lensing mass it should be clear now.
 (sec:The candidates and models; item:Third ...)
@@ -190,12 +188,8 @@ Updated the table, but the requested values don't fit onto the page.
 Added ascii / csv online supplement of table 1 with additional data used to generate the halo matching index (m_moster) and raw values.
 Mentioned stellar mass "span" of <0.8dex (sec:Stellar.. par:4)
 
-TODO: discuss uncertainties on redshifts in text.
 I did add the statement that the lens properties are taken from the
 CFHTLS photometric catalog (Coupon et al. 2009) 2009A&A...500..981C
-
-ASK PS: are there any sources for the uncertainties of the redshifts?
-
 
 
 | Table 1: While I understand that the primary goal is to show the
