@@ -33,7 +33,9 @@ Was the reviewer perhaps thinking of training sets in machine learning?
 | paper but no indication, even tentative, of the time required to
 | obtain a sufficiently reliable model is given.
 
-Added a paragraph and a plot about time.
+The actual time needed in the future is hard to predict.
+We added a paragraph that elaborates about the time that was needed in
+the past in beginning of sec:2.
 
 
 | - The mass mapping method published in Küng et al. (2015) has been

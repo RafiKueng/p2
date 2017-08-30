@@ -55,7 +55,7 @@ testing set in \SW.
 
 This paper continues that study by applying SpaghettiLens to
 lens-candidates discovered through Space~Warps.  We present results
-from modelling of 56 of the 59 lens candidates reported by
+from modelling of 58 of the 59 lens candidates reported by
 \cite{2016MNRAS.455.1191M}.  Each lens candidate was modelled in a
 collaborative refinement process, where anyone interested can create a
 new model or modify an existing model to try and make it
@@ -81,19 +81,13 @@ the already-available data.
 %TODO there is more info about uncertainies here:
 % https://arxiv.org/pdf/0811.3326.pdf
 
-TODO: very short summary of the following sections
-
-The online supplement gives results for all the modelled systems generated
-for all the lensing candidates.
-
-
-
-
-\section{The candidates and models}
-
-TODO: About SW sample
-
-TODO: about SpL
+This paper is organized as follows:
+Section~\ref{sec:candidates_models} introduces the candidates, the models and the diagnostics applied to them.
+The following sections elaborate on the diagnostics.
+Image morphology diagnostics are explained in Section~\ref{sec:morph} and
+diagnostics based on the mass models in Section~\ref{sec:massmodels}.
+Stellar masses are calculated in Section~\ref{sec:stellar-mass} to compare stellar to lensing masses of the lensing candidates.
+Section~\ref{sec:summary} gives our summary and conclusions.
 
 There are three appendices devoted to various technical issues
 relating to modelling.  \cite{2015MNRAS.447.2170K} tested the system
@@ -108,8 +102,21 @@ tendency in the earlier work for mass profile to be too shallow. Then in
 parametric lens model to the model ensemble; so far we have only been
 successful at extracting an Einstein radius.
 
+The online supplement gives results for all the modelled systems generated
+for all the lensing candidates.
 
 
+
+
+\section{The candidates and models}
+\label{sec:candidates_models}
+
+\SW is a citizen science gravitational lens search \citep{2016MNRAS.455.1171M}.
+Its first run searched the CFHT Legacy Survey, a survey carried out in five optical bands ($u^*$,$g'$,$r'$,$i'$,$z'$) covering a total area of 160 \sqdeg, divided up into four fields.
+It has a field of view of 1 \sqdeg, a pixel size of 0.186'' and the deepest limiting magnitude is 25.47 in the $g$ band\citep{2012AJ....143...38G}.
+The cutouts shown to the volunteers were colour composites of the $g$, $r$ and $i$ band of randomly chosen regions.
+It resulted in 59 new (of which 29 promising) lens candidates that have not been found by other searches already and in the rediscovery of 82 previously known lens candidates.
+The candidates have broadly similar redshifts (0.2 -- 1.0), Einstein radii (0.7\arcsec -- 5\arcsec) and arc magnitudes (22 -- 26) as previous robotic robotic searches by ArcFinder and RingFinder \citep{2016MNRAS.455.1191M}.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{img/timelapse3}
@@ -117,14 +124,17 @@ successful at extracting an Einstein radius.
   \label{fig:time}
 \end{figure}
 
-The volunteers were encouraged to create models of objects found in \SW before they were classified as plausible candidates.
+While \SW was running, volunteers started working with \SpL to create models of possible lensing candidates found in \SW that were debated on the \SW discussion forums, before they were classified as plausible candidates.
 Figure~\ref{fig:time} shows the total number of models generated over time, models created for systems that turned out to be non candidates were not included.
-The first beta version of \SpL was launched around day 140 and additional features were implemented on the fly.
+The first beta version of \SpL was launched in May 2013 and additional features were implemented on the fly.
 The system was tested by eight major contributors, volunteers that at least generated five models.
-Around day 200 (Aug. 2013) a modelling challenge for the candidate later to be identified as \sw{01} was launched.
-A group of five volunteers converged to a set of favorite models that they presented in an online letter after about 65 days and 30 models have been created for this particular system.
-Around day 820 (Apr. 2015) the first full version of \SpL was presented for testing, around the same time the list of identified candidates was available \citep[as a preprint of the later work][]{2016MNRAS.455.1191M}.
-At this stage, after a call to model candidates that have been neglected up to that date, candidate \sw{29} shows that the volunteers converged to a favorable model after 15 models generated in 30 days.
+In the beginning of August 2013 (day 70) a modelling challenge for the candidate later to be identified as \sw{01} was launched.
+A group of five volunteers converged to a set of favourite models that they presented in an online letter after about 65 days and 30 models have been created for this particular system.
+In April 2015 (day 700) the first full version of \SpL was presented for testing.
+In the same time the list of identified candidates was made available \citep[as a preprint of the later work][]{2016MNRAS.455.1191M}.
+At this stage, the volunteers were asked to complete the sample and to create models for all the lens candidates that were still missing.
+The generated models for candidate \sw{29} show that the volunteers converged to a favorable model much faster, after 15 models generated in 30 days.
+This modelling effort resulted in a set of 356 \SpL models for all but one of the \SW 59 lens candidates; candidate \sw{39} was not modelled.
 
 
 We characterise each model with seven diagnostics, grouped into three 

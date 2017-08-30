@@ -73,7 +73,9 @@ Added paragraph discussion the criteria in summary and some remarks in sec:2
 | and in previous papers, I feel that a brief summary in the text would
 | make the entire paper more clear.
 
-TODO: put in new sect. 2 with diagnostics
+Added a summary of the CFHT LS details and the SW candidates
+(at beginning of sec:The candidates and models)
+
 
  
 | Sec. 2, 5th paragraph: How is the size of the cutout shown to the
@@ -81,15 +83,14 @@ TODO: put in new sect. 2 with diagnostics
 | bias toward finding nearby galaxies for lenses where a larger cutout
 | is shown?
 
-Now fixed. (explained in sec:Image morphology; par:2)
 The cutouts are uniform, but the users can zoom in manually.
+Now explained in sec:3.Image morphology; par:2.
 
  
 | Sec. 2, last paragraph: It might be useful for the authors to relate
 | their classifications (LQ/SQ/IQ) to the typical lensing configurations
 | (cross/fold/cusp).
 
-Now fixed.
 Explanations added (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 
 
@@ -109,8 +110,8 @@ Typo fixed.
 | slope, clumpiness, etc.  Some additional text connecting this sentence
 | to the next section would be good.
 
-Now fixed. (sec:3 par:last)
-It is actually not a segway. Expanded this into a paragraph to make it clear.
+It was actually not a segway. We expanded this into a paragraph to make it clear.
+(sec:4.Mass Models; par:last)
 
 
 | Sec. 4, first paragraph: I am skeptical of the claim that stellar
@@ -122,7 +123,7 @@ It is actually not a segway. Expanded this into a paragraph to make it clear.
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
 
-[TODO add figure in email]
+[TODO add figure IF in email for editor & reviewer]
 
 
 | Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the
@@ -131,8 +132,9 @@ It is actually not a segway. Expanded this into a paragraph to make it clear.
 | which seems like it should dominate the uncertainties shown in Figure
 | 6.
 
-Added few words to clarify in Sec.4 par.4:
-The span/uncertainties displayed are due to the differences between the two age trends.
+The span/uncertainties displayed are due to the differences between the two age trends only.
+We added few words to clarify this (sec:4.Mass Models par.4 and fig:7)
+
 
  
 | Sec. 4, 3rd paragraph: Studies of early-type lens galaxies
@@ -157,8 +159,8 @@ Leier et al. 2016MNRAS.459.3677L
 | total mass within the Einstein radius?  If so, how do you calculate
 | the stellar mass within that radius?
 
-It is "total lensing mass". Replaced "total mass" with "lensing mass" for clarification.
-With previously fixed def. of lensing mass it should be clear now.
+It is "total lensing mass". Replaced "total mass" with "lensing mass" in the text for clarification.
+With previously fixed definition of lensing mass it should be clear now.
 (sec:The candidates and models; item:Third ...)
 
 
@@ -184,11 +186,12 @@ The detail of Fig6 are discussed in sec:5, the overall trend in sec:6.
 | someone reading the paper, but hopefully the machine-readable version
 | will use ASCII characters that can be easily read in by a computer.
 
-Updated the table, but the requested values don't fit onto the page.
-Added ascii / csv online supplement of table 1 with additional data used to generate the halo matching index (m_moster) and raw values.
-Mentioned stellar mass "span" of <0.8dex (sec:Stellar.. par:4)
+The requested values don't fit onto the page in the printed version.
+We added an ascii / csv online supplement of table 1 with all the additional data used to generate the halo matching index (m_moster), raw values and einstein radii.
 
-I did add the statement that the lens properties are taken from the
+We mentioned stellar mass "span" of <0.8dex in the text (sec:Stellar.. par:4)
+
+We added a statement that the lens properties are taken from the
 CFHTLS photometric catalog (Coupon et al. 2009) 2009A&A...500..981C
 
 
@@ -198,11 +201,7 @@ CFHTLS photometric catalog (Coupon et al. 2009) 2009A&A...500..981C
 | this should at least be discussed somewhere in the text.  After all,
 | the title of the paper is "Models of gravitational lens candidates"!
 
-ASK PS: I got it, shall I add it? it's already in the online supplement..
-
-answer: because of not really a physical parameter, not that important in this case.
-
-
+They are not really a physical parameter and not that important in this case. We added these values to the online supllement for the interessted reader.
 
 
 | Appendix: These details on the improvements to the SpaghettiLens code
@@ -218,10 +217,10 @@ presentation, but not a whole new paper, hence the Appendix.
 | A2: How is the initial size of the mass tiles chosen?  From Figure 4,
 | it seems to vary from lens to lens.
 
-Fixed now. (sec:App2 par:1)
 The modeller can choose the "resolution" as the Radius in
-pixels (before subsampling). Typical values are 8 -- 12, where there
+pixels (before subsampling). Typical values are 8 -- 12, and there
 is an obvidous significant runtime difference between those two.
+We added a remark in (sec:App2 par:1)
 
 
 | A3: Typo: "2.5 as"
