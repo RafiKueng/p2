@@ -1,34 +1,40 @@
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stellar and halo mass estimates}
 \label{sec:stellar-mass}
 
 The stellar masses of the lens galaxies are derived by comparison of
-the photometric data with M/L estimates from population synthesis
-models.  In principle, a detailed analysis of the spectral energy
-distribution is needed to derive accurate stellar masses
+the photometric data with stellar M/L estimates from population
+synthesis models.  In principle, a detailed analysis of the spectral
+energy distribution is needed to derive accurate stellar masses
 \citep[e.g.][]{2009ApJS..185..253G,2011MNRAS.418.1587T}.  However,
-estimates to within 0.3\,dex in $\log(\Mstel/\Msun)$ can be derived
+estimates to within $\sim$0.3\,dex in $\log(\Mstel/\Msun)$ can be derived
 with a single colour, preferably tracing a rest-frame colour similar
-to $U-V$ \citep[see Fig.~1 of][]{2008MNRAS.383..857F}.  There is some
-evidence from spectral lines that massive galaxies tend to have a more
-bottom-heavy IMF than the Milky Way, but a much higher stellar
-mass-to-light would over-predict the mass in some lensing systems
-\citep{2015MNRAS.454L..71S}.
+to $U-V$ \citep[see Fig.~1 of][]{2008MNRAS.383..857F}, assuming
+a universal initial mass function (IMF). There is
+evidence from detailed absorption line strength analysis that massive
+galaxies can feature a non-standard IMF 
+\citep[e.g.][]{2013MNRAS.429L..15F}. However, these variations --
+towards a bottom-heavy distribution -- are typically found in the
+cores of massive early-type galaxies \citep{2016MNRAS.457.1468L}. The
+effect of these variations on the stellar M/L of lensing systems is
+still rather controversial
+\citep{2015MNRAS.449.3441S,2016MNRAS.459.3677L}.
 
 In this paper we further simplify the analysis by assuming a
 relationship between the apparent total magnitude and stellar mass, at
 the redshift of the lens.  For typical stellar-population parameters,
-the variation of this relation is at most 1\,dex.  A further possible
-systematic error is contamination of the light of the lensing galaxy
-by the lensed background galaxy.  Reducing or eliminating the latter
-would require detailed fitting of light distributions for each
-candidate \citep[see][]{2011ApJ...740...97L}, which we have not yet
-attempted.  Nonetheless, because the lensing masses range over two
-order of magnitude, it is still interesting to compare with very rough
-stellar masses.
+the variation of this relation is at most $\Delta\log$M$_s\sim$1\,dex.
+A further potential systematic can arise from contamination of the
+light of the lensing galaxy by the lensed background source.  Reducing
+or eliminating the latter would require detailed fitting of light
+distributions for each candidate \citep[see][]{2011ApJ...740...97L},
+which we have not yet attempted.  Nonetheless, because the lensing
+masses range over two orders of magnitude, it is still interesting to
+compare them with rough estimates of stellar mass.
 
 We make use of the \citet{2003MNRAS.344.1000B} models to derive two
-functional forms of the stellar mass with respect to SDSS-$i$ band
+functional forms of the stellar mass with respect to the $i^{\prime}$-band
 magnitudes. The models have solar metallicity, with a Chabrier IMF,
 and assume two different age trends: a ``young'' model, with a
 constant 500\,Myr age at all redshifts, and an ``old'' model where the
@@ -36,39 +42,40 @@ age is the oldest one possible at each redshift, adopting a standard
 $\Lambda$CDM model with $H_0=70$\,km\,s$^{-1}$\,Mpc$^{-1}$ and
 $\Omega_m=0.3$.
 
-Figure~\ref{fig:stelmass} shows a comparison of stellar and lensing
-masses.  The comparatively large span in the stellar mass shows the range 
-between the masses derived using the two age trends respectively
-and lies between 0.4 and 0.8~dex.
-It will be improved in future work by using available optical and NIR 
-magnitudes to derive more accurate constraints on the stellar populations.
-In addition, we also derive halo masses for the lenses using an
-abundance-matching formula.  This technique matches the distribution
-function of observed stellar mass in galaxies with that of dark-halo
-masses in $N$-body simulations to derive a simple relation between
-stellar mass and halo mass.  We emphasize that a halo mass from
-abundance matching should be considered an ``average'' estimate, and a
-significant scatter can be expected as galaxies with the same stellar
-mass can be found in different environments. We refer the reader to
-\cite{2012MNRAS.424..104L} for an assessment of the effect of
-abundance matching on the derivation of dark matter halo properties in
-lensing galaxies. We follow the prescription of
+Fig.~\ref{fig:stelmass} shows a comparison of stellar and lensing mass
+in our sample.  The comparatively large span of the error bars in
+stellar mass (horizontal axis) shows the range between the masses
+derived using the two age trends respectively, and lies between 0.4 and
+0.8\,dex.  It will be improved in future work by the use of available
+optical and NIR magnitudes to derive more accurate constraints on the
+stellar populations.  In addition, we also derive halo masses for the
+lenses using an abundance-matching formula.  This technique matches
+the distribution function of observed stellar mass in galaxies with
+that of dark-halo masses from $N$-body simulations, to define  a simple
+relation between stellar mass and halo mass.  We emphasize that a halo
+mass from abundance matching should be considered an ``average''
+estimate, and a significant scatter can be expected as galaxies with
+the same stellar mass can be found in different environments. We refer
+the reader to \cite{2012MNRAS.424..104L} for an assessment of the
+effect of abundance matching on the derivation of dark matter halo
+properties in lensing galaxies. We follow the prescription of
 \citet{2010ApJ...710..903M}, namely:
 \begin{equation}
-\begin{aligned}
+  \left.
+  \begin{aligned}
 \frac{\Mstel}{\Mhalo} &= \frac{2C_0}{(\Mhalo/M_1)^{-\beta} +
                                      (\Mhalo/M_1)^\gamma} \\
 C_0 &= 0.02820, \quad M_1 = 10^{11.884} M_\odot \\
 \beta &= 1.057, \quad \gamma = 0.556.
 \end{aligned}
+  \right\}
 \end{equation}
-Figure~\ref{fig:stelmass} may be compared with Figure~4 in
+Fig.~\ref{fig:stelmass} may be compared with fig.~4 in
 \cite{2011ApJ...734...69M}.
-
-The comparison of lensing and stellar masses provides us with the last
-of our model diagnostics.  This is a halo-matching index:
+The comparison of lensing and stellar mass produces the last 
+of our model diagnostics, defined as a halo-matching index:
 \begin{equation}
-\haloindex = \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
+\haloindex \equiv \frac{\ln(M/\Mstel)}{\ln(\Mhalo/\Mstel)}
 \end{equation}
 that relates the observed lensing to stellar mass, with the
 global ratio expected if the host halo corresponds to the
@@ -76,8 +83,8 @@ average value derived by abundance matching. Several cases
 for $\haloindex$ can be considered:
 \begin{itemize}
 \item $\haloindex < 0$ is unphysical because $M<\Mstel$.
-\item $\haloindex = 0$ is when the stellar mass exactly accounts for the
-  lensing mass.
+\item $\haloindex = 0$ means the stellar mass exactly accounts for the
+  lensing mass (i.e. no dark matter affects the lensing model).
 \item $0 < \haloindex < 1$ is the typical situation, where the lens
   includes stars and dark matter, but not the full halo.
 \item $\haloindex = 1$ means that the lens consists of the entire halo.
@@ -85,26 +92,26 @@ for $\haloindex$ can be considered:
   lensing mass exceeds the expected halo mass.
 \end{itemize}
 The halo-matching index expresses whether the lensing mass is
-plausible given the light from the candidate lensing galaxy.
+plausible given the flux received from the candidate lensing galaxy.
 
-Figure~\ref{fig:stelmass} and Table~\ref{tab:models} show most of the
-candidates having stellar
-and lensing mass typical of massive ellipticals\footnote{
+Fig.~\ref{fig:stelmass} and Table~\ref{tab:models} show that most of the
+candidates have stellar
+and lensing masses typical of massive ellipticals\footnote{
   Exact values can be found in the online version of Table~\ref{tab:models}}.
-SW05 is one of the
-most massive of all the candidates, with a mass of galaxy-group scale.
-It is a particularly attractive system for follow-up observations at
-higher resolution, as it is a large system with clear multiple-image
-features, and modelling leaves little doubt that it is a lens.  SW04
-seems to be even more massive, but the diagnostics leave some doubts
-about this model.  The two lowest-mass systems, SW19 and SW42, are
-important if they are indeed lenses, as they would be low-mass lenses
-dominated by dark matter.  All the modelled systems have reasonable
-stellar-mass fractions, except for two cases where the stellar-mass
-fraction is too low ($\haloindex > 1$): these are SW42 and
-SW57.  In the case of SW57, the model has poor diagnostics and should
-be discounted.  The model for SW42, on the other hand, is quite
-convincing --- except for the high halo-matching index.  If SW42 turns
-out not to be a lens, that would support the halo-matching index as an
-effective criterion for filtering models.
+SW05 is one of the most massive of all the candidates, corresponding
+to a galaxy-group mass scale.  It is a particularly attractive system
+for follow-up observations at higher resolution, as it is a large
+system with clear multiple-image features. Modelling leaves little
+doubt that it is a lens.  SW04 seems to be even more massive, but the
+diagnostics leave some doubts about the validity of this model.  The
+two lowest-mass systems, SW19 and SW42, are important if they are
+indeed lenses, as they would be low-mass lenses dominated by dark
+matter.  All the modelled systems have reasonable stellar-mass
+fractions, except for two cases where the stellar-mass fraction is too
+low ($\haloindex > 1$): these are SW42 and SW57.  In the case of SW57,
+the model has poor diagnostics and should be discarded.  The model
+for SW42, on the other hand, is quite convincing -- except for the
+high halo-matching index.  If SW42 turned out not to be a lens, that
+would support the halo-matching index as an effective criterion to
+discriminate models.
 
