@@ -1,70 +1,72 @@
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Image morphology}
 \label{sec:morph}
 
-A modeller's main input to the lens-modelling process is a markup of
-the candidate lens system, which we call a spaghetti diagram.
-This is a sketch of the arrival-time surface from a point-like source,
-with proposed locations of maxima, minima and saddle points, and an
-implied time-ordering of the images.  Such information encodes a
-starting proposal for the mass distribution.  A spaghetti diagram is
-thus a completely abstract construction, and moreover it refers to a
+The main input of a modeller to the process is a markup of the
+candidate lens system, which we call a spaghetti diagram.  This is a
+sketch of the arrival-time surface from a point-like source, with
+proposed locations of maxima, minima and saddle points, and an implied
+time-ordering of the images.  Such information encodes a starting
+proposal for the mass distribution.  A spaghetti diagram is thus a
+completely abstract construction, and moreover it refers to a
 simplified system with a point source.  However, spaghetti diagrams
-are intuitive because they tend to resemble the form of lensed arcs,
-and of course they are simple to draw, and easy to vary and refine in
-an open collaborative environment.  This makes them very practical for
-non-professional lens enthusiasts in the citizen-science community.
-Details and tests are given in \cite{2015MNRAS.447.2170K}.
+are intuitive because they tend to resemble the form of lensed arcs
+\citep[see fig.3 of][]{2008MNRAS.383..857F}, and of course they are
+simple to draw, and easy to vary and refine in an open collaborative
+environment. This makes them very practical for non-professional lens
+enthusiasts in the citizen-science community.  Details and tests are
+given in \citet{2015MNRAS.447.2170K}.
 
 We now discuss the diagnostics that can be taken from the process of
 drawing the spaghetti diagram, even before detailed mass-modelling
-takes place.  Figure~\ref{fig:splinput} shows nine examples, each
-consisting of a cutout of the Space~Warps image of a lens candidate,
+takes place.  Fig.~\ref{fig:splinput} shows nine examples, each
+consisting of a cutout of the \SW  image of a lens candidate,
 marked up with a spaghetti diagram.
-The volunteers are initially presented the original Space~Warps image of
-length and height 82\arcsec (440~pixels) in full size, but they have the
+The volunteers are initially presented a square image with side
+82\arcsec (440~pixels) in full size, but they have the
 ability to zoom in individually.
-The cutouts presented in Figures~\ref{fig:splinput} to \ref{fig:kappa}
-are rescaled in post-processing relative to the outermost image identified.
+The cutouts presented in Figs.~\ref{fig:splinput} to \ref{fig:kappa}
+are rescaled during post-processing, relative to the outermost image.
 % it's a factor L/(L-4) with L=pixradius, for L=12 -> 1.5
 % maprad = rmax * L / (L-4)
 
-All the examples in Figure~\ref{fig:splinput} identify five locations:
+All the examples shown in Fig.~\ref{fig:splinput} identify five locations:
 the centre of the main lensing galaxy, which is also a maximum of the
 arrival time surface (red dots); two minima (blue dots); and two
 saddle points (green dots and also self-intersections of the curves).
 Only two (SW05 and SW42) of the nine systems, however, have five
 distinct features in plausible locations.  In the other seven
 examples, an arc is interpreted as a blend of three or four images.
-This gives the `unblended images' diagnostic.  Note that this
-characterisation could be different if the spaghetti diagram is
+This defines the `unblended images' diagnostic.  Note that this
+characterisation could be different if the spaghetti diagram were 
 different.  For example, SW28 has also been modelled with the arc on
 the right interpreted as a single image, rather than as three images
-as shown in the figure; for such a model, `unblended images'
+as shown in the figure; for such a model, the `unblended images'
 diagnostic would be true.
 
-The second diagnostic is whether all images are visible.  For example,
-we see in SW58 at the top left of Figure~\ref{fig:splinput} that an
+The second diagnostic checks whether all images are visible.  For example,
+we see in SW58 at the top left of Fig.~\ref{fig:splinput} that an
 image at the second minimum is conjectural and does not correspond to
 any visible feature.
 
-The third diagnostic is whether the lens is fairly isolated, or
-whether there are other galaxies in the field that probably contribute
-significantly to the lensing.  For this, we do not consider stars or
-other clearly foregound objects.  Additional galaxies contributing to
-the lensing mass can be
-marked by the volunteer alongside the spaghetti diagrams.  An example
-can be seen as the grey dot and circle in the cutout with SW57 at the
-top right of Figure~\ref{fig:splinput}.  Objects marked in this way
-are modelled as point masses.  Other possible contributors to lensing
-are galaxies or groups that are not in the immediate vicinity of
-the lensed images, yet massive enough to have an effect.  These are
-accounted for by allowing a constant but adjustable external shear.
+The third diagnostic tests whether the lens is isolated, or whether
+other galaxies could contribute to the lensing.  For this, we do not
+consider stars or other clearly foregound objects.  Additional
+galaxies contributing to the lensing mass can be marked by the
+volunteer alongside the spaghetti diagrams.  An example can be seen as
+the grey dot and circle in the cutout with SW57 at the top right of
+Fig.~\ref{fig:splinput}.  Objects marked in this way are modelled as
+point masses.  Other possible contributors to lensing are galaxies or
+groups that are not in the immediate vicinity of the lensed images,
+yet massive enough to exert an influence. These are accounted for by
+allowing a constant but adjustable external shear.
 
-We remark that blended images or missing images or perturbing galaxies
-do not imply that a given candidate is unlikely to be a lens.  They
-mean, rather, that the models are more uncertain and perhaps could be
-more easily improved by trying further variations in the markup.
+We remark that the lack of expected lensed images, or the presence of
+blended images or perturbing galaxies do not imply that a given
+candidate is unlikely to be a lens.  This means, rather, that the
+models are more uncertain and perhaps could be more easily improved by
+trying further variations in the markup.
 
 The fourth diagnostic is based on the fact that the arrangement of
 lensed images of a pointlike source through a non-circular
@@ -72,38 +74,38 @@ gravitational lens depends on the location of the source relative to
 the long and short axes of the lens.  This dependence is quite robust
 and independent of many other details of the lensing mass
 distribution.  Sources close to being dead-centre behind a lens tend
-to produce quads, sources at larger transverse distance tend to
-produce doubles.  We denote these as Q and D respectively, and add a
+to produce quads; sources at larger transverse distance tend to
+produce doubles.  We denote these as Q and D, respectively, and add a
 prefix to the Q systems, as follows: we write LQ if the source is
 inferred as displaced along the long axis of the lens, SQ if displaced
-along the short axis, IQ if inclined to both axes, CQ if only very little to
-no displacement.  Although the
+along the short axis, IQ if inclined to both axes, CQ if only very little or
+no displacement is evident.  Although the
 unlensed source and its location are obviously not seen, the LQ, SQ, IQ and CQ
 cases correspond to easily-seen image morphologies \citep[see,
   e.g.,][]{2003AJ....125.2769S}.
 \begin{itemize}
 \item The simplest is the SQ case: this creates a saddle point and two
   minima in an arc, with the second saddle point on the other side of
-  the lensing galaxy, and closer to the galaxy than the arc is.  SW58
-  and SW28 in the upper row of Figure~\ref{fig:splinput} are typical
-  examples of SQ.  If the source would move outwards along the short
-  axis, the minimum-saddle-minimum would merge into a single minimum,
-  leaving a D system; the transition is known as cusp catastrophe.
-\item The middle row of Figure~\ref{fig:splinput} shows three IQ
-  systems, SW05, SW42 and SW19.  This type has a characteristic
+  the lensing galaxy, at a closer to the galaxy than the arc.  SW58
+  and SW28 in the upper row of Fig.~\ref{fig:splinput} are typical
+  examples of SQ.  If the source were moved outwards along the short
+  axis, the minimum-saddle-minimum set would merge into a single minimum,
+  leaving a D system; the transition is known as a cusp catastrophe.
+\item The middle row of Fig.~\ref{fig:splinput} shows three IQ
+  systems: SW05, SW42 and SW19.  This type has a characteristic
   asymmetry, often with two images close together.  If the source
-  would move outwards, the minimum-saddle pair would merge and
-  mutually cancel, again leaving a D system; the transition is known
+  were moved outwards, the minimum-saddle pair would merge and
+  mutually cancel, leaving again a D system. This transition is known
   as a fold catastrophe.
-\item The lower row of Figure~\ref{fig:splinput} shows three LQ
-  systems, SW09, SW29 and SW02, and the failed model SW57 at top right
-  also possibly belonging to this category.  Here the images have a
+\item The lower row of Fig.~\ref{fig:splinput} shows three LQ
+  systems: SW09, SW29 and SW02. The failed model, SW57, at top right
+  may also belong to this category.  Here the images have a
   fairly symmetric arrangement with an arc and a counter-image on the
   other side, but the spaghetti diagram is completely asymmetric.  If
-  the source would move outwards along the long axis, the
-  saddle-minimum-saddle would merge into a single saddle --- another
+  the source were moved outwards along the long axis, the
+  saddle-minimum-saddle set  would merge into a single saddle --- another
   form of cusp catastrophe.  LQ can be visually distinguished from SQ
-  from the relative distances of the arc and the counter-image.  For
+  by the relative distances of the arc and the counter-image.  For
   LQ the arc is closer, for SQ the counter-image is closer.
 \end{itemize}
 CQ systems are often called `cross' or `Einstein-cross' systems; IQ

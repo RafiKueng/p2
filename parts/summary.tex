@@ -1,35 +1,44 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary and conclusions}\label{sec:summary}
 
 
-We report on a first set of mass distributions and follow up diagnostics for 
-the {\SW} lens candidates created with a novel approach that aims to be scalable 
-by orders of magnitudes to prepare for the many thousands of lenses the next 
-generation of wide field surveys will yield.
+We report on a first set of mass distributions and follow-up
+diagnostics for the {\SW} lens candidates created with a novel
+approach that aims to be scalable by {\sl orders of magnitude} to
+prepare for the many thousands of lenses the next generation of wide
+field surveys will yield (e.g. Euclid, WFIRST).
 
-The way of discovering lenses is changing with the introduction of
-machine learning and citizen science, combined with the coverage of
-huge areas by modern surveys.  The way mass models are constructed also needs to
-change, in order to be prepared for the increasing influx of lenses to
-be modelled.  This work is a hybrid of the classical style, where a
-small team of experts invest many hours into the creation of a single
-model, with the approach of citizen science, where a crowd of amateur
-volunteers make independent contributions.  We are a collaboration of
-professionals and experienced citizen-science volunteers, aiming to
-create early-stage lens models as soon as a lens candidate is found.
+Over the past few years, the way of discovering lenses has changed
+with the introduction of machine learning and citizen science methods,
+combined with the coverage of large areas of the sky by modern
+surveys.  The way lensing mass models are constructed also needs to
+change, in order to be prepared for the increasing influx of lens
+candidates.  The work in this paper represents a hybrid approach
+between the classical style -- where a small team of experts invest
+many hours into the creation of a single model -- and a citizen
+science project -- where a crowd of amateur volunteers make
+independent contributions.  The authors of this paper are a
+collaboration of professional and experienced citizen-science
+volunteers, aiming to create early-stage lens models as soon as a lens
+candidate is found.
 
+To assist volunteers in constraining lensing models, we introduce a
+set of diagnostics that help asses the validity of the models. At a
+later stage, we encourage modellers to apply those diagnostics as
+feedback on the plausibility of their assumptions, and to suggest
+additional diagnostics.
 
-To assists volunteer modellers assessing their models, we introduce a
-set of diagnostics allowing the qualification of the lenses and the
-generated models and present them alongside the generated models. At a
-later stage, we encourage modellers to apply those diagnostics
-themselves to get a preliminary feedback on the plausibility of their
-models and possibly suggest additional diagnostics.
-
-The diagnostics (i) -- (iv) turned out to be useful for evaluating how difficult a system is to model, but they weren't necessary conditions for a promising model.
-They can help select systems to present to novice volunteers to introduce them to the modelling process.
-Diagnostics (v) and (vi) on the other hand can be considered as necessary criteria for a good model.
-Volunteers employed those to evaluate their models and they turned out to be easy enough to grasp for new volunteers.
-The halo-matching index $\haloindex$, diagnostic (vii), is an interesting criterion that might be useful for volunteers, but needs further investigation to be established.
+The diagnostics (i) -- (iv) (see Section.~\ref{sec:candidates_models})
+turned out to be useful measures of the difficulty in modelling a
+system, but they did not constitute necessary conditions for a
+promising model.  They can help select systems to introduce novice
+volunteers to the modelling process. In contrast, diagnostics (v) and
+(vi) can be considered as necessary criteria for a good model.
+Volunteers employed those ones to evaluate their models, and turned out
+to be easy enough to grasp by new volunteers.  The halo-matching
+index diagnostic (vii, $\haloindex$), is an interesting criterion that
+might be useful for the modellers, but needs further investigation.
 
 
 Table~\ref{tab:models} is a summary of our results.  It characterises
@@ -37,26 +46,30 @@ each modelled system with seven diagnostics, indicating (a)~the image
 morphology and how clear or indistinct it is, (b)~whether the mass map
 and synthetic lensed image appear to be plausible, and (c)~how the
 model mass compares with the estimated stellar and full-halo masses.
-Missing entries are due to photometry data not being available, whereas
-missing rows are due to models not having been created for this particular
+Missing entries are due unavailable imaging data, whereas 
+missing rows are due to models that were not created for this particular
 candidate.
 
-The trend in Figure~\ref{fig:stelmass}, that higher-mass galaxies get 
-progressively more dark-matter dominated, is expected, e.g. see 
-\cite{2005ApJ...623L...5F}, as is the span of about one order of magnitude for 
-the stellar mass and the two order of magnitudes for the lensing mass. With 
-future data, it would be interesting to compare enclosed stellar and lensing 
-mass as a function of radius, going from star-dominated inner regions to dark 
-halos. \cite{2011ApJ...740...97L} illustrate this behaviour in their Figure~5, 
-but the present sample could go an order of magnitude higher in mass.
+The trend in Fig.~\ref{fig:stelmass}, where higher-mass galaxies get
+progressively more dark-matter dominated, is expected
+\citep[see, e.g.][]{2005ApJ...623L...5F}, as is the span of about one
+order of magnitude for the stellar mass and the two orders of
+magnitude in lensing mass. With future data, it will be interesting to
+compare the enclosed stellar and lensing mass as a function of radius,
+going from the star-dominated inner regions to the outer dark
+halos. \citet{2011ApJ...740...97L} illustrate this behaviour in their
+fig.~5, but the present sample could go an order of magnitude higher
+in mass.
 
-The quick creation of many models for the {\SW} candidates successfully showed 
-that a subset of citizen scientists are interested in being involved in more 
-challenging tasks that take some time to learn. A next steps involves 
-recruiting more lensing enthusiasts, as soon as the next round of {\SW} is 
-started. In the meantime, the improvements shown in the Appendix have to been 
-integrated into regular {\SpL} usage. Additionally, photometric fitting could 
-be integrated into {\SpL}. This would allow experienced citizen scientists to 
-generate photometric redshifts and stellar masses, and thus generate 
-preliminary dark-matter maps as soon as a lens-candidate is identified.
+The quick creation of many models for the {\SW} candidates
+successfully showed that a subset of citizen scientists are interested
+in being involved in more challenging tasks that take some time to
+learn. The next step involves recruiting more lensing enthusiasts, as
+soon as the next round of {\SW} is started. In the meantime, the
+improvements shown in the Appendix will be integrated in the standard
+version of {\SpL}. Photometric fitting could also be
+integrated into {\SpL}. This would allow experienced citizen
+scientists to generate photometric redshifts and stellar masses, and
+thus generate preliminary dark-matter maps as soon as a lens-candidate
+is identified.
 
