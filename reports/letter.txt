@@ -29,13 +29,33 @@ All fixed
 
 
 -------------------------------------------------------------------------------
+Scientific Editor's Comments:
+-------------------------------------------------------------------------------
+
+Please note that due to a bug in the analysis pipeline, models for two
+candidates were not shown in the first version of table 1. Since then we
+fixed this bug and added those back in for this version.
+Also 3 incorrect mophologies were corrected.
+
+(They were placed at the border of overlapping SpaceWarps tiles, and
+thus their ASW ID was not unique. For example SW 48 can be seen on both
+SpaceWarps tiles ASW000066w [bottom] and ASW00007ls [top]
+https://talk.spacewarps.org/#/subjects/ASW000066w
+https://talk.spacewarps.org/#/subjects/ASW00007ls )
+
+
+
+
+-------------------------------------------------------------------------------
 Reviewer: 2
 -------------------------------------------------------------------------------
 
-First, we would like to express our deepest gratitude to this reviewer for
-her/his detailed and very helpful remarks!
+First, we would like to express our gratitude to reviewer 2 for
+her/his detailed and very helpful remarks!  We have revised our paper
+accordingly and feel that her/his comments helped clarify and improve our
+paper greatly.
 
- 
+
 | My primary comments on this paper are that it is too light on details
 | in some aspects, and often lacks a coherent flow and focus.  Further
 | elaboration on some of the data and methods used will enhance the
