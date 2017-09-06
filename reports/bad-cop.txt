@@ -27,7 +27,6 @@ Mass-Models section) as follows:
 
 Was the reviewer perhaps thinking of training sets in machine learning?
 
-
 | - The authors claim that this approach would allow the analysis of a
 | large number of lens candidates. This is a crucial point for this
 | paper but no indication, even tentative, of the time required to
