@@ -2,42 +2,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Mass models}\label{sec:massmodels}
 
+
+
 Once a spaghetti diagram has been drawn on a web browser, it is
 forwarded to a server-side numerical framework, which searches for
 mass maps consistent with the image locations, parities and time
 ordering, given by the modeller.  The mass maps are made up of mass
 tiles and are free-form, but are required to be concentrated around
 the identified lens centre \citep[see][for the precise formulation of
-  the search problem]{2014MNRAS.445.2181C}. Assuming such mass
-distributions can be found -- which in practice is usually the case --
-a statistical ensemble of two-dimensional mass maps is returned.  This
-ensemble, along with derived quantities and uncertainties, makes up
-one SpaghettiLens model.
+  the search problem]{2014MNRAS.445.2181C}.  The modeller can also set
+various options for the search, such as the number of mass tiles and
+the extent of the mass map; all options have defaults.  Typically,
+there are $\sim500$ mass tiles arranged in a disc, centred on the
+lensing galaxy and extending to twice the radius of the outermost
+image.  By default, the mass distributed is required to have
+$180^\circ$ rotation symmetry, but this option can be unset.  Assuming
+mass distributions can be found -- which in practice is usually the
+case -- a statistical ensemble of two-dimensional mass maps is
+returned.  This ensemble, along with derived quantities and
+uncertainties, makes up one SpaghettiLens model.
 
 The mass will naturally depend on the lens and source redshifts, which
 are unknown when a lens candidate is first identified.  However, this
 is not a problem, because a model can be trivially rescaled to use
-better redshift values, as they become available.  This work applies
-photometric redshifts from the CFHTLS pipeline
-\citep{2009A&A...500..981C} to the candidate lensing galaxies; the
-values range from z=0.2 to 1 (see Table~\ref{tab:models}).
-These redshifts entail rather big uncertainties, up to a few ten
-percent.  Since, however, the angular critical density is proportional
-to $d_l d_s d_{ls}^{-1}$ \citep[consult Equation~A1
-  in][]{2015MNRAS.447.2170K} it is negligible for this tentative
-analysis. \textcolor{red}{\bf IF: I would not say this is
-  ``negligible'' but, rather, that the error in the redshift would lead to
-  surface mass density uncertainties of XX\%, which, for the
-  aim of the tentative analysis presented here, is an acceptable
-  result. You should also check and quantify properly the
-  uncertainty in the photo-z. What is the value claimed by the
-  CFHTLS group? I would say 5-10\% is a decent level, but you
-are mentioning 10s of \% which is rather extreme!}.
-As the mass normalisation depends only weakly on the source redshift,
-provided it is higher than the lens redshift, we adopted a redshift
-z=2 for all sources, unless an unambiguous photometric redshift is
-available. \textcolor{red}{\bf IF: Again, a simple quantification of the
-change you expect, for instance, if the source is at z=3 would be good.}
+better redshift values, as they become available.  The mass
+normalisation of the models is proportional, through the angular
+critical density, to the factor $d_L\, d_S\, d_{LS}^{-1}$, where
+$d_L,d_S$ and $d_{LS}$ are the usual angular-diameter distances.  In
+the redshift ranges typical of galaxy lensing, the normalisation
+factor is roughly proportional to the lens redshift, and weakly
+dependent on the source redshift.  This work applies photometric
+redshifts from the CFHTLS pipeline \citep{2009A&A...500..981C} to the
+candidate lensing galaxies; the values range from $z=0.2$ to 1 (see
+Table~\ref{tab:models}).  The source redshifts are assumed as $z=2$,
+unless an unambiguous photometric redshift is available.  The lens
+redshifts redshifts entail rather big uncertainties, up to a few tens
+of percent.  The lensing masses are uncertain at the same level.  On
+the other hand, the lensing masses in the sample range from
+$10^{11}M_\odot$ to $10^{13}M_\odot$, hence the redshift uncertainty
+is not so important in this preliminary analysis.
+% \textcolor{red}{\bf IF: I would not say this is
+% ``negligible'' but, rather, that the error in the redshift would lead to
+%  surface mass density uncertainties of XX\%, which, for the
+%  aim of the tentative analysis presented here, is an acceptable
+%  result. You should also check and quantify properly the
+%  uncertainty in the photo-z. What is the value claimed by the
+%  CFHTLS group? I would say 5-10\% is a decent level, but you
+%  are mentioning 10s of \% which is rather extreme!}.
+% \textcolor{red}{\bf IF: Again, a simple quantification of the
+% change you expect, for instance, if the source is at z=3 would be good.}
 
 The ensemble of mass maps can be post-processed in many different
 ways.  Four different graphical quantities are particularly useful.
@@ -89,8 +102,11 @@ the lens equation and arrival-time surface are continuous.
 
 Fig.~\ref{fig:encl} shows the enclosed-mass profiles, expressed as the
 average convergence, $\kappa$, within circles of given projected
-radius.  The uncertainties \textcolor{red}{\bf IF: at the BLAH level}
-are included.  Appendix~\ref{subsec:hires} describes the improvements made
+radius.  Uncertainties are included (see the figure caption for
+details).
+% \textcolor{red}{\bf IF: at the BLAH level}
+% Explained in the caption.
+Appendix~\ref{subsec:hires} describes the improvements made
 since our earlier work \citep{2015MNRAS.447.2170K}, to allow for
 steeper profiles in the inner regions.  The enclosed mass is typically
 best constrained at the notional Einstein radius, becoming more

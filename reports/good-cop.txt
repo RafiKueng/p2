@@ -213,15 +213,11 @@ They are not really a physical parameter and not that important in this case. We
 The latter is indeed the case -- we feel the improvements merit
 presentation, but not a whole new paper, hence the Appendix.
 
-
 | A2: How is the initial size of the mass tiles chosen?  From Figure 4,
 | it seems to vary from lens to lens.
 
-The modeller can choose the "resolution" as the Radius in
-pixels (before subsampling). Typical values are 8 -- 12, and there
-is an obvidous significant runtime difference between those two.
-We added a remark in (sec:App2 par:1)
-
+The size of the mass maps and the mass tiles are chosen by the modeller.
+This is now explained in the first paragraph of the Mass-Models section.
 
 | A3: Typo: "2.5 as"
 
@@ -241,8 +237,8 @@ and have changed all occurrences accordingly.
 
 The overestimates in r_E were a result of the too-shallow mass
 profiles.  (This is now noted in the text of Appendix A2).  As the
-Appendix discusses, sub-sampling the central region appears to the way
-to cure the problem, but we do not have a completely satisfactory
+Appendix discusses, sub-sampling the central region appears to be the
+way to cure the problem, but we do not have a completely satisfactory
 implementation as yet.
 
 
