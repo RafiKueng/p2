@@ -37,3 +37,13 @@ Now fixed.
 
 
 Two futher models for sw25 and sw49
+
+
+| Please present the abstract as a single paragraph.
+| Please ensure that all textual labels in figures are at least as
+| large as the caption text; any smaller and they become too difficult to read.
+| Please ensure that all references to arxiv papers also include the preprint
+| number, e.g. arXiv:1506.08817.
+
+
+-------------------------------------------------------------------------------
