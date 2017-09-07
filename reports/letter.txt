@@ -113,7 +113,7 @@ We added explanations in the last Par. of what now is sec 3.
 (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 
 An error in the previous version has also been corrected: LQ/SQ
-were inconsistent between the text and Table 1 (the text was wrong).
+were inconsistent between the text and Table 1.
 
 | Sec. 3, 2nd paragraph: "…provided it is larger than to the lens
 | redshift, we assumed all sources to lie at…" I don't think either "to"
@@ -144,7 +144,7 @@ The paragraph has now been expanded with more details.
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
 
-[ Please find the referenced figure here:
+[ you can find the figure uploaded or here:
   http://www.physik.uzh.ch/~rafik/data/p2/lMs.pdf ]
 
 We would like to show the referee a figure to justify this
