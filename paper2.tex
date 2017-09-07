@@ -1,53 +1,23 @@
 \documentclass[fleqn,usenatbib]{template/mnras}
 
-%%% DEBUG SETTINGS - remove at the end %%%%%%%%%%%%%%%
-
-
-%\usepackage{silence} % silence error warinings
-%\WarningFilter{caption}{Unsupported document class} % caption doesn't know mnras..
-%\hbadness = 10000
-%\vbadness = 10000
-
-
-% \usepackage{}
-
-% MNRAS is set in Times font. If you don't have this installed (most LaTeX
-% installations will be fine) or prefer the old Computer Modern fonts, comment
-% out the following line
-%\usepackage{newtxtext,newtxmath} % not yet supported on arxiv and uni computer
-%\usepackage{txfonts}
-
-% Depending on your LaTeX fonts installation, you might get better results with one of these:
-%\usepackage{mathptmx}
-%\usepackage{txfonts}
-
 % Use vector fonts, so it zooms properly in on-screen viewing software
 % Don't change these lines unless you know what you are doing
-\usepackage[T1]{fontenc} % make sure font is supported
-% \usepackage{ae,aecompl} %obsolete when using modern fonts
+\usepackage[T1]{fontenc}      % make sure font is supported
 \usepackage[final]{microtype} % make sure font is supported
-% and a suitable font
-\usepackage{lmodern} % use a modern font with T1 support
-%\usepackage{cm-super} % use a modern font with T1 support
-
-
-%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+\usepackage{lmodern}          % use a modern font with T1 support
 
 % Only include extra packages if you really need them. Common packages are:
-%\usepackage[dvipdfmx]{graphicx}	% Including figure files
 \usepackage{graphicx} % Including figure files
-%\usepackage[skip=0pt]{subcaption}
-\usepackage{amsmath}	% Advanced maths commands
-\usepackage{amssymb}	% Extra maths symbols
-\usepackage{pifont}	% Extra maths symbols
-%\usepackage{bmpsize}  % PS still needs this for correct bounding boxes?
-\usepackage{xspace} % handling of spaces after shortcuts
+\usepackage{amsmath}  % Advanced maths commands
+\usepackage{amssymb}  % Extra maths symbols
+\usepackage{pifont}   % Extra maths symbols
+\usepackage{xspace}   % handling of spaces after shortcuts
 
 
-% TODO stuff, comment out for final submit
-\usepackage{todonotes} % as long as we are editing...
-%\usepackage{showframe} % for debug
-\overfullrule=5pt      % show overfull boxes
+%%% DEBUG SETTINGS - remove at the end %%%%%%%%%%%%%%%
+% \usepackage{todonotes} % as long as we are editing...
+% \usepackage{showframe} % for debug
+% \overfullrule=5pt      % show overfull boxes
 
 % I disabled hyperlink in the cls und included it here because of bugs
 \usepackage{hyperref}   % Hyperlinks
@@ -58,10 +28,6 @@
 \newcommand*{\NO}{\ding{55}}
 \newcommand*{\UK}{\ensuremath{\text{--}}}
 
-
-%\newcommand{\lenstitle}[1]{\noindent\textbf{#1} --}
-%\newcommand{\params}[3]{(\(\Theta_\text{E}:#1\), $\varepsilon:#2$, $\alpha_\varepsilon:#3$ )}
-
 \newcommand{\SW}{Space\,Warps\xspace}
 \newcommand{\SpL}{SpaghettiLens\xspace}
 \newcommand{\asw}[1]{ASW000\,#1\xspace}
@@ -70,8 +36,6 @@
 
 \newcommand{\figref}[1]{\ref{fig:#1}}
 
-%\newcommand{\Mstel}{\ensuremath{M_{\rm stel}}}
-%\newcommand{\Mhalo}{\ensuremath{M_{\rm h}}}
 \newcommand{\Mstel}{\ensuremath{M_\text{stel}}}
 \newcommand{\Mhalo}{\ensuremath{M_\text{halo}}}
 \newcommand{\Msun}{\ensuremath{M_\odot}}
@@ -86,12 +50,13 @@
 \def\pwidth{.32\linewidth}
 
 
+
 \input{img/model_assignment}
 
 
 
-\title[Lens models for Space Warps CFHTLS]{Models of gravitational lens candidates from
-  Space Warps CFHTLS}
+\title[Lens models for Space Warps CFHTLS]{Models of gravitational
+    lens candidates from Space Warps CFHTLS}
 
 \author[K\"ung et al]{Rafael K\"ung,$^{1}$
 Prasenjit Saha,$^{1}$
@@ -176,17 +141,9 @@ gravitational lensing: strong -- galaxies: general
 
 \input{parts/summary}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliographystyle{template/mnras}
 \bibliography{bib/bibli}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
 
@@ -198,11 +155,8 @@ gravitational lensing: strong -- galaxies: general
 
 \input{parts/app.tex}
 
-%\section{TODO}
-%\listoftodos
 
 % Don't change these lines
 \bsp	% typesetting comment
 \label{lastpage}
 \end{document}
-
