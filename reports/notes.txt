@@ -1,0 +1,6 @@
+(They were placed at the border of overlapping SpaceWarps tiles, and
+thus their ASW ID was not unique. For example SW 48 can be seen on both
+SpaceWarps tiles ASW000066w [bottom] and ASW00007ls [top]
+https://talk.spacewarps.org/#/subjects/ASW000066w
+https://talk.spacewarps.org/#/subjects/ASW00007ls )
+

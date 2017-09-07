@@ -1,17 +1,3 @@
-
-Dear Ms. Cole
-
-Thank you very much for your report. We are confident that we addressed all
-issues with a major revision of the manuscript. Please find below a list
-of all issues raised by the editor and reviewers and our answer.
-
-Kind regards,
-Rafael Kueng
-
-
-
-
-
 -------------------------------------------------------------------------------
 Assistant Editor:
 -------------------------------------------------------------------------------
@@ -23,27 +9,6 @@ Assistant Editor:
 | number, e.g. arXiv:1506.08817.
 
 All fixed
-
-
-
-
-
--------------------------------------------------------------------------------
-Scientific Editor's Comments:
--------------------------------------------------------------------------------
-
-Please note that due to a bug in the analysis pipeline, models for two
-candidates were not shown in the first version of table 1. Since then we
-fixed this bug and added those back in for this version.
-Also 3 incorrect mophologies were corrected.
-
-(They were placed at the border of overlapping SpaceWarps tiles, and
-thus their ASW ID was not unique. For example SW 48 can be seen on both
-SpaceWarps tiles ASW000066w [bottom] and ASW00007ls [top]
-https://talk.spacewarps.org/#/subjects/ASW000066w
-https://talk.spacewarps.org/#/subjects/ASW00007ls )
-
-
 
 
 -------------------------------------------------------------------------------
@@ -74,12 +39,13 @@ Now fixed.
 
 Now cited.
 
+Two more citations to robotic modelling also added.
  
 | Sec. 1, 4th paragraph: Typo: "The result model" -> "The resulting
 | model"
 
 Now fixed.
- 
+
 
 | Sec. 1: The first time you mention "lensing mass", be sure to define
 | it.  It is not clear whether it is referring to the mass within the
@@ -87,7 +53,7 @@ Now fixed.
 | total mass that extrapolates from the lens model results.  This is a
 | common confusion I had throughout the paper.
 
-It is a total mass.
+It is the total of the mass map, but not extrapolated.
 Now clarified in (sec:The candidates and models; item:Thirdly...)
 
 
@@ -96,9 +62,9 @@ Now clarified in (sec:The candidates and models; item:Thirdly...)
 | your work.  This would be better placed in a separate section, leaving
 | Sec. 1 to background and motivation.
 
-We rearranged what were Sec 1 and 2 into three new parts.
-Sec 1 covers the introductioary material only, whereas the new Sec. 2
-covers the candidates, the models and the diagnostics.
+We re-organised the text.  Sec 1 covers the introductory material
+only, whereas the new Sec. 2 covers the candidates, the models and the
+diagnostics.
 
 
 | Sec. 1, 6th paragraph: This paragraph concludes with, "it is
@@ -113,7 +79,7 @@ covers the candidates, the models and the diagnostics.
 | others?  This issue also applies more broadly to Sections 2 and 3 when
 | the authors describe the diagnostics in more detail.
 
-We added a paragraph discussion the criterias in the summary section
+We added a paragraph discussing the criteria in the summary section
 and added some remarks in the new Sec 2.
 
 
@@ -146,6 +112,8 @@ We explain in sec:3 "Image morphology" paragraph 2.
 We added explanations in the last Par. of what now is sec 3.
 (cross = CQ, fold -> IQ, cusp -> SQ or LQ).
 
+An error in the previous version has also been corrected: LQ/SQ
+were inconsistent between the text and Table 1 (the text was wrong).
 
 | Sec. 3, 2nd paragraph: "…provided it is larger than to the lens
 | redshift, we assumed all sources to lie at…" I don't think either "to"
@@ -163,9 +131,7 @@ Typo fixed.
 | slope, clumpiness, etc.  Some additional text connecting this sentence
 | to the next section would be good.
 
-It was not meant to be a segway but was actually about the properties
-of the mass map the reviewer listed. We expanded this into a paragraph
-to make it clear.
+The paragraph has now been expanded with more details.
 (sec:4.Mass Models; last paragraph)
 
 
@@ -178,7 +144,7 @@ to make it clear.
 | claim that with photo-zs alone, stellar mass uncertainties are 0.45
 | dex, and they use more than just a single color.
 
-[ Please find the refenced figure here:
+[ Please find the referenced figure here:
   http://www.physik.uzh.ch/~rafik/data/p2/lMs.pdf ]
 
 We would like to show the referee a figure to justify this
@@ -215,13 +181,12 @@ panel). As we move away from the 4000A break, the colour is less able
 to constrain the population parameters, giving rise to a higher
 uncertainty, as seen at the low- and high-z limits in the right-hand panel.
 
-Incidentally, we note that the quote of 0.45dex in Collett et al. (2013)
-is not backed by any estimate, derivation, or previous work, although we
-understand it is a good educated guess.
+The quote of 0.45dex in Collett et al. (2013) does not give details,
+so it appears to be an educated guess.
 
-Also note the work presented here is just a pilot study. In an ongoing
-project (Denzel et al.)  we are including several broadband filters to
-better constrain the stellar M/L
+Also note the work presented here is just a pilot study. An ongoing
+project (led by P. Denzel) is endeavouring to include several
+broadband filters to better constrain the stellar M/L.
 
 
 | Sec. 4, 2nd/3rd paragraph: How are the final uncertainties on the
@@ -232,7 +197,7 @@ better constrain the stellar M/L
 
 The uncertainties or maybe better "span" displayed are due to the differences
 between the two age trends *only*.
-We added few words to clarify this (in sec:4.Mass Models par.4 and fig:7)
+We added a few words to clarify this (in sec:4.Mass Models par.4 and fig:7)
 
  
 | Sec. 4, 3rd paragraph: Studies of early-type lens galaxies
@@ -289,15 +254,17 @@ The requested values don't fit nicely onto the page in the printed version,
 even a second line for the caption or adding a few more pixels in a row makes
 the box overfull. So we decided to keep the current layout.
 
-We added however an ascii / csv online supplement of table 1 with all the
+We added however an ascii / csv online supplement of Table 1 with all the
 additional data used to generate the halo matching index (m_moster), raw
 values, errors and einstein radii.
 
-Additionally we discuss the errors in (sec:5:Stellar.. par:4).
+We also now discuss the errors in (sec:5:Stellar.. par:4).
 We added a statement that the lens properties are taken from the CFHTLS
 photometric catalog (Coupon et al. 2009; 2009A&A...500..981C) and discuss
 uncertainties of zlens in (sec:4:Mass models; par:2)
 
+Additionally, Table 1 has been corrected to include models for two
+more candidates.  Those models had been missed in the earlier version.
 
 | Table 1: While I understand that the primary goal is to show the
 | diagnostics, why not also show the inferred lens model parameters such
@@ -305,10 +272,11 @@ uncertainties of zlens in (sec:4:Mass models; par:2)
 | this should at least be discussed somewhere in the text.  After all,
 | the title of the paper is "Models of gravitational lens candidates"!
 
-We think that they are not really an important physical parameter and not
-that interessting in this case. We added these values to the online
-supllement of table 1 for the interessted reader.
+We have added these values to the online supplement -- both for Table 1
+and for all individual models.
 
+As the print version of Table 1 is very full, and r_E could be
+estimated from M_lens and z_lens, we have not included it there.
 
 | Appendix: These details on the improvements to the SpaghettiLens code
 | feel a bit out of place in this paper.  Do the authors plan a
@@ -349,10 +317,6 @@ profiles.  (This is now noted in the text of Appendix A2).  As the
 Appendix discusses, sub-sampling the central region appears to be the
 way to cure the problem, but we do not have a completely satisfactory
 implementation as yet.
-
-
-
-
 
 
 -------------------------------------------------------------------------------
@@ -461,7 +425,7 @@ Star-formation becomes more efficient for masses a few times that, and
 then cuts off again (AGN feedback?).  To see the whole range in a
 single sample is, all caveats notwithstanding, indeed exciting.
 
-We did expand the interpretation of Figure 6 to better hilight these points.
+We expanded the interpretation of Figure 6 to better highlight these points.
 
 
 
