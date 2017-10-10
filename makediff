@@ -1,5 +1,8 @@
 #!/bin/bash
 
-BASECOMMIT=df89f2550b5
+# submitted - rev1
+#BASECOMMIT=df89f2550b5
+# rev 1 - rev2
+BASECOMMIT=c989a43644004
 
 ./git-latexdiff --bibtex --main paper2.tex --output paper2_diff.pdf $BASECOMMIT
