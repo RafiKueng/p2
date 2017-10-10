@@ -1,45 +1,114 @@
-I thank the authors for addressing most of my points.  The paper is much better-organized and reads more clearly now.  I still have some remaining concerns and suggestions that I would like them to address before I recommend the paper for publication.
+I thank the authors for addressing most of my points.  The paper is much 
+better-organized and reads more clearly now.  I still have some remaining 
+concerns and suggestions that I would like them to address before I recommend 
+the paper for publication.
 
-I am glad that the authors have clarified “lensing mass” in the text, but I have concerns about this formulation.  It is stated that the mass map extends to roughly twice the distance of the outermost image.  While this probably encloses most of the total mass of the lens galaxy, their halos certainly extend beyond this, creating a bias toward lensing masses that are low compared to total mass.  This also can create a systematic effect where low-redshift lenses will have a smaller ratio of Einstein radius to effective radius (or halo scale radius), and thus this bias will affect them more.  The immediate thought is to extend the mass maps until the mass tiles around the edge go to zero, but this creates larger uncertainties elsewhere and probably increases computation time.  An alternative is to define lensing mass as mass within the Einstein radius, although then the comparison to abundance matching results will require further assumptions.  However the authors deal with this, it needs to be at least mentioned and some estimate of the biases should be made.
+I am glad that the authors have clarified “lensing mass” in the text, but I have 
+concerns about this formulation.  It is stated that the mass map extends to 
+roughly twice the distance of the outermost image.  While this probably encloses 
+most of the total mass of the lens galaxy, their halos certainly extend beyond 
+this, creating a bias toward lensing masses that are low compared to total mass. 
+ This also can create a systematic effect where low-redshift lenses will have a 
+smaller ratio of Einstein radius to effective radius (or halo scale radius), and 
+thus this bias will affect them more.  The immediate thought is to extend the 
+mass maps until the mass tiles around the edge go to zero, but this creates 
+larger uncertainties elsewhere and probably increases computation time.  An 
+alternative is to define lensing mass as mass within the Einstein radius, 
+although then the comparison to abundance matching results will require further 
+assumptions.  However the authors deal with this, it needs to be at least 
+mentioned and some estimate of the biases should be made.
+
+
 >
 paper by dominik "diagnostics of  baryon cooling":
 one could try to extrapolate it as done in above paper, but we have not done it.
 -----
-When doing the ensemble average of the mass models, how is the “mean” determined?  Is it on a tile-by-tile basis?  Is it by total lensing mass?  Is there some weighting of the different models based on quality of fit?  How are the uncertainties determined?  Figure 6 shows the full range of mass, but how does this translate statistically into uncertainties on physical properties of the lens galaxy?
->
-add two three sentences how glass works
+
+
+When doing the ensemble average of the mass models, how is the “mean” 
+determined?  Is it on a tile-by-tile basis?  Is it by total lensing mass?  Is 
+there some weighting of the different models based on quality of fit?  How are 
+the uncertainties determined?  Figure 6 shows the full range of mass, but how 
+does this translate statistically into uncertainties on physical properties of 
+the lens galaxy?
+
+>>>
+Clarified in sect 4, par 1.
+It is indeed on a tile by tile basis and uncertainties are the spans between min and max of each tile.
 -----
 
 
-Given the relatively small number of modelers and the fact that one lens was not modeled at all, there must be some lenses with just one model, or very few models.  How can you determine uncertainties on these models with so few numbers?  There must be some minimum number of models you need before you can start to get a handle on the model uncertainties.  I feel that either lenses below this minimum number should be excluded from the analysis from the time being, or a note should be made regarding the low number of models.  Perhaps adding a column to Table 1 showing the number of models would be useful.
+Given the relatively small number of modelers and the fact that one lens was not 
+modeled at all, there must be some lenses with just one model, or very few 
+models.  How can you determine uncertainties on these models with so few 
+numbers?  There must be some minimum number of models you need before you can 
+start to get a handle on the model uncertainties.  I feel that either lenses 
+below this minimum number should be excluded from the analysis from the time 
+being, or a note should be made regarding the low number of models.  Perhaps 
+adding a column to Table 1 showing the number of models would be useful.
 
->
-misunderstanding...
+>>>
+Clarified in sect 4, par 1.
+We remind the Reviewer that what is called a model in this work is actually an
+"a statistical ensemble of two-dimensional mass maps" [sec.4 par.1]
+(typically one "model" consists of 200 models)
+The uncertainties can be determined for each "ensemble of models" individually.
 -----
 
-I thank the authors for providing a figure to justify their stellar mass accuracy claim.  I am at least partially reassured that the claim of 0.3 dex accuracy from the rest U-V color is not crazy, although I think it is still on the optimistic side.  I also think the text should include a few sentences about this test the authors performed to justify the claimed accuracy, and a forward reference to the Denzel et al. (in prep) project may be warranted.  However, I am not quite satisfied with the authors’ response to my other point about the stellar IMF, claiming that “redshift and photometric uncertainties are more important”.  Really?  The difference in M/L between a Chabrier and Salpeter IMF is nearly a factor of ~2 (i.e.,~0.2-0.3 dex) and thus comparable, and although the text now mentions disagreements in the literature, it still does not justify the choice of Chabrier.  I would recommend the authors repeat this test using a Salpeter (or similar) IMF to see just how much the stellar mass changes, and adopt the difference between Salpeter/Chabrier as an additional uncertainty on top of the already-claimed 0.3 dex.
+
+I thank the authors for providing a figure to justify their stellar mass 
+accuracy claim.  I am at least partially reassured that the claim of 0.3 dex 
+accuracy from the rest U-V color is not crazy, although I think it is still on 
+the optimistic side.  I also think the text should include a few sentences about 
+this test the authors performed to justify the claimed accuracy, and a forward 
+reference to the Denzel et al. (in prep) project may be warranted.  However, I 
+am not quite satisfied with the authors’ response to my other point about the 
+stellar IMF, claiming that “redshift and photometric uncertainties are more 
+important”.  Really?  The difference in M/L between a Chabrier and Salpeter IMF 
+is nearly a factor of ~2 (i.e.,~0.2-0.3 dex) and thus comparable, and although 
+the text now mentions disagreements in the literature, it still does not justify 
+the choice of Chabrier.  I would recommend the authors repeat this test using a 
+Salpeter (or similar) IMF to see just how much the stellar mass changes, and 
+adopt the difference between Salpeter/Chabrier as an additional uncertainty on 
+top of the already-claimed 0.3 dex.
 >
-revise the text: IMF will become an issue. photometry will be done better with multiple bands.
+revise the text: IMF will become an issue. photometry will be done better with 
+multiple bands.
 -----
 
 
 
 More minor suggestions:
 
-Section 1, paragraph 2: When mentioning “thousands of lenses in the next generation of wide-field surveys”, cite Oguri & Marshall (2010) and Collett (2015).
-
-Section 1, paragraph 5: At the end of this paragraph, when talking about the “already available data”, discuss how much more data (and thus, estimate how many more lenses) you will eventually have.  It is useful to give the reader a scope of how much of the eventual data set is being presented in this paper.
-
-> collect est. number of candidates
-
-Section 3, paragraph 5: What are the exact quantitative criteria for determining whether a lens is “isolated” or not?  If the citizen marks any galaxy within some distance of the system?
-> clarify: based on the modeller looking at the field
-
-Section 4, last paragraph: It is not clear whether the citizens or the experts/authors are the ones who evaluate the plausibility of the synthetic images and mass maps.  The paper just says “modelers”, which implies that it is the citizens.  If this is the case, how do they evaluate this?  Are they simply given a yes/no question as to whether their model is plausible?
-> clarify: currently authors.
+Section 1, paragraph 2: When mentioning “thousands of lenses in the next 
+generation of wide-field surveys”, cite Oguri & Marshall (2010) and Collett 
+(2015).
+>>> Done
 
 
-Table 1: Regarding the formatting of this table and running out of space, might the authors consider putting the table into landscape orientation and having it span multiple pages?
+Section 1, paragraph 5: At the end of this paragraph, when talking about the 
+“already available data”, discuss how much more data (and thus, estimate how 
+many more lenses) you will eventually have.  It is useful to give the reader a 
+scope of how much of the eventual data set is being presented in this paper.
+>>> Done / Clarified
+
+
+Section 3, paragraph 5: What are the exact quantitative criteria for determining 
+whether a lens is “isolated” or not?  If the citizen marks any galaxy within 
+some distance of the system?
+>>> Clarified
+
+Section 4, last paragraph: It is not clear whether the citizens or the 
+experts/authors are the ones who evaluate the plausibility of the synthetic 
+images and mass maps.  The paper just says “modelers”, which implies that it is 
+the citizens.  If this is the case, how do they evaluate this?  Are they simply 
+given a yes/no question as to whether their model is plausible?
+>>> Clarified: the authors
+
+
+Table 1: Regarding the formatting of this table and running out of space, might 
+the authors consider putting the table into landscape orientation and having it 
+span multiple pages?
 
 > ans: the data is in the supplement.
 
