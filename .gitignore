@@ -146,4 +146,7 @@ spaghetti/*.png
 paper2.kilepr
 paper2.tps
 
+versions/*
+supplemental_material/*
+
 .directory
