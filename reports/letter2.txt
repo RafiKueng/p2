@@ -36,26 +36,40 @@ does this translate statistically into uncertainties on physical properties of
 the lens galaxy?
 
 >>>
-Clarified in sect 4, par 1.
-It is indeed on a tile by tile basis and uncertainties are the spans between min and max of each tile.
------
 
 
-Given the relatively small number of modelers and the fact that one lens was not 
-modeled at all, there must be some lenses with just one model, or very few 
-models.  How can you determine uncertainties on these models with so few 
-numbers?  There must be some minimum number of models you need before you can 
-start to get a handle on the model uncertainties.  I feel that either lenses 
-below this minimum number should be excluded from the analysis from the time 
-being, or a note should be made regarding the low number of models.  Perhaps 
-adding a column to Table 1 showing the number of models would be useful.
+We take the common-sense approach of first computing any quantity of
+interest (enclosed-mass curve, arrival-time surface) individually for
+each mass map in an ensemble, and then considering the statistical
+distribution of the derived quantity.  This is clarified in sect 4, par 1.
+As this paper emphasises qualitative diagnostics, we have mostly just
+presented ensemble averages (full ranges in the case of the mass maps).
+
+An ensemble mean is tile-by-tile for a 2D mass map, but radius-wise
+for enclosed mass.
+
+There is no weighting within an ensemble.  (Weighting according to the
+quality of the synthetic images is planned in future work.)
+
+---
+
+Given the relatively small number of modelers and the fact that one
+lens was not modeled at all, there must be some lenses with just one
+model, or very few models.  How can you determine uncertainties on
+these models with so few numbers?  There must be some minimum number
+of models you need before you can start to get a handle on the model
+uncertainties.  I feel that either lenses below this minimum number
+should be excluded from the analysis from the time being, or a note
+should be made regarding the low number of models.  Perhaps adding a
+column to Table 1 showing the number of models would be useful.
 
 >>>
-Clarified in sect 4, par 1.
-We remind the Reviewer that what is called a model in this work is actually an
-"a statistical ensemble of two-dimensional mass maps" [sec.4 par.1]
-(typically one "model" consists of 200 models)
-The uncertainties can be determined for each "ensemble of models" individually.
+
+For each lens, one model is chosen by consensus as the current best.
+
+But note that "one model" contains a statistical ensemble of 200 mass
+maps.  Uncertainties are derived from the ensemble.
+
 -----
 
 

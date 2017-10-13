@@ -10,20 +10,23 @@ mass maps consistent with the image locations, parities and time
 ordering, given by the modeller.  The mass maps are made up of mass
 tiles and are free-form, but are required to be concentrated around
 the identified lens centre \citep[see][for the precise formulation of
-the search problem]{2014MNRAS.445.2181C}.  The modeller can also set
+  the search problem]{2014MNRAS.445.2181C}.  The modeller can also set
 various options for the search, such as the number of mass tiles and
 the extent of the mass map; all options have defaults.  Typically,
-there are $\sim$ 500 mass tiles arranged in a disc, centred on the
+there are $\sim500$ mass tiles arranged in a disc, centred on the
 lensing galaxy and extending to twice the radius of the outermost
 image.  By default, the mass distributed is required to have
 $180^\circ$ rotation symmetry, but this option can be unset.  Assuming
 mass distributions can be found -- which in practice is usually the
-case -- a statistical ensemble of two-dimensional mass maps is
-returned.  
-This ensemble of typically 200 models, along with derived quantities and 
+case -- a statistical ensemble of 200 two-dimensional mass maps is
+returned.  From each mass map, further quantities such as lens
+potentials or enclosed masses can be derived.  Thus, there are
+ensembles of 200 values for the surface density at any point, for the
+enclosed mass within a given radius and so on.  In this paper we
+present the averages and ranges of different quantities, but other
+quantities such as 90\% confidence ranges could also be computed.  The
+whole ensemble of mass maps, along with derived quantities and
 uncertainties, makes up one SpaghettiLens model.
-Each of these ensemble of models is usually represented using tile-by-tile 
-mean values and uncertainties derived from tile-by-tile minima and maxima.
 
 The mass will naturally depend on the lens and source redshifts, which
 are unknown when a lens candidate is first identified.  However, this
