@@ -1,3 +1,4 @@
+
 | I thank the authors for addressing most of my points.  The paper is
 | much better-organized and reads more clearly now.  I still have some
 | remaining concerns and suggestions that I would like them to address
@@ -22,12 +23,10 @@
 | needs to be at least mentioned and some estimate of the biases
 | should be made.
 
->>> 2012MNRAS.424..104L -----
+We discuss this now in sec.2 2nd last paragraph and add a ref. to
+2012MNRAS.424..104L that shows how to extrapolate to estimate full
+virial mass.
 
->
-paper by dominik "diagnostics of  baryon cooling":
-one could try to extrapolate it as done in above paper, but we have not done it.
------
 
 | When doing the ensemble average of the mass models, how is the
 | “mean” determined?  Is it on a tile-by-tile basis?  Is it by total
@@ -36,8 +35,6 @@ one could try to extrapolate it as done in above paper, but we have not done it.
 | shows the full range of mass, but how does this translate
 | statistically into uncertainties on physical properties of the lens
 | galaxy?
-
->>>
 
 We take the common-sense approach of first computing any quantity of
 interest (enclosed-mass curve, arrival-time surface) individually for
@@ -52,7 +49,6 @@ for enclosed mass.
 There is no weighting within an ensemble.  (Weighting according to the
 quality of the synthetic images is planned in future work.)
 
----
 
 | Given the relatively small number of modelers and the fact that one
 | lens was not modeled at all, there must be some lenses with just one
@@ -64,14 +60,11 @@ quality of the synthetic images is planned in future work.)
 | should be made regarding the low number of models.  Perhaps adding a
 | column to Table 1 showing the number of models would be useful.
 
->>>
-
 For each lens, one model is chosen by consensus as the current best.
 
 But note that "one model" contains a statistical ensemble of 200 mass
 maps.  Uncertainties are derived from the ensemble.
 
------
 
 | I thank the authors for providing a figure to justify their stellar
 | mass accuracy claim.  I am at least partially reassured that the
@@ -92,10 +85,28 @@ maps.  Uncertainties are derived from the ensemble.
 | Salpeter/Chabrier as an additional uncertainty on top of the
 | already-claimed 0.3 dex.
 
-Salpeter is an extreme bottom-heavy IMF, and strongly excluded by the
-(cited) result of Smith et al (2015).  That work finds that even in
-three cases where spectral lines indicate a bottom-heavy IMF, Salpeter
-would put too much mass inside the Einstein ring.
+> Salpeter is an extreme bottom-heavy IMF, and strongly excluded by the
+> (cited) result of Smith et al (2015).  That work finds that even in
+> three cases where spectral lines indicate a bottom-heavy IMF, Salpeter
+> would put too much mass inside the Einstein ring.
+
+We apologize for not making this point clear. Indeed, the net effect
+of a change of the IMF towards a bottom-heavy distribution (in evolved
+populations) is to increase M/L without a fundamental change in
+colours or line strengths (one of the reasons why these constraints
+are so difficult to derive from observed data). So, a change from
+Chabrier to Salpeter will indeed imply a ~0.3dex change in (log)
+stellar mass, without a significant change in the photometric
+observables.
+
+What we meant is that the observations (mostly based on giant/dwarf
+sensitive spectral features) suggest, at present, a departure from the
+standard IMF only in the cores of the most massive early-type galaxies
+(see, e.g. Figure 12 in La Barbera et al. 2016, MNRAS, 457, 1468).
+Therefore, the net change in stellar M/L from a potential non-universality
+may be rather subtle, and needlessly beyond the scope of this simple
+approach on lensing galaxies.
+
 
 | More minor suggestions:
 
@@ -105,6 +116,7 @@ would put too much mass inside the Einstein ring.
 
 Done
 
+
 | Section 1, paragraph 5: At the end of this paragraph, when talking
 | about the “already available data”, discuss how much more data (and
 | thus, estimate how many more lenses) you will eventually have.  It
@@ -113,11 +125,13 @@ Done
 
 Done / Clarified
 
+
 | Section 3, paragraph 5: What are the exact quantitative criteria for
 | determining whether a lens is “isolated” or not?  If the citizen
 | marks any galaxy within some distance of the system?
 
 Clarified
+
 
 | Section 4, last paragraph: It is not clear whether the citizens or
 | the experts/authors are the ones who evaluate the plausibility of
@@ -127,6 +141,7 @@ Clarified
 | whether their model is plausible?
 
 Clarified: the authors
+
 
 | Table 1: Regarding the formatting of this table and running out of
 | space, might the authors consider putting the table into landscape
