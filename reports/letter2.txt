@@ -85,11 +85,6 @@ maps.  Uncertainties are derived from the ensemble.
 | Salpeter/Chabrier as an additional uncertainty on top of the
 | already-claimed 0.3 dex.
 
-> Salpeter is an extreme bottom-heavy IMF, and strongly excluded by the
-> (cited) result of Smith et al (2015).  That work finds that even in
-> three cases where spectral lines indicate a bottom-heavy IMF, Salpeter
-> would put too much mass inside the Einstein ring.
-
 We apologize for not making this point clear. Indeed, the net effect
 of a change of the IMF towards a bottom-heavy distribution (in evolved
 populations) is to increase M/L without a fundamental change in
