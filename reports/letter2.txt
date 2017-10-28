@@ -36,19 +36,19 @@ virial mass.
 | statistically into uncertainties on physical properties of the lens
 | galaxy?
 
-We take the common-sense approach of first computing any quantity of
-interest (enclosed-mass curve, arrival-time surface) individually for
-each mass map in an ensemble, and then considering the statistical
-distribution of the derived quantity.  This is clarified in sect 4, par 1.
-As this paper emphasises qualitative diagnostics, we have mostly just
-presented ensemble averages (full ranges in the case of the mass maps).
+We take the approach of first computing any quantity of interest
+(enclosed-mass curve, arrival-time surface) individually for each mass
+map in an ensemble, and then considering the statistical distribution
+of the derived quantity.  This is clarified in sect 4, par 1.  As this
+paper emphasises qualitative diagnostics, we have mostly just
+presented ensemble averages (full ranges in the case of the mass
+maps).
 
-An ensemble mean is tile-by-tile for a 2D mass map, but radius-wise
+An ensemble mean is done tile-by-tile for a 2D mass map, but radius-wise
 for enclosed mass.
 
 There is no weighting within an ensemble.  (Weighting according to the
 quality of the synthetic images is planned in future work.)
-
 
 | Given the relatively small number of modelers and the fact that one
 | lens was not modeled at all, there must be some lenses with just one
@@ -64,7 +64,6 @@ For each lens, one model is chosen by consensus as the current best.
 
 But note that "one model" contains a statistical ensemble of 200 mass
 maps.  Uncertainties are derived from the ensemble.
-
 
 | I thank the authors for providing a figure to justify their stellar
 | mass accuracy claim.  I am at least partially reassured that the
@@ -90,18 +89,17 @@ of a change of the IMF towards a bottom-heavy distribution (in evolved
 populations) is to increase M/L without a fundamental change in
 colours or line strengths (one of the reasons why these constraints
 are so difficult to derive from observed data). So, a change from
-Chabrier to Salpeter will indeed imply a ~0.3dex change in (log)
+Chabrier to Salpeter will indeed imply a ~0.2-0.3dex change in (log)
 stellar mass, without a significant change in the photometric
 observables.
 
-What we meant is that the observations (mostly based on giant/dwarf
-sensitive spectral features) suggest, at present, a departure from the
-standard IMF only in the cores of the most massive early-type galaxies
-(see, e.g. Figure 12 in La Barbera et al. 2016, MNRAS, 457, 1468).
-Therefore, the net change in stellar M/L from a potential non-universality
-may be rather subtle, and needlessly beyond the scope of this simple
-approach on lensing galaxies.
-
+What we meant is that the latest observational constraints (mostly
+based on giant/dwarf sensitive spectral features) suggest, at present,
+a departure from the standard IMF only in the cores of the most
+massive early-type galaxies (see, e.g. Figure 12 in La Barbera et
+al. 2016, MNRAS, 457, 1468).  Therefore, the net change in stellar M/L
+from a potential non-universality may be rather subtle, and needlessly
+beyond the scope of this simple approach on lensing galaxies.
 
 | More minor suggestions:
 
@@ -110,7 +108,6 @@ approach on lensing galaxies.
 | and Collett (2015).
 
 Done
-
 
 | Section 1, paragraph 5: At the end of this paragraph, when talking
 | about the “already available data”, discuss how much more data (and
