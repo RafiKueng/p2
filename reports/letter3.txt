@@ -1,0 +1,17 @@
+|  I thank the authors for addressing my remaining points.  I
+|  encourage them to think more about the stellar IMF issue and to
+|  perhaps include further elaboration in the text about the tests
+|  they have performed, but I agree now that with the number of other
+|  assumptions and uncertainties, it is unlikely to make a major
+|  qualitative difference in their results.  I recommend this paper
+|  for publication in MNRAS.
+
+We have added (near the start of in Section 5) a short explanation for
+how stellar masses could be effectively estimated from just rest-frame
+U and V fluxes.  The added text is a qualitative summary of our
+earlier more detailed response to the referee on this point.
+
+The topic, though important, is somewhat tangential to the present
+paper, which uses a cruder approximation with just one photometric band.
+
+
