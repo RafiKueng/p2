@@ -6,12 +6,15 @@
 |  qualitative difference in their results.  I recommend this paper
 |  for publication in MNRAS.
 
-We have added (near the start of in Section 5) a short explanation for
-how stellar masses could be effectively estimated from just rest-frame
-U and V fluxes.  The added text is a qualitative summary of our
-earlier more detailed response to the referee on this point.
+We have added (near the start of in Section 5) some intuitive
+justification for how stellar masses could be effectively estimated
+from just rest-frame U and V fluxes.
 
-The topic, though important, is somewhat tangential to the present
-paper, which uses a cruder approximation with just one photometric band.
+We agree that the effect of a stellar IMF on the mass budget is
+important.  We emphasize, however, that this paper presents a pilot
+study with a simple estimate of stellar mass based on standard
+population synthesis models. Our group is working on the stellar IMF
+front, and the upgraded versions of the lensing analysis (Denzel et
+al. in preparation) will take this issue into account.
 
-
+Many thanks for your comments.
