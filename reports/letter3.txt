@@ -6,9 +6,8 @@
 |  qualitative difference in their results.  I recommend this paper
 |  for publication in MNRAS.
 
-We have added (near the start of in Section 5) some intuitive
-justification for how stellar masses could be effectively estimated
-from just rest-frame U and V fluxes.
+We have added (near the start of in Section 5) a few more words to
+shortly elaborate.
 
 We agree that the effect of a stellar IMF on the mass budget is
 important.  We emphasize, however, that this paper presents a pilot
