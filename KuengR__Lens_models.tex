@@ -1,5 +1,11 @@
 \documentclass[fleqn,usenatbib]{template/mnras}
 
+\pdfoutput=1
+% pdfoutput is used for arxiv, should be somewhere in lines 1-5
+
+
+
+
 % Use vector fonts, so it zooms properly in on-screen viewing software
 % Don't change these lines unless you know what you are doing
 \usepackage[T1]{fontenc}      % make sure font is supported
@@ -21,7 +27,15 @@
 
 % I disabled hyperlink in the cls und included it here because of bugs
 \usepackage{hyperref}   % Hyperlinks
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=blue,
+  urlcolor=blue,
+  pdfauthor={Kueng, Rafael et al.},
+  pdftitle={Models of gravitational lens candidates from Space Warps CFHTLS}
+}
 
 \newcommand*{\rot}{\rotatebox{90}}
 \newcommand*{\OK}{\ding{51}}
