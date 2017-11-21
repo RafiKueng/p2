@@ -7,4 +7,4 @@
 # rev 2 - rev 3
 BASECOMMIT=8c256108be70
 
-./git-latexdiff --bibtex --main paper2.tex --output paper2_diff.pdf $BASECOMMIT
+./git-latexdiff --bibtex --main KuengR__Lens_models.tex --output KuengR__Lens_models_diff.pdf $BASECOMMIT
