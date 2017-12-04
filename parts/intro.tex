@@ -3,13 +3,13 @@
 \section{Introduction}
 
 By a curious coincidence, the typical escape velocity of massive
-galaxies -- of order a few hundred km/s -- is such that $v_{\rm
+galaxies -- of the order of a few hundred km/s -- is such that $v_{\rm
   esc}^2/c^2$, expressed as an angular distance, is comparable to the
 apparent sizes of galaxies at cosmological distances.  This
 coincidence is fortunate, because it makes the gravitational lensing
 deflection angle of distant galaxies ($\alpha\sim 2v_{\rm esc}^2/c^2$)
 comparable to their size on the sky. As a result, strong lensing by
-galaxies produces images that probe their host dark matter halos,
+galaxies produces images that probe their host dark matter haloes,
 providing a useful tool to understand galaxy formation.  While there
 is a general consensus about the basic mechanisms at play, involving
 gravitational collapse, fragmentation, and mergers of dark-matter
@@ -34,8 +34,8 @@ Several studies in recent years have done so \citep[see,
 enlarge the samples from tens of lensing galaxies to thousands.  Doing
 so requires both finding more lenses and also modelling their mass
 distribution.  Recent searches through the CFHT Lens Survey
-\citep[CFHTLS,][]{2012MNRAS.427..146H} using arc-finders
-\citep[e.g.,][]{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G,2017arXiv170401585S}
+\citep[CFHTLS;][]{2012MNRAS.427..146H} using arc-finders
+\citep[e.g.][]{2012ApJ...749...38M,2014A&A...567A.111M,2014ApJ...785..144G,2017arXiv170401585S}
 by either machine learning methods
 \citep[e.g.,][]{2016A&A...592A..75P,2017arXiv170302642L} or visual
 inspection by citizen-science volunteers through the \SW project
@@ -61,7 +61,7 @@ still needed.  With that in mind \cite{2015MNRAS.447.2170K} developed
 a new modelling strategy, implemented as the SpaghettiLens\footnote{\url{http://labs.spacewarps.org/spaghetti/}}
 system.
 The idea is to collaborate with experienced members of the
-citizen-science community, who have already participated in lens
+citizen-science community who have already participated in lens
 discovery through \SW, as well as several other projects involving
 astronomical data.  The system was tested on a sample of simulated
 lenses, which were part of the training and testing set in \SW.
@@ -92,10 +92,10 @@ secure lenses.  Moreover the candidate-lens redshifts have large
 uncertainties, while the candidate-source redshifts can only be
 guessed at present.  Nevertheless it is interesting to explore the
 trends observed with the already available data, based on some 300 models
-created by 8 volunteers for 58 candidate lenses found in the 150\sqdeg
+created by eight volunteers for 58 candidate lenses found in the 150\sqdeg
 CFHTLS.
 
-This paper is organized as follows:
+This paper is organized as follows.
 Section~\ref{sec:candidates_models} introduces the candidate lenses,
 their models and the diagnostics applied to them.  The following
 sections elaborate on the diagnostics.  Image morphology diagnostics
@@ -103,7 +103,7 @@ are explained in Section~\ref{sec:morph} and diagnostics based on the
 mass models are discussed in Section~\ref{sec:massmodels}.  Stellar masses are
 presented in Section~\ref{sec:stellar-mass}, to compare stellar and
 lensing masses.  Finally, Section~\ref{sec:summary}
-summarises and tabulates the diagnostics in Table~\ref{tab:models}.
+summarizes and tabulates the diagnostics in Table~\ref{tab:models}.
 
 We include three appendices devoted to various technical issues
 relating to the modelling.  The online supplement gives the results
@@ -114,22 +114,22 @@ candidates.
 \section{The candidates and models}
 \label{sec:candidates_models}
 
-\SW is a citizen science gravitational lens search
+\SW is a citizen-science gravitational lens search
 \citep{2016MNRAS.455.1171M}.  Its first run searched the CFHT Legacy
 Survey, a survey carried out in five optical bands
 ($u^*$,$g^\prime$,$r^\prime$,$i^\prime$,$z^\prime$) covering a total
-area of 160\sqdeg divided up into four fields W1 -- W4.  The
+area of \SI{160}{\sqdeg} divided up into four fields W1--W4.  The
 MegaPrime camera, used for the survey, has a field of view of
-1\sqdeg, with $0.186\arcsec$ pixels. The flux limit of the
+\SI{1}{\sqdeg}, with \SI{0.186}{\arcsec} pixels. The flux limit of the
 survey is $g^\prime<25.6\,\text{AB}$ ($5 \sigma$) with a typical seeing
-FWHM $\sim 0.7\arcsec$ \citep{2013MNRAS.433.2545E}. The cutouts
+FWHM $\sim \SI{0.7}{\arcsec}$ \citep{2013MNRAS.433.2545E}. The cutouts
 shown to the volunteers were colour composites of the $g^\prime$,
 $r^\prime$ and $i^\prime$ bands from randomly chosen regions.
 The programme resulted in 59 new lens candidates, of which 29 are
 considered high quality.
-Moreover, 82 previously known lens candidates were ``rediscovered''.
+Moreover, 82 previously known lens candidates were `rediscovered'.
 The candidates have broadly similar redshifts ($0.2<z<1.0$), Einstein
-radii between 0.7 and 5\arcsec, and arc fluxes in $g$-band AB
+radii between 0.7 and \SI{5}{\arcsec}, and arc fluxes in $g$-band AB
 magnitudes between 22 and 26. These properties are
 similar to those found by previous robotic searches like ArcFinder and
 RingFinder \citep{2016MNRAS.455.1191M}.
@@ -138,7 +138,7 @@ RingFinder \citep{2016MNRAS.455.1191M}.
 \begin{figure}
   \includegraphics[width=\linewidth]{img/timelapse3}
   \caption{ Number of models generated over time in days since the
-    launch of \SpL; the black line shows all models, the coloured
+    launch of \SpL; the black line shows all models, and the coloured
     lines show the five most active candidates. A total of 377 models
     were generated for 58 lens candidates, eight users contributed
     more than five models per person. }
@@ -146,21 +146,21 @@ RingFinder \citep{2016MNRAS.455.1191M}.
 \end{figure}
 
 
-A first version of \SpL was launched in May 2013, while
+A first version of \SpL was launched in 2013 May, while
 the first run of \SW was ongoing.  Fig.~\ref{fig:time} shows the
 total number of models generated since launch for our lens candidates.
 A small number of volunteers started creating models of possible lens
 candidates from \SW that were debated in the discussion forum.  In the
-beginning of August 2013 (around day 70 since release) a modelling
+beginning of 2013 August (around day 70 since release), a modelling
 challenge for the candidate later to be identified as \sw{01} was
 launched.  A group of five volunteers presented their results in an
 online letter
-converging on a set of 30 models. In April 2015 (day 700),
+converging on a set of 30 models. In 2015 April (day 700),
 the first major version of \SpL was released. At the same time,
 the list of identified candidates was made available \citep[as a preprint
   of][]{2016MNRAS.455.1191M}.  At this stage, the volunteers were
 asked to create models for all the lens candidates that were still
-missing.  The work done for candidate \sw{29} show that the
+missing.  The work done for candidate \sw{29} shows that the
 volunteers converged on a favourable model much faster, after 15
 models, generated in 30 days.  The total modelling effort resulted in
 a set of 377 \SpL models for all but one of the 59 \SW lens
@@ -179,13 +179,13 @@ relieves a tendency in the earlier work for mass profiles to be too
 shallow. In \S~\ref{subsec:parameter} we consider the possibility
 of fitting a parametric lens model to the ensemble.
 
-We characterise each model with seven diagnostics, grouped into three
+We characterize each model with seven diagnostics, grouped into three
 categories, whose purpose is to help identify the most likely cases of
 a gravitational lens, as well as flag the most interesting candidates
 for future follow-up observations. The diagnostics are as follows.
 
 \begin{itemize}
-\item Firstly we have diagnostics based on morphology.
+\item First, we have diagnostics based on morphology.
   Section~\ref{sec:morph} and Fig.~\ref{fig:splinput} explain
   this diagnostic in more detail. We consider:
 \begin{enumerate}
@@ -197,10 +197,10 @@ for future follow-up observations. The diagnostics are as follows.
   insert conjectural image positions.
 \item Whether the lens is isolated.
 \item The image morphology concisely described: double or quads,
-  further sub-categorised to indicate the elongation direction of the
+  further sub-categorized to indicate the elongation direction of the
   lensing mass.
 \end{enumerate}
-\item Secondly we have mass models, covered in Section~\ref{sec:massmodels}.
+\item Secondly, we have mass models, covered in Section~\ref{sec:massmodels}.
   We assess the following points:
 \begin{enumerate}
 \setcounter{enumi}{4}
@@ -208,7 +208,7 @@ for future follow-up observations. The diagnostics are as follows.
 \item Whether the arrival-time surface and synthetic image are
   plausible. In particular, an unsatisfactory model is flagged when 
   additional images are implied in regions
-  where they are not observed (see Figs.~\ref{fig:arriv}, \ref{fig:synth} \ref{fig:encl}).
+  where they are not observed (see Figs.~\ref{fig:arriv}, \ref{fig:synth} and \ref{fig:encl}).
 \end{enumerate}
 \item Thirdly, whether the total implied lensing mass determined from
   the lens model is plausible, given the photometry of the lensing
@@ -216,7 +216,7 @@ for future follow-up observations. The diagnostics are as follows.
   mass tiles in the model.  These mass tiles reach out to typically
   twice the radius of the outermost image.
   Section~\ref{sec:stellar-mass} explains how we compare the lensing
-  mass with the stellar mass.  Galaxies may have halos extending well
+  mass with the stellar mass.  Galaxies may have haloes extending well
   beyond the mass maps in the models, so the calculated lensing mass
   is only a lower bound on the total galaxy mass.  Hence, the lensing
   mass should be somewhere between the stellar mass (lower bound) and
@@ -226,7 +226,7 @@ for future follow-up observations. The diagnostics are as follows.
   work.
 \begin{enumerate}
 \setcounter{enumi}{6}
-\item We then introduce a so-called halo index ($\haloindex$), that
+\item We then introduce a so-called halo index ($\haloindex$), which
   quantifies how the lensing mass compares with these two
   constraints (see Fig.~\ref{fig:stelmass}).
 \end{enumerate}

@@ -25,7 +25,7 @@ and magnification.  The brightness of each source-plane pixel is set
 to the mean of all the lens-plane pixels mapped to it.  Finally, the
 mapping is run back to the lens plane.  The result is a synthetic
 image.  In effect, one is reconstructing a source-plane brightness map
-by least-squares.
+by least squares.
 
 The procedure is not yet implemented in SpaghettiLens but can be
 applied during post-processing.  The new synthetic images could be used to
@@ -38,9 +38,9 @@ according to how good the synthetic images are.
     (J143454.4+522850). Top-left: original image, with areas
     containing lensed images enclosed within green frames.  Top-right:
     synthetic image (coloured arcs) with lensing galaxy and unrelated
-    objects in greyscale.  Bottom from left to right: reconstructed
-    source in colour, intensity (greyscale), count of lens plane
-    pixels per source plane pixel, residual of original image to
+    objects in grey-scale.  Bottom from left to right: reconstructed
+    source in colour, intensity (grey-scale), count of lens-plane
+    pixels per source-plane pixel, and residual of original image to
     synthetic image.}
   \label{fig:synthimg}
 \end{figure}
@@ -56,15 +56,15 @@ more steeply near the centre, was suggested as a possible cure.
 
 Fig.~\figref{subsampling} shows an experiment with smaller mass
 tiles in the inner region.  Replacing the very central mass tile with
-9 smaller tiles allows for steeper central profiles.  Doing the same
+nine smaller tiles allows for steeper central profiles.  Doing the same
 for the 25 innermost mass tiles allows for even steeper central
 profiles, eliminating the systematic shallow profiles.  However, 
 it does not provide a completely satisfactory solution, because (a)~it increases
-the number of mass tiles by 40\% and significantly increases the
+the number of mass tiles by \SI{40}{\%} and significantly increases the
 computational time, and (b)~the square boundary between areas with
 different tile sizes is rather undesirable.
 The main modelling work in this paper was, however, done before the
-experiments with smaller mass tiles was complete.  Some of the models
+experiment with smaller mass tiles was complete.  Some of the models
 presented in this paper apply the intermediate option (corresponding
 to the middle panel in Fig.~\figref{subsampling}) while others use
 the old system.  We note this paper mainly concerns the enclosed mass
@@ -81,14 +81,14 @@ an issue.
     different reconstructions of a simulated lens (sim) from
     Space~Warps.  In each panel, the dashed blue curve is the correct
     answer.  The orange band represents the statistical ensemble from
-    SpaghettiLens, the orange line shows the ensemble mean.  Locations of
+    \SpL, and the orange line shows the ensemble mean.  Locations of
     images (maximum, saddle point, minimum) are marked with vertical
     arrows.  The radial value at $\kappa=1$ is the effective
     Einstein radius, \ER. The upper panel is taken from
-    \citet{2015MNRAS.447.2170K}, see Fig.~3 of that paper.  The middle
-    panel is the result when the innermost mass tile is replaced by 9
+    \citet{2015MNRAS.447.2170K}, see fig.~3 of that paper.  The middle
+    panel is the result when the innermost mass tile is replaced by nine
     smaller tiles.  The lower panel results from replacing the
-    innermost 5$\times$5 tiles with 9 smaller tiles each.}
+    innermost 5$\times$5 tiles with nine smaller tiles each.}
   \label{fig:subsampling}
 \end{figure}
 
@@ -96,21 +96,21 @@ an issue.
 \subsection{Parametrization of pixel models} \label{subsec:parameter}
 
 In order to fit the set of pixelated models to a single parametrized
-model, a programme was written that took a parametrized function and
+model, a program was written that took a parametrized function and
 subtracted from it the mean and the principal components (PCs) of the
-data. This created the residual function.  The number of principal
-components in the analysis was varied, to test how this affected the
-output. It was found that 5 PCs gave a reasonable approximation. A
+data. This created the residual function.  The number of PCs in
+the analysis was varied, to test how this affected the
+output. It was found that five PCs gave a reasonable approximation. A
 masking function was added, selecting only the data points that fell
 inside the image of the lens, and the PCs were clipped in order to
 keep the values inside the region of the ensemble. Any value higher
 than the clip was set to be the clip value. This was chosen to 2.5
-because, assuming that the data follows a Gaussian error distribution,
+because, assuming that the data follow a Gaussian error distribution,
 almost all the values for the variance should lie between 2 and 3
-standard deviations from the mean. Minimising the residuals function
+standard deviations from the mean. Minimizing the residuals function
 produces the set of parameters that fit the parametrized function to
 the original pixelated ensemble most closely.  A least squares fit was
-used to perform this minimisation.  The parametrized model function
+used to perform this minimization.  The parametrized model function
 was obtained from the gravitational potential of an isothermal
 ellipsoid mass distribution \citep{2001astro.ph..2341K}.  This model
 is frequently used to describe gravitational lenses, giving good fits
@@ -127,8 +127,8 @@ Fig.~\ref{fig:parameter}.
 \begin{figure}
   \includegraphics[width=\linewidth]{img/rE_comp/rE_comp.png}
   \caption{ Comparison of Einstein radii \ER\ obtained from mass tiles
-    to the results from a parameterized model to test the performance
-    of the algorithm.  The parameterized model was generated using
+    to the results from a parametrized model to test the performance
+    of the algorithm.  The parametrized model was generated using
     principal component analysis on the ensemble of models.  The blue
     dashed line represents a perfect recovery of \ER.  }
   \label{fig:parameter}
